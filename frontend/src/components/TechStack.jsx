@@ -1,5 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { techStack } from '../data/mock';
+import { useLanguage } from '../i18n/LanguageContext';
 import { motion } from 'framer-motion';
 import { Cpu } from 'lucide-react';
 
@@ -33,6 +34,8 @@ const MarqueeRow = ({ items, direction = 'left', speed = 30 }) => {
 };
 
 const TechStack = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="techstack" className="relative py-24 md:py-32 bg-[#0a0a0a] overflow-hidden">
       <div className="absolute bottom-0 left-1/2 w-[600px] h-[600px] bg-amber-500/[0.015] rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
@@ -47,12 +50,12 @@ const TechStack = () => {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-amber-500 font-mono text-sm">04.</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-zinc-100">Tech Stack</h2>
+            <span className="text-amber-500 font-mono text-sm">{t('techstack.sectionNum')}</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-zinc-100">{t('techstack.title')}</h2>
             <div className="flex-1 h-[1px] bg-zinc-800 ml-4" />
           </div>
           <p className="text-zinc-500 text-sm max-w-lg">
-            Tecnologias e ferramentas que utilizo para criar experiências digitais de alta qualidade.
+            {t('techstack.subtitle')}
           </p>
         </motion.div>
 
@@ -69,7 +72,7 @@ const TechStack = () => {
               <div className="w-6 h-6 rounded-md bg-amber-500/10 flex items-center justify-center">
                 <Cpu className="w-3 h-3 text-amber-400" />
               </div>
-              <span className="font-mono text-xs text-zinc-500 uppercase tracking-wider">Frontend</span>
+              <span className="font-mono text-xs text-zinc-500 uppercase tracking-wider">{t('techstack.frontend')}</span>
             </motion.div>
             <MarqueeRow items={techStack.frontend} direction="left" speed={25} />
           </div>
@@ -85,7 +88,7 @@ const TechStack = () => {
               <div className="w-6 h-6 rounded-md bg-amber-500/10 flex items-center justify-center">
                 <Cpu className="w-3 h-3 text-amber-400" />
               </div>
-              <span className="font-mono text-xs text-zinc-500 uppercase tracking-wider">Backend</span>
+              <span className="font-mono text-xs text-zinc-500 uppercase tracking-wider">{t('techstack.backend')}</span>
             </motion.div>
             <MarqueeRow items={techStack.backend} direction="right" speed={30} />
           </div>
@@ -101,7 +104,7 @@ const TechStack = () => {
               <div className="w-6 h-6 rounded-md bg-amber-500/10 flex items-center justify-center">
                 <Cpu className="w-3 h-3 text-amber-400" />
               </div>
-              <span className="font-mono text-xs text-zinc-500 uppercase tracking-wider">Ferramentas & DevOps</span>
+              <span className="font-mono text-xs text-zinc-500 uppercase tracking-wider">{t('techstack.tools')}</span>
             </motion.div>
             <MarqueeRow items={techStack.tools} direction="left" speed={28} />
           </div>
@@ -116,11 +119,11 @@ const TechStack = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16"
         >
           {[
-            { label: 'Tecnologias', value: '24+' },
-            { label: 'Projetos', value: '8+' },
-            { label: 'Experiência', value: '3+ anos' },
-            { label: 'Frameworks', value: '10+' },
-          ].map((stat, index) => (
+            { label: t('techstack.stats.technologies'), value: '24+' },
+            { label: t('techstack.stats.projects'), value: '8+' },
+            { label: t('techstack.stats.experience'), value: t('techstack.stats.experienceValue') },
+            { label: t('techstack.stats.frameworks'), value: '10+' },
+          ].map((stat) => (
             <div
               key={stat.label}
               className="p-5 rounded-2xl border border-zinc-800/80 bg-zinc-900/20 text-center hover:border-amber-500/15 transition-all duration-300"

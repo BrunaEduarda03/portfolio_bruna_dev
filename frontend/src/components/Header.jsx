@@ -1,11 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { navLinks, personalInfo } from '../data/mock';
-import { Menu, X, Terminal } from 'lucide-react';
+import { personalInfo } from '../data/mock';
+import { useLanguage, LANGUAGES } from '../i18n/LanguageContext';
+import { Menu, X, Terminal, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
+  const { t, language, changeLanguage } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [langMenuOpen, setLangMenuOpen] = useState(false);
+
+  const navLinks = [
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.experience'), href: '#experience' },
+    { name: t('nav.projects'), href: '#projects' },
+    { name: t('nav.techstack'), href: '#techstack' },
+    { name: t('nav.contact'), href: '#contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +25,16 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (langMenuOpen && !e.target.closest('.lang-switcher')) {
+        setLangMenuOpen(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [langMenuOpen]);
 
   const scrollToSection = (href) => {
     setMobileMenuOpen(false);
@@ -59,7 +80,7 @@ const Header = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           {navLinks.map((link, index) => (
-            <li key={link.name}>
+            <li key={link.href}>
               <button
                 onClick={() => scrollToSection(link.href)}
                 className="relative px-4 py-2 text-sm font-mono text-zinc-400 hover:text-amber-400 transition-colors duration-300 group"
@@ -72,28 +93,111 @@ const Header = () => {
           ))}
         </motion.ul>
 
-        {/* CTA Button */}
-        <motion.a
-          href="#contact"
-          className="hidden md:flex items-center gap-2 px-4 py-2 text-sm font-mono border border-amber-500/30 text-amber-400 rounded-lg hover:bg-amber-500/10 transition-all duration-300"
+        {/* Right side: Language switcher + CTA */}
+        <motion.div
+          className="hidden md:flex items-center gap-3"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToSection('#contact');
-          }}
         >
-          Contacto
-        </motion.a>
+          {/* Language Switcher */}
+          <div className="relative lang-switcher">
+            <button
+              onClick={() => setLangMenuOpen(!langMenuOpen)}
+              className="flex items-center gap-1.5 px-3 py-2 text-xs font-mono border border-zinc-800 text-zinc-400 rounded-lg hover:border-amber-500/30 hover:text-amber-400 transition-all duration-300"
+            >
+              <Globe className="w-3.5 h-3.5" />
+              {language.toUpperCase()}
+            </button>
+            <AnimatePresence>
+              {langMenuOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 4, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 4, scale: 0.95 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute right-0 top-full mt-2 bg-[#141414] border border-zinc-800 rounded-lg overflow-hidden shadow-xl shadow-black/40 min-w-[140px]"
+                >
+                  {LANGUAGES.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        changeLanguage(lang.code);
+                        setLangMenuOpen(false);
+                      }}
+                      className={`w-full text-left px-4 py-2.5 text-xs font-mono flex items-center justify-between transition-all duration-200 ${
+                        language === lang.code
+                          ? 'text-amber-400 bg-amber-500/5'
+                          : 'text-zinc-400 hover:text-amber-400 hover:bg-amber-500/5'
+                      }`}
+                    >
+                      <span>{lang.fullLabel}</span>
+                      <span className="text-zinc-600">{lang.label}</span>
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-zinc-400 hover:text-amber-400 transition-colors"
-        >
-          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+          {/* CTA */}
+          <a
+            href="#contact"
+            className="flex items-center gap-2 px-4 py-2 text-sm font-mono border border-amber-500/30 text-amber-400 rounded-lg hover:bg-amber-500/10 transition-all duration-300"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('#contact');
+            }}
+          >
+            {t('nav.contact')}
+          </a>
+        </motion.div>
+
+        {/* Mobile: Language + Menu */}
+        <div className="md:hidden flex items-center gap-2">
+          <div className="relative lang-switcher">
+            <button
+              onClick={() => setLangMenuOpen(!langMenuOpen)}
+              className="flex items-center gap-1 px-2 py-1.5 text-xs font-mono border border-zinc-800 text-zinc-400 rounded-lg"
+            >
+              <Globe className="w-3 h-3" />
+              {language.toUpperCase()}
+            </button>
+            <AnimatePresence>
+              {langMenuOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 4 }}
+                  className="absolute right-0 top-full mt-2 bg-[#141414] border border-zinc-800 rounded-lg overflow-hidden shadow-xl shadow-black/40 min-w-[130px] z-50"
+                >
+                  {LANGUAGES.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        changeLanguage(lang.code);
+                        setLangMenuOpen(false);
+                      }}
+                      className={`w-full text-left px-3 py-2 text-xs font-mono ${
+                        language === lang.code
+                          ? 'text-amber-400 bg-amber-500/5'
+                          : 'text-zinc-400 hover:text-amber-400'
+                      }`}
+                    >
+                      {lang.fullLabel}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 text-zinc-400 hover:text-amber-400 transition-colors"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
@@ -107,7 +211,7 @@ const Header = () => {
           >
             <ul className="px-6 py-4 space-y-2">
               {navLinks.map((link, index) => (
-                <li key={link.name}>
+                <li key={link.href}>
                   <button
                     onClick={() => scrollToSection(link.href)}
                     className="w-full text-left px-4 py-3 text-sm font-mono text-zinc-400 hover:text-amber-400 hover:bg-amber-500/5 rounded-lg transition-all duration-300"
@@ -122,7 +226,7 @@ const Header = () => {
                   onClick={() => scrollToSection('#contact')}
                   className="w-full text-center px-4 py-3 text-sm font-mono border border-amber-500/30 text-amber-400 rounded-lg mt-2"
                 >
-                  Contacto
+                  {t('nav.contact')}
                 </button>
               </li>
             </ul>

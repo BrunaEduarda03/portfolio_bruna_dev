@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { personalInfo } from '../data/mock';
+import { useLanguage } from '../i18n/LanguageContext';
 import { motion } from 'framer-motion';
 import { Send, Mail, MapPin, Phone, Loader2, CheckCircle2 } from 'lucide-react';
 import { Input } from './ui/input';
@@ -9,6 +10,7 @@ import { toast } from '../hooks/use-toast';
 import { Toaster } from './ui/toaster';
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,8 +28,8 @@ const Contact = () => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       toast({
-        title: 'Campos obrigatórios',
-        description: 'Por favor, preencha todos os campos obrigatórios.',
+        title: t('contact.requiredFields'),
+        description: t('contact.requiredFieldsDesc'),
         variant: 'destructive',
       });
       return;
@@ -36,15 +38,14 @@ const Contact = () => {
     // MOCK: Simulating email send - will integrate with EmailJS or backend later
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log('MOCK: Contact form submitted', formData);
-    // Save to localStorage as mock
     const submissions = JSON.parse(localStorage.getItem('contact_submissions') || '[]');
     submissions.push({ ...formData, timestamp: new Date().toISOString() });
     localStorage.setItem('contact_submissions', JSON.stringify(submissions));
     setIsSubmitting(false);
     setIsSubmitted(true);
     toast({
-      title: 'Mensagem enviada!',
-      description: 'Obrigada pelo contacto. Responderei em breve!',
+      title: t('contact.successTitle'),
+      description: t('contact.successDesc'),
     });
     setFormData({ name: '', email: '', subject: '', message: '' });
     setTimeout(() => setIsSubmitted(false), 3000);
@@ -64,12 +65,12 @@ const Contact = () => {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-amber-500 font-mono text-sm">05.</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-zinc-100">Contacto</h2>
+            <span className="text-amber-500 font-mono text-sm">{t('contact.sectionNum')}</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-zinc-100">{t('contact.title')}</h2>
             <div className="flex-1 h-[1px] bg-zinc-800 ml-4" />
           </div>
           <p className="text-zinc-500 text-sm max-w-lg">
-            Interessado(a) em colaborar? Envie uma mensagem e responderei o mais breve possível.
+            {t('contact.subtitle')}
           </p>
         </motion.div>
 
@@ -83,14 +84,14 @@ const Contact = () => {
             className="lg:col-span-2 space-y-6"
           >
             <div className="p-6 rounded-2xl border border-zinc-800/80 bg-zinc-900/20 space-y-5">
-              <h3 className="font-mono text-sm text-amber-400 uppercase tracking-wider">Informações</h3>
+              <h3 className="font-mono text-sm text-amber-400 uppercase tracking-wider">{t('contact.info')}</h3>
 
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0">
                   <Mail className="w-4 h-4 text-amber-400" />
                 </div>
                 <div>
-                  <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider mb-1">Email</p>
+                  <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider mb-1">{t('contact.email')}</p>
                   <a href={`mailto:${personalInfo.email}`} className="text-sm text-zinc-300 hover:text-amber-400 transition-colors">
                     {personalInfo.email}
                   </a>
@@ -102,7 +103,7 @@ const Contact = () => {
                   <Phone className="w-4 h-4 text-amber-400" />
                 </div>
                 <div>
-                  <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider mb-1">Telefone</p>
+                  <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider mb-1">{t('contact.phone')}</p>
                   <span className="text-sm text-zinc-300">{personalInfo.phone}</span>
                 </div>
               </div>
@@ -112,16 +113,16 @@ const Contact = () => {
                   <MapPin className="w-4 h-4 text-amber-400" />
                 </div>
                 <div>
-                  <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider mb-1">Localização</p>
+                  <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider mb-1">{t('contact.locationLabel')}</p>
                   <span className="text-sm text-zinc-300">{personalInfo.location}</span>
                 </div>
               </div>
             </div>
 
             <div className="p-6 rounded-2xl border border-zinc-800/80 bg-zinc-900/20">
-              <p className="text-xs text-zinc-500 font-mono mb-3 uppercase tracking-wider">Nota</p>
+              <p className="text-xs text-zinc-500 font-mono mb-3 uppercase tracking-wider">{t('contact.note')}</p>
               <p className="text-xs text-zinc-600 leading-relaxed">
-                Este formulário está a funcionar com <span className="text-amber-500/70">dados mock</span> (localStorage). A integração com EmailJS ou backend será feita posteriormente.
+                {t('contact.noteText')} <span className="text-amber-500/70">{t('contact.mockData')}</span> {t('contact.noteTextEnd')}
               </p>
             </div>
           </motion.div>
@@ -137,46 +138,46 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="p-6 md:p-8 rounded-2xl border border-zinc-800/80 bg-zinc-900/20 space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">Nome *</label>
+                  <label className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">{t('contact.nameLabel')} *</label>
                   <Input
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="O teu nome"
+                    placeholder={t('contact.namePlaceholder')}
                     className="bg-zinc-900/50 border-zinc-800 text-zinc-200 placeholder:text-zinc-700 focus:border-amber-500/40 focus:ring-amber-500/20 h-11"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">Email *</label>
+                  <label className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">{t('contact.emailLabel')} *</label>
                   <Input
                     name="email"
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="email@exemplo.com"
+                    placeholder={t('contact.emailPlaceholder')}
                     className="bg-zinc-900/50 border-zinc-800 text-zinc-200 placeholder:text-zinc-700 focus:border-amber-500/40 focus:ring-amber-500/20 h-11"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">Assunto</label>
+                <label className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">{t('contact.subjectLabel')}</label>
                 <Input
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder="Assunto da mensagem"
+                  placeholder={t('contact.subjectPlaceholder')}
                   className="bg-zinc-900/50 border-zinc-800 text-zinc-200 placeholder:text-zinc-700 focus:border-amber-500/40 focus:ring-amber-500/20 h-11"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">Mensagem *</label>
+                <label className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">{t('contact.messageLabel')} *</label>
                 <Textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Escreve a tua mensagem aqui..."
+                  placeholder={t('contact.messagePlaceholder')}
                   rows={5}
                   className="bg-zinc-900/50 border-zinc-800 text-zinc-200 placeholder:text-zinc-700 focus:border-amber-500/40 focus:ring-amber-500/20 resize-none"
                 />
@@ -190,17 +191,17 @@ const Contact = () => {
                 {isSubmitting ? (
                   <span className="flex items-center gap-2">
                     <Loader2 className="w-4 h-4 animate-spin" />
-                    A enviar...
+                    {t('contact.sending')}
                   </span>
                 ) : isSubmitted ? (
                   <span className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4" />
-                    Enviado!
+                    {t('contact.sent')}
                   </span>
                 ) : (
                   <span className="flex items-center gap-2">
                     <Send className="w-4 h-4" />
-                    Enviar Mensagem
+                    {t('contact.send')}
                   </span>
                 )}
               </Button>

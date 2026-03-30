@@ -1,10 +1,13 @@
 import React from 'react';
 import { personalInfo } from '../data/mock';
+import { useLanguage } from '../i18n/LanguageContext';
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { HeroScene } from './Scene3D';
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
       {/* 3D Background */}
@@ -26,7 +29,7 @@ const Hero = () => {
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-400 text-xs font-mono tracking-wider">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-            {personalInfo.availability}
+            {t('hero.availability')}
           </span>
         </motion.div>
 
@@ -36,7 +39,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
         >
-          <span className="text-zinc-100">Olá, sou </span>
+          <span className="text-zinc-100">{t('hero.greeting')} </span>
           <span className="relative">
             <span className="text-amber-400">{personalInfo.name.split(' ')[0]}</span>
             <span className="absolute -bottom-2 left-0 w-full h-[3px] bg-amber-500/40 rounded-full" />
@@ -49,7 +52,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-4 font-mono"
         >
-          {personalInfo.role}
+          {t('hero.role')}
         </motion.p>
 
         <motion.p
@@ -58,7 +61,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.9 }}
           className="text-sm md:text-base text-zinc-500 max-w-xl mx-auto mb-10 leading-relaxed"
         >
-          {personalInfo.tagline}
+          {t('hero.tagline')}
         </motion.p>
 
         {/* Social Links */}
@@ -99,7 +102,7 @@ const Hero = () => {
           transition={{ duration: 1, delay: 1.5 }}
           className="flex flex-col items-center gap-2"
         >
-          <span className="text-xs font-mono text-zinc-600 tracking-widest uppercase">Scroll</span>
+          <span className="text-xs font-mono text-zinc-600 tracking-widest uppercase">{t('hero.scroll')}</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}

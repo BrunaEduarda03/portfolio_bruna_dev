@@ -1,8 +1,19 @@
 import React from 'react';
-import { personalInfo, navLinks } from '../data/mock';
+import { personalInfo } from '../data/mock';
+import { useLanguage } from '../i18n/LanguageContext';
 import { Github, Linkedin, Mail, Heart, Terminal, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.experience'), href: '#experience' },
+    { name: t('nav.projects'), href: '#projects' },
+    { name: t('nav.techstack'), href: '#techstack' },
+    { name: t('nav.contact'), href: '#contact' },
+  ];
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -28,10 +39,10 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-mono text-xs text-zinc-500 uppercase tracking-wider mb-4">Navegação</h4>
+            <h4 className="font-mono text-xs text-zinc-500 uppercase tracking-wider mb-4">{t('footer.navigation')}</h4>
             <ul className="space-y-2">
               {navLinks.map((link) => (
-                <li key={link.name}>
+                <li key={link.href}>
                   <a
                     href={link.href}
                     className="text-xs text-zinc-600 hover:text-amber-400 transition-colors duration-300 font-mono"
@@ -50,7 +61,7 @@ const Footer = () => {
 
           {/* Social + Contact */}
           <div>
-            <h4 className="font-mono text-xs text-zinc-500 uppercase tracking-wider mb-4">Conecta</h4>
+            <h4 className="font-mono text-xs text-zinc-500 uppercase tracking-wider mb-4">{t('footer.connect')}</h4>
             <div className="flex items-center gap-3 mb-4">
               <a
                 href={personalInfo.github}
@@ -82,10 +93,10 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-zinc-800/50 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-zinc-700 font-mono flex items-center gap-1">
-            Feito com <Heart className="w-3 h-3 text-amber-500/50" /> por {personalInfo.name}
+            {t('footer.madeWith')} <Heart className="w-3 h-3 text-amber-500/50" /> {t('footer.by')} {personalInfo.name}
           </p>
           <p className="text-xs text-zinc-700 font-mono">
-            &copy; {new Date().getFullYear()} Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} {t('footer.rights')}
           </p>
           <button
             onClick={scrollToTop}
