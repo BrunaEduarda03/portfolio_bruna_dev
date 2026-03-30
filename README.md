@@ -1,70 +1,172 @@
-# Getting Started with Create React App
+<h1 align="center">
+  <br />
+  bruna.dev — Portfolio
+  <br />
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  Portfólio pessoal de <strong>Bruna Eduarda</strong>, Software Engineer.<br />
+  Desenvolvido com React 19, TypeScript, TailwindCSS, Framer Motion e Three.js.
+</p>
 
-## Available Scripts
+<p align="center">
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=white" />
+  <img src="https://img.shields.io/badge/TypeScript-6-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/TailwindCSS-3.4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" />
+  <img src="https://img.shields.io/badge/Framer_Motion-12-E10098?style=flat-square&logo=framer&logoColor=white" />
+  <img src="https://img.shields.io/badge/Three.js-0.183-white?style=flat-square&logo=threedotjs&logoColor=black" />
+</p>
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Sobre o Projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Portfólio profissional com design dark/minimal, animações fluidas e suporte a múltiplos idiomas (PT / EN / ES). A interface foi construída com foco em performance, acessibilidade e responsividade mobile-first.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Seções
 
-### `npm test`
+| Seção | Descrição |
+|-------|-----------|
+| **Hero** | Apresentação com cena 3D interativa em background |
+| **Sobre** | Bio, habilidades por área (bento grid), formação acadêmica e idiomas |
+| **Experiência** | Timeline de experiências profissionais com tecnologias utilizadas |
+| **Projetos** | Grid de projetos com links para GitHub e demo |
+| **Tech Stack** | Carrossel animado de tecnologias por categoria |
+| **Contacto** | Formulário funcional com validação e toast de feedback |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
+- **React 19** + **TypeScript 6**
+- **TailwindCSS 3.4** — utilitários, tema dark, animações customizadas
+- **Framer Motion 12** — animações de scroll e mount
+- **Three.js** + **@react-three/fiber** + **@react-three/drei** — cena 3D no Hero
+- **Radix UI** — primitivos acessíveis (Toast, Dialog, etc.)
+- **Lucide React** — ícones
+- **shadcn/ui** — componentes base de UI
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tooling
+- **CRACO** — customização do CRA sem eject
+- **PostCSS** + **Autoprefixer**
+- **ESLint** — linting com plugins React e a11y
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### i18n & Tema
+- Sistema próprio de internacionalização com `LanguageContext` (PT/EN/ES)
+- Alternância de tema dark/light via `ThemeContext`
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📁 Estrutura do Projeto
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+src/
+├── components/          # Componentes das seções do portfolio
+│   ├── Header.tsx
+│   ├── Hero.tsx
+│   ├── About.tsx
+│   ├── Experience.tsx
+│   ├── Projects.tsx
+│   ├── TechStack.tsx
+│   ├── Contact.tsx
+│   ├── Footer.tsx
+│   ├── Scene3D.tsx      # Cena Three.js do Hero
+│   └── ui/              # Componentes shadcn/ui
+├── data/
+│   └── mock.ts          # Dados tipados do portfolio (info, projetos, experiências)
+├── hooks/
+│   └── use-toast.ts     # Hook de toast notifications
+├── i18n/
+│   ├── LanguageContext.tsx  # Contexto de idioma (PT/EN/ES)
+│   ├── ThemeContext.tsx     # Contexto de tema (dark/light)
+│   └── translations.ts     # Strings traduzidas
+├── lib/
+│   └── utils.ts         # Utilitários (cn, classnames)
+├── App.tsx
+└── index.tsx
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🚀 Como Rodar Localmente
 
-## Learn More
+### Pré-requisitos
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Node.js** ≥ 18
+- **npm** ≥ 9
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Instalação
 
-### Code Splitting
+```bash
+# Clone o repositório
+git clone https://github.com/BrunaEduarda03/portfolio_bruna_dev.git
+cd portfolio_bruna_dev
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Instale as dependências
+npm install --legacy-peer-deps
 
-### Analyzing the Bundle Size
+# Inicie o servidor de desenvolvimento
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+A aplicação estará disponível em [http://localhost:3000](http://localhost:3000).
 
-### Making a Progressive Web App
+### Build de Produção
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm run build
+```
 
-### Advanced Configuration
+Os arquivos otimizados serão gerados na pasta `build/`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 📜 Scripts Disponíveis
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+| Comando | Descrição |
+|---------|-----------|
+| `npm start` | Inicia o servidor de desenvolvimento |
+| `npm run build` | Gera o build de produção |
+| `npm test` | Executa os testes |
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🌐 Internacionalização
+
+O portfolio suporta 3 idiomas, alternáveis pelo seletor no header:
+
+| Código | Idioma |
+|--------|--------|
+| `pt` | Português (padrão) |
+| `en` | English |
+| `es` | Español |
+
+Todas as strings estão centralizadas em `src/i18n/translations.ts`.
+
+---
+
+## 📱 Responsividade
+
+Layout mobile-first com breakpoints Tailwind:
+
+- **Mobile** (`< 640px`) — layout em coluna única, tipografia reduzida, menu hamburguer
+- **Tablet** (`sm` / `md`) — grids de 2 colunas, espaçamentos ajustados
+- **Desktop** (`lg` / `xl`) — layout completo com cenas 3D e efeitos visuais
+
+---
+
+## 📬 Contacto
+
+**Bruna Eduarda Maciel**
+
+- 📧 [brunaecmaciel@gmail.com](mailto:brunaecmaciel@gmail.com)
+- 💼 [linkedin.com/in/brunaeduarda](https://linkedin.com/in/brunaeduarda)
+- �� [github.com/brunaeduarda](https://github.com/brunaeduarda)
+- 📍 Brasil — disponível para trabalho remoto
+
+---
+
+<p align="center">
+  Feito com ❤️ por <strong>Bruna Eduarda</strong>
+</p>
