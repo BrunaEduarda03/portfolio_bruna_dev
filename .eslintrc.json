@@ -13,10 +13,5 @@
     "jsx-a11y/anchor-is-valid": "warn",
     "import/no-unresolved": "off"
   },
-  "ignorePatterns": [
-    "src/components/ui/**",
-    "node_modules/",
-    "build/",
-    "craco.config.js"
-  ]
+  "ignorePatterns": ["src/components/ui/**", "node_modules/", "build/"]
 }
