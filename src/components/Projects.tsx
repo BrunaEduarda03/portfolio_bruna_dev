@@ -60,20 +60,25 @@ const Projects: React.FC = () => {
                     <div className="flex items-center gap-2">
                       {project && (
                         <>
-                          <a
-                            href={project.github}
-                            className="p-2 rounded-lg text-zinc-600 hover:text-amber-400 hover:bg-amber-500/10 transition-all duration-300"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <Github className="w-4 h-4" />
-                          </a>
-                          <a
-                            href={project.link}
-                            className="p-2 rounded-lg text-zinc-600 hover:text-amber-400 hover:bg-amber-500/10 transition-all duration-300"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                          </a>
+                          {project.github && (
+                            <a
+                              href={project.github}
+                              className="p-2 rounded-lg text-zinc-600 hover:text-amber-400 hover:bg-amber-500/10 transition-all duration-300"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <Github className="w-4 h-4" />
+                            </a>
+                          )}
+                          {project.link && (
+                            <a
+                              href={project.link}
+                              target="_blank"
+                              className="p-2 rounded-lg text-zinc-600 hover:text-amber-400 hover:bg-amber-500/10 transition-all duration-300"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <ExternalLink className="w-4 h-4" />
+                            </a>
+                          )}
                         </>
                       )}
                     </div>

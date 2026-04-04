@@ -60,8 +60,8 @@ export interface Project {
   description: string;
   technologies: string[];
   image: null | string;
-  link: string;
-  github: string;
+  link?: string;
+  github?: string;
 }
 
 export interface TechItem {
@@ -102,8 +102,8 @@ export const personalInfo: PersonalInfo = {
   email: "brunaecmaciel@gmail.com",
   phone: "+55 (83) 9 96635326",
   location: "Brasil",
-  github: "https://github.com/brunaeduarda",
-  linkedin: "https://linkedin.com/in/brunaeduarda",
+  github: "https://github.com/BrunaEduarda03",
+  linkedin: "https://www.linkedin.com/in/bruna-eduarda-a06a1b18b/",
   availability: "Disponível para trabalho remoto",
   currentStudy: "Pós-graduação em Engenharia de Software",
 };
@@ -156,19 +156,50 @@ export const aboutCards: AboutCard[] = [
 export const experiences: Experience[] = [
   {
     id: 1,
-    company: "Horus & Copanest",
+    company: "CopanestRIO",
     role: "Software Developer",
     period: "Atual",
     description: [
-      "Criação de interfaces modernas e responsivas com React, Vue, Nuxt, React Native, Zustand, TanStack Query, TailwindCSS e Shadcn/UI.",
-      "Desenvolvimento backend com Node.js, Express, Prisma, PostgreSQL, PHP e Laravel.",
-      "Integração real-time com WebSockets, PWA, Service Workers e filas com Redis.",
-      "Containerização e deploy com Docker, Docker Compose e AWS (EC2, RDS, Amplify, S3).",
+      "Desenvolvimento e manutenção de landing page e sistema de gestão da cooperativa utilizando HTML, CSS, JavaScript e jQuery.",
+      "Desenvolvimento backend com PHP e NestJS para APIs e integrações do sistema.",
+      "Containerização e deploy com Docker e infraestrutura na AWS.",
+      "Gestão de dados com MySQL para o sistema da cooperativa.",
     ],
-    technologies: ["React", "Vue", "Node.js", "Docker", "AWS", "PostgreSQL"],
+    technologies: [
+      "HTML",
+      "JS",
+      "CSS",
+      "JQuery",
+      "PHP",
+      "NestJS",
+      "Docker",
+      "AWS",
+      "MySQL",
+    ],
   },
   {
     id: 2,
+    company: "Horus",
+    role: "Software Developer",
+    period: "Atual",
+    description: [
+      "Criação de interfaces modernas e responsivas com React, Vue e TypeScript para o sistema de faturamento médico.",
+      "Desenvolvimento backend com PHP para APIs e regras de negócio do sistema.",
+      "Containerização com Docker e deploy na AWS para ambientes de produção.",
+      "Modelagem e gestão de dados com MySQL para o sistema hospitalar.",
+    ],
+    technologies: [
+      "React",
+      "Vue",
+      "PHP",
+      "TypeScript",
+      "Docker",
+      "AWS",
+      "MySQL",
+    ],
+  },
+  {
+    id: 3,
     company: "Grupo Neiva",
     role: "Software Developer",
     period: "Anterior",
@@ -180,7 +211,7 @@ export const experiences: Experience[] = [
     technologies: ["Vue", "Nuxt", "Laravel", "PHP", "MySQL", "React Native"],
   },
   {
-    id: 3,
+    id: 4,
     company: "UFCG",
     role: "Software Developer",
     period: "Anterior",
@@ -202,19 +233,17 @@ export const projects: Project[] = [
       "Landing Page e Sistema de Faturamento Médico. Interface moderna para gestão de faturamento hospitalar.",
     technologies: ["React", "TailwindCSS", "Node.js", "PostgreSQL"],
     image: null,
-    link: "#",
-    github: "#",
+    link: "https://horusfat.com/",
   },
   {
     id: 2,
     title: "CoopanestRIO",
     subtitle: "Cooperative Management System",
     description:
-      "Desenvolvimento e manutenção do sistema para a cooperativa de anestesiologistas.",
+      "Desenvolvimento da landing page e do sistema para a cooperativa de anestesiologistas.",
     technologies: ["Vue", "Nuxt", "Laravel", "PostgreSQL", "Docker"],
     image: null,
-    link: "#",
-    github: "#",
+    link: "https://www.coopanestrio.org.br/",
   },
   {
     id: 3,
@@ -224,8 +253,7 @@ export const projects: Project[] = [
       "Sistema EAD e Landing Page para a plataforma Evoluir de ensino à distância.",
     technologies: ["Vue", "Nuxt", "Laravel", "MySQL"],
     image: null,
-    link: "#",
-    github: "#",
+    link: "https://plataformaevoluir.com.br/",
   },
   {
     id: 4,
@@ -235,8 +263,7 @@ export const projects: Project[] = [
       "Aplicação de automação, monitoramento e controle de ar-condicionados. Projeto de TCC.",
     technologies: ["React Native", "Node.js", "IoT", "MongoDB"],
     image: null,
-    link: "#",
-    github: "#",
+    github: "https://github.com/BrunaEduarda03/SmartAir",
   },
   {
     id: 5,
@@ -246,8 +273,7 @@ export const projects: Project[] = [
       "Landing Page para a plataforma de livros da instituição. Design responsivo e acessível.",
     technologies: ["Vue", "TailwindCSS", "Laravel"],
     image: null,
-    link: "#",
-    github: "#",
+    link: "https://mvcpnld.com.br/",
   },
   {
     id: 6,
@@ -257,8 +283,7 @@ export const projects: Project[] = [
       "Marketplace de livros para a instituição, com sistema de busca e categorização.",
     technologies: ["React", "Node.js", "MongoDB"],
     image: null,
-    link: "#",
-    github: "#",
+    link: "https://dev.iducs.com.br/login",
   },
 ];
 

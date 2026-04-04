@@ -27,6 +27,8 @@ export const translations = {
       langPtLevel: "Nativo",
       langEn: "Inglês",
       langEnLevel: "Intermediário/Avançado",
+      langEs: "Espanhol",
+      langEsLevel: "Intermediário",
       frontend: "Frontend",
       frontendDesc:
         "React, Vue, Next.js, Nuxt, TailwindCSS, Shadcn/UI, React Hook Form, Zustand, Zod, Framer Motion, TanStack Query",
@@ -47,7 +49,7 @@ export const translations = {
       edu1Institution: "Universidade Federal de Campina Grande",
       edu1Period: "Jan 2018 - Dez 2024",
       edu1Highlights: [
-        "Ênfase em desenvolvimento de software, controle e automação",
+        "Ênfase em desenvolvimento de software, Eletrônica, controle e automação",
         "Bolsista no LIEC - projetos de integração hardware e software",
       ],
       edu2Degree: "Análise e Desenvolvimento de Sistemas",
@@ -67,13 +69,23 @@ export const translations = {
       previous: "Anterior",
       jobs: [
         {
-          company: "Horus & Copanest",
+          company: "CopanestRIO",
           role: "Software Developer",
           description: [
-            "Criação de interfaces modernas e responsivas com React, Vue, Nuxt, React Native, Zustand, TanStack Query, TailwindCSS e Shadcn/UI.",
-            "Desenvolvimento backend com Node.js, Express, Prisma, PostgreSQL, PHP e Laravel.",
-            "Integração real-time com WebSockets, PWA, Service Workers e filas com Redis.",
-            "Containerização e deploy com Docker, Docker Compose e AWS (EC2, RDS, Amplify, S3).",
+            "Desenvolvimento e manutenção de landing page e sistema de gestão da cooperativa utilizando HTML, CSS, JavaScript e jQuery.",
+            "Desenvolvimento backend com PHP e NestJS para APIs e integrações do sistema.",
+            "Containerização e deploy com Docker e infraestrutura na AWS.",
+            "Gestão de dados com MySQL para o sistema da cooperativa.",
+          ],
+        },
+        {
+          company: "Horus",
+          role: "Software Developer",
+          description: [
+            "Criação de interfaces modernas e responsivas com React, Vue e TypeScript para o sistema de faturamento médico.",
+            "Desenvolvimento backend com PHP para APIs e regras de negócio do sistema.",
+            "Containerização com Docker e deploy na AWS para ambientes de produção.",
+            "Modelagem e gestão de dados com MySQL para o sistema hospitalar.",
           ],
         },
         {
@@ -153,18 +165,20 @@ export const translations = {
         projects: "Projetos",
         experience: "Experiência",
         frameworks: "Frameworks",
-        experienceValue: "4+ anos",
+        experienceValue: "5+ anos",
       },
     },
     contact: {
       sectionNum: "05.",
-      title: "Contacto",
+      title: "Contato",
       subtitle:
         "Interessado(a) em colaborar? Envie uma mensagem e responderei o mais breve possível.",
       info: "Informações",
       email: "Email",
       phone: "Telefone",
       locationLabel: "Localização",
+      githubLabel: "GitHub",
+      linkedinLabel: "LinkedIn",
       nameLabel: "Nome",
       namePlaceholder: "O teu nome",
       emailLabel: "Email",
@@ -218,6 +232,8 @@ export const translations = {
       langPtLevel: "Native",
       langEn: "English",
       langEnLevel: "Intermediate/Advanced",
+      langEs: "Spanish",
+      langEsLevel: "Intermediate",
       frontend: "Frontend",
       frontendDesc:
         "React, Vue, Next.js, Nuxt, TailwindCSS, Shadcn/UI, React Hook Form, Zustand, Zod, Framer Motion, TanStack Query",
@@ -238,7 +254,7 @@ export const translations = {
       edu1Institution: "Federal University of Campina Grande",
       edu1Period: "Jan 2018 - Dec 2024",
       edu1Highlights: [
-        "Emphasis on software development, control and automation",
+        "Emphasis on software development, Electronics, control and automation",
         "Scholarship at LIEC - hardware and software integration projects",
       ],
       edu2Degree: "Systems Analysis and Development",
@@ -258,13 +274,23 @@ export const translations = {
       previous: "Previous",
       jobs: [
         {
-          company: "Horus & Copanest",
+          company: "CopanestRIO",
           role: "Software Developer",
           description: [
-            "Creation of modern and responsive interfaces with React, Vue, Nuxt, React Native, Zustand, TanStack Query, TailwindCSS and Shadcn/UI.",
-            "Backend development with Node.js, Express, Prisma, PostgreSQL, PHP and Laravel.",
-            "Real-time integration with WebSockets, PWA, Service Workers and queues with Redis.",
-            "Containerization and deployment with Docker, Docker Compose and AWS (EC2, RDS, Amplify, S3).",
+            "Development and maintenance of landing page and cooperative management system using HTML, CSS, JavaScript and jQuery.",
+            "Backend development with PHP and NestJS for APIs and system integrations.",
+            "Containerization and deployment with Docker and AWS infrastructure.",
+            "Data management with MySQL for the cooperative system.",
+          ],
+        },
+        {
+          company: "Horus",
+          role: "Software Developer",
+          description: [
+            "Creation of modern and responsive interfaces with React, Vue and TypeScript for the medical billing system.",
+            "Backend development with PHP for APIs and system business rules.",
+            "Containerization with Docker and deployment on AWS for production environments.",
+            "Data modeling and management with MySQL for the hospital system.",
           ],
         },
         {
@@ -344,7 +370,7 @@ export const translations = {
         projects: "Projects",
         experience: "Experience",
         frameworks: "Frameworks",
-        experienceValue: "4+ years",
+        experienceValue: "5+ years",
       },
     },
     contact: {
@@ -356,6 +382,8 @@ export const translations = {
       email: "Email",
       phone: "Phone",
       locationLabel: "Location",
+      linkedinLabel: "LinkedIn",
+      githubLabel: "GitHub",
       nameLabel: "Name",
       namePlaceholder: "Your name",
       emailLabel: "Email",
@@ -408,7 +436,9 @@ export const translations = {
       langPt: "Portugués",
       langPtLevel: "Nativo",
       langEn: "Inglés",
+      langEs: "Español",
       langEnLevel: "Intermedio/Avanzado",
+      langEsLevel: "Intermedio",
       frontend: "Frontend",
       frontendDesc:
         "React, Vue, Next.js, Nuxt, TailwindCSS, Shadcn/UI, React Hook Form, Zustand, Zod, Framer Motion, TanStack Query",
@@ -429,7 +459,7 @@ export const translations = {
       edu1Institution: "Universidad Federal de Campina Grande",
       edu1Period: "Ene 2018 - Dic 2024",
       edu1Highlights: [
-        "Énfasis en desarrollo de software, control y automatización",
+        "Énfasis en desarrollo de software, Electrónica, control y automatización",
         "Becaria en LIEC - proyectos de integración hardware y software",
       ],
       edu2Degree: "Análisis y Desarrollo de Sistemas",
@@ -449,13 +479,23 @@ export const translations = {
       previous: "Anterior",
       jobs: [
         {
-          company: "Horus & Copanest",
+          company: "CopanestRIO",
           role: "Software Developer",
           description: [
-            "Creación de interfaces modernas y responsivas con React, Vue, Nuxt, React Native, Zustand, TanStack Query, TailwindCSS y Shadcn/UI.",
-            "Desarrollo backend con Node.js, Express, Prisma, PostgreSQL, PHP y Laravel.",
-            "Integración real-time con WebSockets, PWA, Service Workers y colas con Redis.",
-            "Containerización y deploy con Docker, Docker Compose y AWS (EC2, RDS, Amplify, S3).",
+            "Desarrollo y mantenimiento de landing page y sistema de gestión de la cooperativa utilizando HTML, CSS, JavaScript y jQuery.",
+            "Desarrollo backend con PHP y NestJS para APIs e integraciones del sistema.",
+            "Containerización y deploy con Docker e infraestructura en AWS.",
+            "Gestión de datos con MySQL para el sistema de la cooperativa.",
+          ],
+        },
+        {
+          company: "Horus",
+          role: "Software Developer",
+          description: [
+            "Creación de interfaces modernas y responsivas con React, Vue y TypeScript para el sistema de facturación médica.",
+            "Desarrollo backend con PHP para APIs y reglas de negocio del sistema.",
+            "Containerización con Docker y deploy en AWS para ambientes de producción.",
+            "Modelado y gestión de datos con MySQL para el sistema hospitalario.",
           ],
         },
         {
@@ -535,7 +575,7 @@ export const translations = {
         projects: "Proyectos",
         experience: "Experiencia",
         frameworks: "Frameworks",
-        experienceValue: "4+ años",
+        experienceValue: "5+ años",
       },
     },
     contact: {
@@ -547,6 +587,8 @@ export const translations = {
       email: "Email",
       phone: "Teléfono",
       locationLabel: "Ubicación",
+      linkedinLabel: "LinkedIn",
+      githubLabel: "GitHub",
       nameLabel: "Nombre",
       namePlaceholder: "Tu nombre",
       emailLabel: "Email",

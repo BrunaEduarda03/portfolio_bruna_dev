@@ -49,23 +49,24 @@ const About = () => {
     },
     {
       id: 5,
-      title: t("about.devops"),
-      description: t("about.devopsDesc"),
-      icon: Cloud,
-      span: "col-span-2",
-    },
-    {
-      id: 6,
       title: t("about.architecture"),
       description: t("about.architectureDesc"),
       icon: Layers,
       span: "col-span-1",
+    },
+    {
+      id: 6,
+      title: t("about.devops"),
+      description: t("about.devopsDesc"),
+      icon: Cloud,
+      span: "col-span-2",
     },
   ];
 
   const languages = [
     { name: t("about.langPt"), level: t("about.langPtLevel"), percentage: 100 },
     { name: t("about.langEn"), level: t("about.langEnLevel"), percentage: 75 },
+    { name: t("about.langEs"), level: t("about.langEsLevel"), percentage: 65 },
   ];
 
   const educationItems = [
@@ -105,9 +106,7 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Bio + Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          {/* Bio Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -121,7 +120,7 @@ const About = () => {
                 {t("about.whoAmI")}
               </span>
             </div>
-            <p className="text-zinc-400 leading-relaxed text-sm mb-6">
+            <p className="text-zinc-400 leading-6 text-sm mb-6">
               {t("about.bio")}
             </p>
             <div className="space-y-3">
@@ -141,12 +140,11 @@ const About = () => {
               </div>
             </div>
 
-            {/* Languages */}
             <div className="mt-6 pt-6 border-t border-zinc-800">
               <span className="font-mono text-xs text-zinc-500 uppercase tracking-wider">
                 {t("about.languages")}
               </span>
-              <div className="mt-3 space-y-3">
+              <div className="mt-3 space-y-5">
                 {languages.map((lang) => (
                   <div key={lang.name}>
                     <div className="flex justify-between text-xs mb-1">

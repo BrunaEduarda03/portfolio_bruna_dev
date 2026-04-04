@@ -15,11 +15,9 @@ const Hero = () => {
         <HeroScene />
       </div>
 
-      {/* Gradient overlays */}
       <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#0a0a0a] opacity-60" />
       <div className="absolute bottom-0 left-0 right-0 z-[1] h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
 
-      {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -95,7 +93,6 @@ const Hero = () => {
           </a>
         </motion.div>
 
-        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

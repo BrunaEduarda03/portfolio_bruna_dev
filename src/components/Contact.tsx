@@ -2,7 +2,16 @@ import React, { useState } from "react";
 import { personalInfo } from "../data/mock";
 import { useLanguage } from "../i18n/LanguageContext";
 import { motion } from "framer-motion";
-import { Send, Mail, MapPin, Phone, Loader2, CheckCircle2 } from "lucide-react";
+import {
+  Send,
+  Mail,
+  MapPin,
+  Phone,
+  Loader2,
+  CheckCircle2,
+  Linkedin,
+  Github,
+} from "lucide-react";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
@@ -96,8 +105,8 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-2 space-y-6"
           >
-            <div className="p-6 rounded-2xl border border-zinc-800/80 bg-zinc-900/20 space-y-5">
-              <h3 className="font-mono text-sm text-amber-400 uppercase tracking-wider">
+            <div className="p-6 rounded-2xl border border-zinc-800/80 bg-zinc-900/20 space-y-7">
+              <h3 className="font-mono text-sm text-amber-400 uppercase tracking-wider mb-10">
                 {t("contact.info")}
               </h3>
 
@@ -142,6 +151,32 @@ const Contact: React.FC = () => {
                   </p>
                   <span className="text-sm text-zinc-300">
                     {personalInfo.location}
+                  </span>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0">
+                  <Linkedin className="w-4 h-4 text-amber-400" />
+                </div>
+                <div>
+                  <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider mb-1">
+                    {t("contact.linkedinLabel")}
+                  </p>
+                  <span className="text-sm text-zinc-300">
+                    {personalInfo.linkedin}
+                  </span>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0">
+                  <Github className="w-4 h-4 text-amber-400" />
+                </div>
+                <div>
+                  <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider mb-1">
+                    {t("contact.githubLabel")}
+                  </p>
+                  <span className="text-sm text-zinc-300">
+                    {personalInfo.github}
                   </span>
                 </div>
               </div>

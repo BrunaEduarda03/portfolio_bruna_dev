@@ -147,16 +147,15 @@ const TechStack = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16"
+          className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-16"
         >
           {[
-            { label: t("techstack.stats.technologies"), value: "24+" },
+            { label: t("techstack.stats.technologies"), value: "16+" },
             { label: t("techstack.stats.projects"), value: "28+" },
             {
               label: t("techstack.stats.experience"),
               value: t("techstack.stats.experienceValue"),
             },
-            { label: t("techstack.stats.frameworks"), value: "10+" },
           ].map((stat) => (
             <div
               key={stat.label}
