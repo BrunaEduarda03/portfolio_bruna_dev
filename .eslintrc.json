@@ -1,0 +1,22 @@
+{
+  "extends": ["react-app"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/display-name": "off",
+    "no-unused-vars": "off",
+    "jsx-a11y/anchor-is-valid": "warn",
+    "import/no-unresolved": "off"
+  },
+  "ignorePatterns": [
+    "src/components/ui/**",
+    "node_modules/",
+    "build/",
+    "craco.config.js"
+  ]
+}

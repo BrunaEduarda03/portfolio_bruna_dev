@@ -1,27 +1,3 @@
-import {
-  Code2,
-  Layers,
-  Globe,
-  Smartphone,
-  Server,
-  Database,
-  Cloud,
-  Terminal,
-  GitBranch,
-  Cpu,
-  Monitor,
-  Wifi,
-  Zap,
-  Mail,
-  MapPin,
-  Briefcase,
-  GraduationCap,
-  ExternalLink,
-  Github,
-  Linkedin,
-  ArrowRight,
-} from "lucide-react";
-
 export interface PersonalInfo {
   name: string;
   role: string;

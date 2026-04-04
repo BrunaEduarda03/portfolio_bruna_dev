@@ -1,5 +1,4 @@
 import React from "react";
-import { personalInfo } from "../data/mock";
 import { useLanguage } from "../i18n/LanguageContext";
 import { motion } from "framer-motion";
 import {

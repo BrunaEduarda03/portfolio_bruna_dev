@@ -73,6 +73,7 @@ const Projects: React.FC = () => {
                             <a
                               href={project.link}
                               target="_blank"
+                              rel="noreferrer"
                               className="p-2 rounded-lg text-zinc-600 hover:text-amber-400 hover:bg-amber-500/10 transition-all duration-300"
                               onClick={(e) => e.stopPropagation()}
                             >
