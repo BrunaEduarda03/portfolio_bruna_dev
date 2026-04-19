@@ -77,7 +77,7 @@ const Experience = () => {
                           </div>
                         </div>
                         <span className="mt-2 sm:mt-0 text-xs font-mono text-zinc-600 bg-zinc-800/50 px-3 py-1 rounded-full">
-                          {index <= 1
+                          {index <= 2
                             ? t("experience.current")
                             : t("experience.previous")}
                         </span>

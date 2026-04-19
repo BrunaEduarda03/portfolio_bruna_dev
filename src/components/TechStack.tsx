@@ -151,7 +151,7 @@ const TechStack = () => {
         >
           {[
             { label: t("techstack.stats.technologies"), value: "16+" },
-            { label: t("techstack.stats.projects"), value: "28+" },
+            { label: t("techstack.stats.projects"), value: "19+" },
             {
               label: t("techstack.stats.experience"),
               value: t("techstack.stats.experienceValue"),

@@ -132,6 +132,27 @@ export const aboutCards: AboutCard[] = [
 export const experiences: Experience[] = [
   {
     id: 1,
+    company: "Auclan Design",
+    role: "Mobile Developer",
+    period: "Atual",
+    description: [
+      "Atualmente reconstruindo do zero o app mobile DentalUni com React Native.",
+      "Desenvolvimento de interfaces mobile modernas, performáticas e acessíveis para gestão odontológica.",
+    ],
+    technologies: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Zustand",
+      "React Hook Form",
+      "Zod",
+      "TanStack Query",
+      "Expo Router",
+      "Reanimated",
+    ],
+  },
+  {
+    id: 2,
     company: "CopanestRIO",
     role: "Software Developer",
     period: "Atual",
@@ -154,10 +175,10 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     company: "Horus",
     role: "Software Developer",
-    period: "Atual",
+    period: "Anterior",
     description: [
       "Criação de interfaces modernas e responsivas com React, Vue e TypeScript para o sistema de faturamento médico.",
       "Desenvolvimento backend com PHP para APIs e regras de negócio do sistema.",
@@ -175,7 +196,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     company: "Grupo Neiva",
     role: "Software Developer",
     period: "Anterior",
@@ -187,7 +208,7 @@ export const experiences: Experience[] = [
     technologies: ["Vue", "Nuxt", "Laravel", "PHP", "MySQL", "React Native"],
   },
   {
-    id: 4,
+    id: 5,
     company: "UFCG",
     role: "Software Developer",
     period: "Anterior",

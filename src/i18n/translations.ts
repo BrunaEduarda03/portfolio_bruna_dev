@@ -69,6 +69,14 @@ export const translations = {
       previous: "Anterior",
       jobs: [
         {
+          company: "Auclan Design",
+          role: "Mobile Developer",
+          description: [
+            "Atualmente reconstruindo do zero o app mobile DentalUni com React Native.",
+            "Desenvolvimento de interfaces mobile modernas, performáticas e acessíveis para gestão odontológica.",
+          ],
+        },
+        {
           company: "CopanestRIO",
           role: "Software Developer",
           description: [
@@ -274,6 +282,14 @@ export const translations = {
       previous: "Previous",
       jobs: [
         {
+          company: "Auclan Design",
+          role: "Mobile Developer",
+          description: [
+            "Currently rebuilding the DentalUni mobile app from scratch using React Native.",
+            "Developing modern, performant and accessible mobile interfaces for dental management.",
+          ],
+        },
+        {
           company: "CopanestRIO",
           role: "Software Developer",
           description: [
@@ -478,6 +494,14 @@ export const translations = {
       current: "Actual",
       previous: "Anterior",
       jobs: [
+        {
+          company: "Auclan Design",
+          role: "Mobile Developer",
+          description: [
+            "Actualmente reconstruyendo desde cero la app mobile DentalUni con React Native.",
+            "Desarrollo de interfaces mobile modernas, performáticas y accesibles para gestión odontológica.",
+          ],
+        },
         {
           company: "CopanestRIO",
           role: "Software Developer",
