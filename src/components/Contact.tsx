@@ -88,10 +88,12 @@ const Contact: React.FC = () => {
       });
       setFormData({ name: "", email: "", subject: "", message: "" });
       setTimeout(() => setIsSubmitted(false), 3000);
-    } catch {
+    } catch (error: unknown) {
+      console.error("EmailJS error:", error);
+      const errMsg = error instanceof Error ? error.message : String((error as { text?: string })?.text ?? error);
       toast({
         title: t("contact.errorTitle"),
-        description: t("contact.errorDesc"),
+        description: errMsg || t("contact.errorDesc"),
         variant: "destructive",
       });
     } finally {
