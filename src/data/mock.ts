@@ -38,6 +38,7 @@ export interface Project {
   image: null | string;
   link?: string;
   github?: string;
+  wip?: boolean;
 }
 
 export interface TechItem {
@@ -74,7 +75,7 @@ export const personalInfo: PersonalInfo = {
   name: "Bruna Eduarda",
   role: "Software Engineer",
   tagline: "Crafting elegant, accessible & high-performance systems",
-  bio: "Desenvolvedora de software com formação em Engenharia Elétrica, com experiência em projetos fullstack, mobile e automação de processos. Interesse especial em Front-end/Mobile, combinando lógica e criatividade para criar interfaces elegantes, acessíveis e de alta performance. Atualmente cursando pós-graduação em Engenharia de Software.",
+  bio: "Engenheira de Software com formação em Engenharia Elétrica e experiência sólida em desenvolvimento fullstack, mobile e cloud. Atua com React, React Native, Node.js e PHP/Laravel no dia a dia, com forte domínio de infraestrutura AWS — EC2, ECS, Lambda, API Gateway e CloudWatch. Interesse especial em arquitetura de sistemas escaláveis, interfaces de alta performance e boas práticas de engenharia de software. Atualmente cursando pós-graduação em Engenharia de Software.",
   email: "brunaecmaciel@gmail.com",
   phone: "+55 (83) 9 96635326",
   location: "Brasil",
@@ -116,7 +117,8 @@ export const aboutCards: AboutCard[] = [
   {
     id: 5,
     title: "DevOps & Cloud",
-    description: "Docker, AWS (EC2, RDS, S3, Amplify), CI/CD",
+    description:
+      "Docker, AWS (EC2, ECS, Lambda, API Gateway, S3, RDS, CloudWatch), GitHub Actions CI/CD",
     icon: "Cloud",
     span: "col-span-2",
   },
@@ -132,11 +134,34 @@ export const aboutCards: AboutCard[] = [
 export const experiences: Experience[] = [
   {
     id: 1,
-    company: "Auclan Design",
-    role: "Mobile Developer",
+    company: "CopanestRIO",
+    role: "Software Developer",
     period: "Atual",
     description: [
-      "Atualmente reconstruindo do zero o app mobile DentalUni com React Native.",
+      "Desenvolvimento e manutenção de landing page e sistema de gestão da cooperativa utilizando Vue, HTML, CSS e JavaScript.",
+      "Desenvolvimento backend com PHP e Laravel para APIs e integrações do sistema.",
+      "Containerização com Docker e deploy em ambiente AWS (EC2, S3, RDS) com pipeline de CI/CD.",
+      "Gestão de dados com MySQL para o sistema da cooperativa.",
+    ],
+    technologies: [
+      "Vue",
+      "Laravel",
+      "PHP",
+      "HTML",
+      "CSS",
+      "JS",
+      "Docker",
+      "AWS",
+      "MySQL",
+    ],
+  },
+  {
+    id: 2,
+    company: "Auclan Design",
+    role: "Mobile Developer · Freelancer",
+    period: "Anterior",
+    description: [
+      "Reconstrução do zero do app mobile DentalUni com React Native.",
       "Desenvolvimento de interfaces mobile modernas, performáticas e acessíveis para gestão odontológica.",
     ],
     technologies: [
@@ -152,43 +177,21 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    id: 2,
-    company: "CopanestRIO",
-    role: "Software Developer",
-    period: "Atual",
-    description: [
-      "Desenvolvimento e manutenção de landing page e sistema de gestão da cooperativa utilizando HTML, CSS, JavaScript e jQuery.",
-      "Desenvolvimento backend com PHP e NestJS para APIs e integrações do sistema.",
-      "Containerização e deploy com Docker e infraestrutura na AWS.",
-      "Gestão de dados com MySQL para o sistema da cooperativa.",
-    ],
-    technologies: [
-      "HTML",
-      "JS",
-      "CSS",
-      "JQuery",
-      "PHP",
-      "NestJS",
-      "Docker",
-      "AWS",
-      "MySQL",
-    ],
-  },
-  {
     id: 3,
     company: "Horus",
     role: "Software Developer",
     period: "Anterior",
     description: [
-      "Criação de interfaces modernas e responsivas com React, Vue e TypeScript para o sistema de faturamento médico.",
-      "Desenvolvimento backend com PHP para APIs e regras de negócio do sistema.",
-      "Containerização com Docker e deploy na AWS para ambientes de produção.",
-      "Modelagem e gestão de dados com MySQL para o sistema hospitalar.",
+      "Desenvolvimento de interfaces modernas e responsivas com React, Vue e TypeScript para o sistema de faturamento médico.",
+      "Backend com PHP e Laravel — APIs RESTful, autenticação e regras de negócio do sistema hospitalar.",
+      "Containerização com Docker (multi-stage builds) e deploy em AWS EC2 com pipelines de CI/CD via GitHub Actions.",
+      "Gestão de infraestrutura AWS: EC2, S3 para assets e RDS MySQL em ambiente de produção.",
     ],
     technologies: [
       "React",
       "Vue",
       "PHP",
+      "Laravel",
       "TypeScript",
       "Docker",
       "AWS",
@@ -222,6 +225,26 @@ export const experiences: Experience[] = [
 ];
 
 export const projects: Project[] = [
+  {
+    id: 0,
+    title: "DENTAL UNI",
+    subtitle: "Dental Management Mobile App",
+    description:
+      "App mobile em desenvolvimento para a Auclan Design, voltado à gestão de planos odontológicos. Arquitetura moderna com navegação fluida e experiência de usuário otimizada.",
+    technologies: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Zustand",
+      "TanStack Query",
+      "Expo Router",
+      "Reanimated",
+      "Zod",
+    ],
+    image: null,
+    link: "https://www.planosdentaluni.com.br/",
+    wip: true,
+  },
   {
     id: 1,
     title: "HORUS",
@@ -333,7 +356,7 @@ export const education: EducationItem[] = [
   {
     id: 2,
     institution: "SENAI",
-    degree: "Análise e Desenvolvimento de Sistemas",
+    degree: "Formação Técnica em Análise e Desenvolvimento de Sistemas",
     period: "2020 - 2022",
     highlights: [
       "Conhecimento sólido em modelagem de dados e bases relacionais",

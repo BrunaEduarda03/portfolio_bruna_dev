@@ -37,7 +37,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     return saved &&
       (["pt", "en", "es"] as LanguageCode[]).includes(saved as LanguageCode)
       ? (saved as LanguageCode)
-      : "pt";
+      : "en";
   });
 
   const changeLanguage = useCallback((lang: LanguageCode) => {

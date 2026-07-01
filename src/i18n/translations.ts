@@ -18,7 +18,7 @@ export const translations = {
       sectionNum: "01.",
       title: "Sobre Mim",
       whoAmI: "Quem sou eu",
-      bio: "Desenvolvedora de software com formação em Engenharia Elétrica, com experiência em projetos fullstack, mobile e automação de processos. Interesse especial em Front-end/Mobile, combinando lógica e criatividade para criar interfaces elegantes, acessíveis e de alta performance. Atualmente cursando pós-graduação em Engenharia de Software.",
+      bio: "Engenheira de Software com formação em Engenharia Elétrica e experiência sólida em desenvolvimento fullstack, mobile e cloud. Atua com React, React Native, Node.js e PHP/Laravel no dia a dia, com forte domínio de infraestrutura AWS — EC2, ECS, Lambda, API Gateway e CloudWatch. Interesse especial em arquitetura de sistemas escaláveis, interfaces de alta performance e boas práticas de engenharia de software. Atualmente cursando pós-graduação em Engenharia de Software.",
       location: "Brasil",
       currentStudy: "Pós-graduação em Engenharia de Software",
       availabilityText: "Disponível",
@@ -41,7 +41,8 @@ export const translations = {
       databases: "Bases de Dados",
       databasesDesc: "PostgreSQL, MongoDB, MySQL, Prisma ORM",
       devops: "DevOps & Cloud",
-      devopsDesc: "Docker, AWS (EC2, RDS, S3, Amplify), CI/CD",
+      devopsDesc:
+        "Docker • AWS (EC2, ECS, Lambda, API Gateway, S3, RDS, CloudWatch) • GitHub Actions CI/CD",
       architecture: "Arquitetura",
       architectureDesc:
         "Clean Architecture • SOLID • Microservices • DDD • Scalable SaaS systems • API Design",
@@ -51,8 +52,9 @@ export const translations = {
       edu1Highlights: [
         "Ênfase em desenvolvimento de software, Eletrônica, controle e automação",
         "Bolsista no LIEC - projetos de integração hardware e software",
+        "Bolsista na Trybe - curso de Web Development (fullstack)",
       ],
-      edu2Degree: "Análise e Desenvolvimento de Sistemas",
+      edu2Degree: "Formação Técnica em Análise e Desenvolvimento de Sistemas",
       edu2Institution: "SENAI",
       edu2Period: "2020 - 2022",
       edu2Highlights: [
@@ -69,36 +71,40 @@ export const translations = {
       previous: "Anterior",
       jobs: [
         {
-          company: "Auclan Design",
-          role: "Mobile Developer",
+          company: "CopanestRIO",
+          role: "Software Developer",
+          period: "Atual",
           description: [
-            "Atualmente reconstruindo do zero o app mobile DentalUni com React Native.",
-            "Desenvolvimento de interfaces mobile modernas, performáticas e acessíveis para gestão odontológica.",
+            "Desenvolvimento e manutenção de landing page e sistema de gestão da cooperativa utilizando Vue, HTML, CSS e JavaScript.",
+            "Desenvolvimento backend com PHP e Laravel para APIs e integrações do sistema.",
+            "Containerização com Docker e deploy em ambiente AWS (EC2, S3, RDS) com pipeline de CI/CD.",
+            "Gestão de dados com MySQL para o sistema da cooperativa.",
           ],
         },
         {
-          company: "CopanestRIO",
-          role: "Software Developer",
+          company: "Auclan Design",
+          role: "Mobile Developer · Freelancer",
+          period: "Anterior",
           description: [
-            "Desenvolvimento e manutenção de landing page e sistema de gestão da cooperativa utilizando HTML, CSS, JavaScript e jQuery.",
-            "Desenvolvimento backend com PHP e NestJS para APIs e integrações do sistema.",
-            "Containerização e deploy com Docker e infraestrutura na AWS.",
-            "Gestão de dados com MySQL para o sistema da cooperativa.",
+            "Reconstrução do zero do app mobile DentalUni com React Native.",
+            "Desenvolvimento de interfaces mobile modernas, performáticas e acessíveis para gestão odontológica.",
           ],
         },
         {
           company: "Horus",
           role: "Software Developer",
+          period: "Anterior",
           description: [
-            "Criação de interfaces modernas e responsivas com React, Vue e TypeScript para o sistema de faturamento médico.",
-            "Desenvolvimento backend com PHP para APIs e regras de negócio do sistema.",
-            "Containerização com Docker e deploy na AWS para ambientes de produção.",
-            "Modelagem e gestão de dados com MySQL para o sistema hospitalar.",
+            "Desenvolvimento de interfaces modernas e responsivas com React, Vue e TypeScript para o sistema de faturamento médico.",
+            "Backend com PHP e Laravel — APIs RESTful, autenticação e regras de negócio do sistema hospitalar.",
+            "Containerização com Docker (multi-stage builds) e deploy em AWS EC2 com pipelines de CI/CD via GitHub Actions.",
+            "Gestão de infraestrutura AWS: EC2, S3 para assets e RDS MySQL em ambiente de produção.",
           ],
         },
         {
           company: "Grupo Neiva",
           role: "Software Developer",
+          period: "Anterior",
           description: [
             "Projetos com Vue, Nuxt, Laravel, PHP, MySQL, React Native.",
             "Desenvolvimento de landing pages e sistemas como Evoluir EAD, PNLD, IDUCS.",
@@ -108,6 +114,7 @@ export const translations = {
         {
           company: "UFCG",
           role: "Software Developer",
+          period: "Anterior",
           description: [
             "Desenvolvimento de aplicações com Next.js, NestJS, Node.js, React Native e MongoDB.",
             "Automação de processos laboratoriais e melhorias de performance.",
@@ -121,7 +128,14 @@ export const translations = {
       title: "Projetos",
       subtitle:
         "Uma seleção de projetos que demonstram as minhas competências em diferentes áreas do desenvolvimento.",
+      wipLabel: "Em desenvolvimento",
       items: [
+        {
+          title: "DENTAL UNI",
+          subtitle: "App Mobile de Gestão Odontológica",
+          description:
+            "App mobile em desenvolvimento para a Auclan Design, voltado à gestão de planos odontológicos. Arquitetura moderna com navegação fluida e experiência de usuário otimizada.",
+        },
         {
           title: "HORUS",
           subtitle: "Plataforma de Faturamento Médico",
@@ -231,7 +245,7 @@ export const translations = {
       sectionNum: "01.",
       title: "About Me",
       whoAmI: "Who am I",
-      bio: "Software developer with a degree in Electrical Engineering, experienced in fullstack, mobile, and process automation projects. Special interest in Front-end/Mobile, combining logic and creativity to create elegant, accessible, and high-performance interfaces. Currently pursuing a postgraduate degree in Software Engineering.",
+      bio: "Software Engineer with a background in Electrical Engineering and hands-on experience in fullstack, mobile, and cloud development. Works daily with React, React Native, Node.js and PHP/Laravel, with strong AWS infrastructure skills — EC2, ECS, Lambda, API Gateway and CloudWatch. Passionate about scalable system architecture, high-performance interfaces and software engineering best practices. Currently pursuing a postgraduate degree in Software Engineering.",
       location: "Brazil",
       currentStudy: "Postgraduate in Software Engineering",
       availabilityText: "Available",
@@ -254,7 +268,8 @@ export const translations = {
       databases: "Databases",
       databasesDesc: "PostgreSQL, MongoDB, MySQL, Prisma ORM",
       devops: "DevOps & Cloud",
-      devopsDesc: "Docker, AWS (EC2, RDS, S3, Amplify), CI/CD",
+      devopsDesc:
+        "Docker • AWS (EC2, ECS, Lambda, API Gateway, S3, RDS, CloudWatch) • GitHub Actions CI/CD",
       architecture: "Architecture",
       architectureDesc:
         "Clean Architecture • SOLID • Microservices • DDD • Scalable SaaS systems • API Design",
@@ -264,8 +279,9 @@ export const translations = {
       edu1Highlights: [
         "Emphasis on software development, Electronics, control and automation",
         "Scholarship at LIEC - hardware and software integration projects",
+        "Scholarship at Trybe - Web Development course (fullstack)",
       ],
-      edu2Degree: "Systems Analysis and Development",
+      edu2Degree: "Technical Degree in Systems Analysis and Development",
       edu2Institution: "SENAI",
       edu2Period: "2020 - 2022",
       edu2Highlights: [
@@ -282,36 +298,40 @@ export const translations = {
       previous: "Previous",
       jobs: [
         {
-          company: "Auclan Design",
-          role: "Mobile Developer",
+          company: "CopanestRIO",
+          role: "Software Developer",
+          period: "Current",
           description: [
-            "Currently rebuilding the DentalUni mobile app from scratch using React Native.",
-            "Developing modern, performant and accessible mobile interfaces for dental management.",
+            "Development and maintenance of landing page and cooperative management system using Vue, HTML, CSS and JavaScript.",
+            "Backend development with PHP and Laravel for APIs and system integrations.",
+            "Containerization with Docker and deployment on AWS (EC2, S3, RDS) with CI/CD pipeline.",
+            "Data management with MySQL for the cooperative system.",
           ],
         },
         {
-          company: "CopanestRIO",
-          role: "Software Developer",
+          company: "Auclan Design",
+          role: "Mobile Developer · Freelancer",
+          period: "Previous",
           description: [
-            "Development and maintenance of landing page and cooperative management system using HTML, CSS, JavaScript and jQuery.",
-            "Backend development with PHP and NestJS for APIs and system integrations.",
-            "Containerization and deployment with Docker and AWS infrastructure.",
-            "Data management with MySQL for the cooperative system.",
+            "Rebuilt the DentalUni mobile app from scratch using React Native.",
+            "Developed modern, performant and accessible mobile interfaces for dental management.",
           ],
         },
         {
           company: "Horus",
           role: "Software Developer",
+          period: "Previous",
           description: [
-            "Creation of modern and responsive interfaces with React, Vue and TypeScript for the medical billing system.",
-            "Backend development with PHP for APIs and system business rules.",
-            "Containerization with Docker and deployment on AWS for production environments.",
-            "Data modeling and management with MySQL for the hospital system.",
+            "Built modern, responsive interfaces with React, Vue and TypeScript for a medical billing platform.",
+            "Backend with PHP and Laravel — RESTful APIs, authentication and hospital system business logic.",
+            "Containerization with Docker (multi-stage builds) and deployment to AWS EC2 via GitHub Actions CI/CD pipelines.",
+            "AWS infrastructure management: EC2, S3 for assets and RDS MySQL in production.",
           ],
         },
         {
           company: "Grupo Neiva",
           role: "Software Developer",
+          period: "Previous",
           description: [
             "Projects with Vue, Nuxt, Laravel, PHP, MySQL, React Native.",
             "Development of landing pages and systems like Evoluir EAD, PNLD, IDUCS.",
@@ -321,6 +341,7 @@ export const translations = {
         {
           company: "UFCG",
           role: "Software Developer",
+          period: "Previous",
           description: [
             "Development of applications with Next.js, NestJS, Node.js, React Native and MongoDB.",
             "Automation of laboratory processes and performance improvements.",
@@ -334,7 +355,14 @@ export const translations = {
       title: "Projects",
       subtitle:
         "A selection of projects that demonstrate my skills across different areas of development.",
+      wipLabel: "In development",
       items: [
+        {
+          title: "DENTAL UNI",
+          subtitle: "Dental Management Mobile App",
+          description:
+            "Mobile app in development for Auclan Design, focused on dental plan management. Modern architecture with smooth navigation and optimized user experience.",
+        },
         {
           title: "HORUS",
           subtitle: "Medical Billing Platform",
@@ -444,7 +472,7 @@ export const translations = {
       sectionNum: "01.",
       title: "Sobre Mí",
       whoAmI: "Quién soy",
-      bio: "Desarrolladora de software con formación en Ingeniería Eléctrica, con experiencia en proyectos fullstack, mobile y automatización de procesos. Interés especial en Front-end/Mobile, combinando lógica y creatividad para crear interfaces elegantes, accesibles y de alto rendimiento. Actualmente cursando posgrado en Ingeniería de Software.",
+      bio: "Ingeniera de Software con formación en Ingeniería Eléctrica y experiencia sólida en desarrollo fullstack, mobile y cloud. Trabaja con React, React Native, Node.js y PHP/Laravel, con dominio de infraestructura AWS — EC2, ECS, Lambda, API Gateway y CloudWatch. Apasionada por la arquitectura de sistemas escalables, interfaces de alto rendimiento y buenas prácticas de ingeniería de software. Actualmente cursando posgrado en Ingeniería de Software.",
       location: "Brasil",
       currentStudy: "Posgrado en Ingeniería de Software",
       availabilityText: "Disponible",
@@ -467,7 +495,8 @@ export const translations = {
       databases: "Bases de Datos",
       databasesDesc: "PostgreSQL, MongoDB, MySQL, Prisma ORM",
       devops: "DevOps & Cloud",
-      devopsDesc: "Docker, AWS (EC2, RDS, S3, Amplify), CI/CD",
+      devopsDesc:
+        "Docker • AWS (EC2, ECS, Lambda, API Gateway, S3, RDS, CloudWatch) • GitHub Actions CI/CD",
       architecture: "Arquitectura",
       architectureDesc:
         "Clean Architecture • SOLID • Microservices • DDD • Scalable SaaS systems • API Design",
@@ -477,8 +506,9 @@ export const translations = {
       edu1Highlights: [
         "Énfasis en desarrollo de software, Electrónica, control y automatización",
         "Becaria en LIEC - proyectos de integración hardware y software",
+        "Becaria en Trybe - curso de Web Development (fullstack)",
       ],
-      edu2Degree: "Análisis y Desarrollo de Sistemas",
+      edu2Degree: "Formación Técnica en Análisis y Desarrollo de Sistemas",
       edu2Institution: "SENAI",
       edu2Period: "2020 - 2022",
       edu2Highlights: [
@@ -495,36 +525,40 @@ export const translations = {
       previous: "Anterior",
       jobs: [
         {
-          company: "Auclan Design",
-          role: "Mobile Developer",
+          company: "CopanestRIO",
+          role: "Software Developer",
+          period: "Actual",
           description: [
-            "Actualmente reconstruyendo desde cero la app mobile DentalUni con React Native.",
-            "Desarrollo de interfaces mobile modernas, performáticas y accesibles para gestión odontológica.",
+            "Desarrollo y mantenimiento de landing page y sistema de gestión de la cooperativa utilizando Vue, HTML, CSS y JavaScript.",
+            "Desarrollo backend con PHP y Laravel para APIs e integraciones del sistema.",
+            "Containerización con Docker y deploy en AWS (EC2, S3, RDS) con pipeline de CI/CD.",
+            "Gestión de datos con MySQL para el sistema de la cooperativa.",
           ],
         },
         {
-          company: "CopanestRIO",
-          role: "Software Developer",
+          company: "Auclan Design",
+          role: "Mobile Developer · Freelancer",
+          period: "Dic 2025 - May 2026",
           description: [
-            "Desarrollo y mantenimiento de landing page y sistema de gestión de la cooperativa utilizando HTML, CSS, JavaScript y jQuery.",
-            "Desarrollo backend con PHP y NestJS para APIs e integraciones del sistema.",
-            "Containerización y deploy con Docker e infraestructura en AWS.",
-            "Gestión de datos con MySQL para el sistema de la cooperativa.",
+            "Reconstrucción desde cero de la app mobile DentalUni con React Native.",
+            "Desarrollo de interfaces mobile modernas, performáticas y accesibles para gestión odontológica.",
           ],
         },
         {
           company: "Horus",
           role: "Software Developer",
+          period: "Anterior",
           description: [
-            "Creación de interfaces modernas y responsivas con React, Vue y TypeScript para el sistema de facturación médica.",
-            "Desarrollo backend con PHP para APIs y reglas de negocio del sistema.",
-            "Containerización con Docker y deploy en AWS para ambientes de producción.",
-            "Modelado y gestión de datos con MySQL para el sistema hospitalario.",
+            "Desarrollo de interfaces modernas y responsivas con React, Vue y TypeScript para el sistema de facturación médica.",
+            "Backend con PHP y Laravel — APIs RESTful, autenticación y lógica de negocio del sistema hospitalario.",
+            "Containerización con Docker (multi-stage builds) y deploy en AWS EC2 mediante pipelines CI/CD con GitHub Actions.",
+            "Gestión de infraestructura AWS: EC2, S3 para assets y RDS MySQL en producción.",
           ],
         },
         {
           company: "Grupo Neiva",
           role: "Software Developer",
+          period: "Anterior",
           description: [
             "Proyectos con Vue, Nuxt, Laravel, PHP, MySQL, React Native.",
             "Desarrollo de landing pages y sistemas como Evoluir EAD, PNLD, IDUCS.",
@@ -534,6 +568,7 @@ export const translations = {
         {
           company: "UFCG",
           role: "Software Developer",
+          period: "Anterior",
           description: [
             "Desarrollo de aplicaciones con Next.js, NestJS, Node.js, React Native y MongoDB.",
             "Automatización de procesos de laboratorio y mejoras de rendimiento.",
@@ -547,7 +582,14 @@ export const translations = {
       title: "Proyectos",
       subtitle:
         "Una selección de proyectos que demuestran mis competencias en diferentes áreas del desarrollo.",
+      wipLabel: "En desarrollo",
       items: [
+        {
+          title: "DENTAL UNI",
+          subtitle: "App Mobile de Gestión Odontológica",
+          description:
+            "App mobile en desarrollo para Auclan Design, orientado a la gestión de planes dentales. Arquitectura moderna con navegación fluida y experiencia de usuario optimizada.",
+        },
         {
           title: "HORUS",
           subtitle: "Plataforma de Facturación Médica",

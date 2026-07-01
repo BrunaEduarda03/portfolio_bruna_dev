@@ -58,6 +58,12 @@ const Projects: React.FC = () => {
                       <Code2 className="w-5 h-5 text-amber-400" />
                     </div>
                     <div className="flex items-center gap-2">
+                      {project?.wip && (
+                        <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono border border-amber-500/25 bg-amber-500/5 text-amber-400">
+                          <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                          {t("projects.wipLabel")}
+                        </span>
+                      )}
                       {project && (
                         <>
                           {project.github && (
@@ -88,9 +94,14 @@ const Projects: React.FC = () => {
                   <h3 className="text-lg font-semibold text-zinc-100 group-hover:text-amber-300 transition-colors duration-300 mb-1 font-mono">
                     {item.title}
                   </h3>
-                  <p className="text-xs font-mono text-amber-500/60 mb-3">
+                  <p className={`text-xs font-mono text-amber-500/60 ${project?.wip ? "mb-1" : "mb-3"}`}>
                     {item.subtitle}
                   </p>
+                  {project?.wip && (
+                    <p className="text-[10px] font-mono text-zinc-600 mb-3">
+                      Auclan Design · Freelancer
+                    </p>
+                  )}
                   <p className="text-sm text-zinc-500 leading-relaxed mb-5 flex-1">
                     {item.description}
                   </p>

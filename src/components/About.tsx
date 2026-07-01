@@ -14,6 +14,13 @@ import {
   Sparkles,
 } from "lucide-react";
 
+const parseTags = (desc: string): string[] => {
+  if (typeof desc !== "string") return [];
+  if (desc.includes(" • ")) return desc.split(" • ");
+  if (desc.includes(", ")) return desc.split(", ");
+  return [desc];
+};
+
 const About = () => {
   const { t } = useLanguage();
 
@@ -111,54 +118,60 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-2 p-6 rounded-2xl border border-zinc-800/80 bg-zinc-900/30 backdrop-blur-sm"
+            className="lg:col-span-2 p-6 rounded-2xl border border-zinc-700/50 bg-zinc-900/50 backdrop-blur-sm"
           >
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-5">
               <Sparkles className="w-4 h-4 text-amber-400" />
-              <span className="font-mono text-xs text-amber-400 tracking-wider uppercase">
+              <span className="font-mono text-xs text-amber-400 tracking-wider uppercase font-semibold">
                 {t("about.whoAmI")}
               </span>
             </div>
-            <p className="text-zinc-400 leading-6 text-sm mb-6">
+            <p className="text-zinc-300 leading-7 text-sm mb-6">
               {t("about.bio")}
             </p>
-            <div className="space-y-3">
+            <div className="space-y-2.5">
               <div className="flex items-center gap-3 text-sm">
-                <MapPin className="w-4 h-4 text-amber-500/70" />
-                <span className="text-zinc-400">{t("about.location")}</span>
+                <div className="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
+                  <MapPin className="w-3.5 h-3.5 text-amber-400" />
+                </div>
+                <span className="text-zinc-300">{t("about.location")}</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
-                <GraduationCap className="w-4 h-4 text-amber-500/70" />
-                <span className="text-zinc-400">{t("about.currentStudy")}</span>
+                <div className="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
+                  <GraduationCap className="w-3.5 h-3.5 text-amber-400" />
+                </div>
+                <span className="text-zinc-300">{t("about.currentStudy")}</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
-                <Globe className="w-4 h-4 text-amber-500/70" />
-                <span className="text-zinc-400">
+                <div className="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
+                  <Globe className="w-3.5 h-3.5 text-amber-400" />
+                </div>
+                <span className="text-zinc-300">
                   {t("about.availabilityText")}
                 </span>
               </div>
             </div>
 
             <div className="mt-6 pt-6 border-t border-zinc-800">
-              <span className="font-mono text-xs text-zinc-500 uppercase tracking-wider">
+              <span className="font-mono text-xs text-zinc-400 uppercase tracking-wider font-semibold">
                 {t("about.languages")}
               </span>
-              <div className="mt-3 space-y-5">
+              <div className="mt-4 space-y-4">
                 {languages.map((lang) => (
                   <div key={lang.name}>
-                    <div className="flex justify-between text-xs mb-1">
-                      <span className="text-zinc-400">{lang.name}</span>
-                      <span className="text-zinc-500 font-mono">
+                    <div className="flex justify-between text-xs mb-1.5">
+                      <span className="text-zinc-300 font-medium">{lang.name}</span>
+                      <span className="text-zinc-400 font-mono">
                         {lang.level}
                       </span>
                     </div>
-                    <div className="w-full h-1 bg-zinc-800 rounded-full overflow-hidden">
+                    <div className="w-full h-1.5 bg-zinc-800 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${lang.percentage}%` }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: 0.3 }}
-                        className="h-full bg-amber-500/70 rounded-full"
+                        className="h-full bg-gradient-to-r from-amber-600 to-amber-400 rounded-full"
                       />
                     </div>
                   </div>
@@ -171,6 +184,7 @@ const About = () => {
           <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-4">
             {skillCards.map((card, index) => {
               const IconComponent = card.icon;
+              const tags = parseTags(card.description as string);
               return (
                 <motion.div
                   key={card.id}
@@ -178,19 +192,26 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 * index }}
-                  className={`sm:${card.span} p-5 rounded-2xl border border-zinc-800/80 bg-zinc-900/30 backdrop-blur-sm group hover:border-amber-500/20 hover:bg-amber-500/[0.02] transition-all duration-500`}
+                  className={`sm:${card.span} p-5 rounded-2xl border border-zinc-700/50 bg-zinc-900/50 backdrop-blur-sm group hover:border-amber-500/30 hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-amber-500/5 transition-all duration-500`}
                 >
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/15 transition-colors duration-300">
-                      <IconComponent className="w-4 h-4 text-amber-400" />
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center group-hover:bg-amber-500/20 group-hover:border-amber-500/40 transition-all duration-300 shrink-0">
+                      <IconComponent className="w-5 h-5 text-amber-400" />
                     </div>
-                    <h3 className="font-mono text-sm font-semibold text-zinc-200 group-hover:text-amber-300 transition-colors duration-300">
+                    <h3 className="font-mono text-sm font-bold text-zinc-100 group-hover:text-amber-300 transition-colors duration-300 tracking-wide">
                       {card.title}
                     </h3>
                   </div>
-                  <p className="text-xs text-zinc-500 leading-relaxed">
-                    {card.description}
-                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[11px] px-2 py-0.5 rounded-md bg-zinc-800/80 text-zinc-300 border border-zinc-700/60 leading-5"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </motion.div>
               );
             })}
@@ -206,30 +227,30 @@ const About = () => {
                   duration: 0.5,
                   delay: 0.1 * (skillCards.length + index),
                 }}
-                className={`${index === 0 ? "sm:col-span-2" : "sm:col-span-1"} p-5 rounded-2xl border border-zinc-800/80 bg-zinc-900/30 backdrop-blur-sm group hover:border-amber-500/20 hover:bg-amber-500/[0.02] transition-all duration-500`}
+                className={`${index === 0 ? "sm:col-span-2" : "sm:col-span-1"} p-5 rounded-2xl border border-zinc-700/50 bg-zinc-900/50 backdrop-blur-sm group hover:border-amber-500/30 hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-amber-500/5 transition-all duration-500`}
               >
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
-                    <GraduationCap className="w-4 h-4 text-amber-400" />
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center shrink-0 mt-0.5">
+                    <GraduationCap className="w-5 h-5 text-amber-400" />
                   </div>
                   <div>
-                    <h3 className="font-mono text-sm font-semibold text-zinc-200">
+                    <h3 className="font-mono text-sm font-bold text-zinc-100 leading-snug">
                       {edu.degree}
                     </h3>
-                    <p className="text-xs text-zinc-500">{edu.institution}</p>
+                    <p className="text-xs text-zinc-400 mt-0.5">{edu.institution}</p>
+                    <p className="text-xs text-amber-500/70 font-mono mt-1">
+                      {edu.period}
+                    </p>
                   </div>
                 </div>
-                <p className="text-xs text-amber-500/60 font-mono mb-2">
-                  {edu.period}
-                </p>
-                <ul className="space-y-1">
+                <ul className="space-y-1.5 mt-3 pl-1">
                   {Array.isArray(edu.highlights) &&
-                    edu.highlights.slice(0, 2).map((h, i) => (
+                    edu.highlights.map((h, i) => (
                       <li
                         key={i}
-                        className="text-xs text-zinc-500 flex items-start gap-2"
+                        className="text-xs text-zinc-400 flex items-start gap-2 leading-relaxed"
                       >
-                        <span className="text-amber-500/40 mt-1">&#8250;</span>
+                        <span className="text-amber-500/60 mt-0.5 shrink-0">›</span>
                         {h}
                       </li>
                     ))}
