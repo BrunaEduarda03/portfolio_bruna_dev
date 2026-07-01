@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { personalInfo } from "../data/mock";
 import { useLanguage } from "../i18n/LanguageContext";
@@ -33,6 +33,11 @@ interface FormData {
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
+
+  useEffect(() => {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  }, []);
+
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -69,21 +74,12 @@ const Contact: React.FC = () => {
         reply_to: formData.email,
       };
 
-      // Envia notificação para brunaecmaciel@gmail.com
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_NOTIFY,
-        templateParams,
-        EMAILJS_PUBLIC_KEY,
-      );
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_NOTIFY, templateParams);
 
-      // Envia confirmação para o usuário
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_CONFIRM,
-        { ...templateParams, to_name: formData.name },
-        EMAILJS_PUBLIC_KEY,
-      );
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CONFIRM, {
+        ...templateParams,
+        to_name: formData.name,
+      });
 
       setIsSubmitted(true);
       toast({
