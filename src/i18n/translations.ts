@@ -216,6 +216,8 @@ export const translations = {
       requiredFieldsDesc: "Por favor, preencha todos os campos obrigatórios.",
       successTitle: "Mensagem enviada!",
       successDesc: "Obrigada pelo contacto. Responderei em breve!",
+      errorTitle: "Erro ao enviar",
+      errorDesc: "Ocorreu um problema. Tente novamente ou envie por email.",
     },
     footer: {
       navigation: "Navegação",
@@ -443,6 +445,8 @@ export const translations = {
       requiredFieldsDesc: "Please fill in all required fields.",
       successTitle: "Message sent!",
       successDesc: "Thanks for reaching out. I'll respond shortly!",
+      errorTitle: "Failed to send",
+      errorDesc: "Something went wrong. Please try again or reach out via email.",
     },
     footer: {
       navigation: "Navigation",
@@ -670,6 +674,8 @@ export const translations = {
       requiredFieldsDesc: "Por favor, rellena todos los campos obligatorios.",
       successTitle: "¡Mensaje enviado!",
       successDesc: "¡Gracias por contactar! Responderé pronto.",
+      errorTitle: "Error al enviar",
+      errorDesc: "Algo salió mal. Inténtalo de nuevo o escríbeme por email.",
     },
     footer: {
       navigation: "Navegación",

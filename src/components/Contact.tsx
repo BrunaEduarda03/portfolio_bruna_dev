@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { personalInfo } from "../data/mock";
 import { useLanguage } from "../i18n/LanguageContext";
 import { motion } from "framer-motion";
@@ -17,6 +18,11 @@ import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { toast } from "../hooks/use-toast";
 import { Toaster } from "./ui/toaster";
+
+const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY!;
+const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID!;
+const EMAILJS_TEMPLATE_NOTIFY = process.env.REACT_APP_EMAILJS_TEMPLATE_NOTIFY!;
+const EMAILJS_TEMPLATE_CONFIRM = process.env.REACT_APP_EMAILJS_TEMPLATE_CONFIRM!;
 
 interface FormData {
   name: string;
@@ -53,20 +59,48 @@ const Contact: React.FC = () => {
       return;
     }
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    const submissions = JSON.parse(
-      localStorage.getItem("contact_submissions") || "[]",
-    );
-    submissions.push({ ...formData, timestamp: new Date().toISOString() });
-    localStorage.setItem("contact_submissions", JSON.stringify(submissions));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast({
-      title: t("contact.successTitle"),
-      description: t("contact.successDesc"),
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setTimeout(() => setIsSubmitted(false), 3000);
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject || "Contato via portfólio",
+        message: formData.message,
+        to_email: "brunaecmaciel@gmail.com",
+        reply_to: formData.email,
+      };
+
+      // Envia notificação para brunaecmaciel@gmail.com
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_NOTIFY,
+        templateParams,
+        EMAILJS_PUBLIC_KEY,
+      );
+
+      // Envia confirmação para o usuário
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_CONFIRM,
+        { ...templateParams, to_name: formData.name },
+        EMAILJS_PUBLIC_KEY,
+      );
+
+      setIsSubmitted(true);
+      toast({
+        title: t("contact.successTitle"),
+        description: t("contact.successDesc"),
+      });
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setIsSubmitted(false), 3000);
+    } catch {
+      toast({
+        title: t("contact.errorTitle"),
+        description: t("contact.errorDesc"),
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
