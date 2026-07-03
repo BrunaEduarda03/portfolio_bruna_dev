@@ -5,6 +5,7 @@ export const translations = {
       experience: "Experiência",
       projects: "Projetos",
       techstack: "Tech Stack",
+      certifications: "Certificações",
       contact: "Contato",
     },
     hero: {
@@ -190,8 +191,20 @@ export const translations = {
         experienceValue: "5+ anos",
       },
     },
-    contact: {
+    certifications: {
       sectionNum: "05.",
+      title: "Certificações",
+      subtitle: "Cursos e certificações concluídos ao longo da minha trajetória profissional.",
+      copyLink: "Copiar link",
+      copied: "Copiado!",
+      download: "Download",
+      view: "Ver certificado",
+      statsCourses: "cursos",
+      statsHours: "horas de conteúdo",
+      statsInstitutions: "instituições",
+    },
+    contact: {
+      sectionNum: "06.",
       title: "Contato",
       subtitle:
         "Interessado(a) em colaborar? Envie uma mensagem e responderei o mais breve possível.",
@@ -234,6 +247,7 @@ export const translations = {
       experience: "Experience",
       projects: "Projects",
       techstack: "Tech Stack",
+      certifications: "Certifications",
       contact: "Contact",
     },
     hero: {
@@ -419,8 +433,20 @@ export const translations = {
         experienceValue: "5+ years",
       },
     },
-    contact: {
+    certifications: {
       sectionNum: "05.",
+      title: "Certifications",
+      subtitle: "Courses and certifications completed throughout my professional journey.",
+      copyLink: "Copy link",
+      copied: "Copied!",
+      download: "Download",
+      view: "View certificate",
+      statsCourses: "courses",
+      statsHours: "hours of content",
+      statsInstitutions: "institutions",
+    },
+    contact: {
+      sectionNum: "06.",
       title: "Contact",
       subtitle:
         "Interested in collaborating? Send a message and I'll reply as soon as possible.",
@@ -463,6 +489,7 @@ export const translations = {
       experience: "Experiencia",
       projects: "Proyectos",
       techstack: "Tech Stack",
+      certifications: "Certificaciones",
       contact: "Contacto",
     },
     hero: {
@@ -648,8 +675,20 @@ export const translations = {
         experienceValue: "5+ años",
       },
     },
-    contact: {
+    certifications: {
       sectionNum: "05.",
+      title: "Certificaciones",
+      subtitle: "Cursos y certificaciones completados a lo largo de mi trayectoria profesional.",
+      copyLink: "Copiar enlace",
+      copied: "¡Copiado!",
+      download: "Descargar",
+      view: "Ver certificado",
+      statsCourses: "cursos",
+      statsHours: "horas de contenido",
+      statsInstitutions: "instituciones",
+    },
+    contact: {
+      sectionNum: "06.",
       title: "Contacto",
       subtitle:
         "¿Interesado(a) en colaborar? Envía un mensaje y responderé lo antes posible.",

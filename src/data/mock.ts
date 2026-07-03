@@ -370,10 +370,123 @@ export const languages: Language[] = [
   { name: "Inglês", level: "Intermediário/Avançado", percentage: 75 },
 ];
 
+export interface Certification {
+  id: number;
+  title: string;
+  institution: string;
+  date: string;
+  duration?: string;
+  type: string;
+  link: string;
+  downloadLink?: string;
+  previewImage: string;
+}
+
+export const certifications: Certification[] = [
+  {
+    id: 1,
+    title: "WebSockets e Cronjobs Serverless na AWS",
+    institution: "JStack",
+    date: "28/03/2025",
+    duration: "4h 34m",
+    type: "Curso",
+    link: "https://drive.google.com/file/d/16VRGQg1HrFce1ciE15dENe_Eo266ni4z/view?usp=sharing",
+    downloadLink:
+      "https://drive.google.com/uc?export=download&id=16VRGQg1HrFce1ciE15dENe_Eo266ni4z",
+    previewImage:
+      "https://drive.google.com/thumbnail?id=16VRGQg1HrFce1ciE15dENe_Eo266ni4z&sz=w800",
+  },
+  {
+    id: 2,
+    title: "Filas na AWS para Processamento Assíncrono com Lambda e SQS",
+    institution: "JStack",
+    date: "06/03/2025",
+    duration: "4h 15m",
+    type: "Curso",
+    link: "https://drive.google.com/file/d/1bjpjYLmgc87fEi6bUvj3Y7LG0yWz6rOF/view?usp=sharing",
+    downloadLink:
+      "https://drive.google.com/uc?export=download&id=1bjpjYLmgc87fEi6bUvj3Y7LG0yWz6rOF",
+    previewImage:
+      "https://drive.google.com/thumbnail?id=1bjpjYLmgc87fEi6bUvj3Y7LG0yWz6rOF&sz=w800",
+  },
+  {
+    id: 3,
+    title: "Upload para o S3 com Lambda Functions e Presigned URLs",
+    institution: "JStack",
+    date: "22/02/2025",
+    duration: "2h 19m",
+    type: "Curso",
+    link: "https://drive.google.com/file/d/1qtVieiPT09yhhM1LW_6EmBGsZMhKE9-J/view?usp=sharing",
+    downloadLink:
+      "https://drive.google.com/uc?export=download&id=1qtVieiPT09yhhM1LW_6EmBGsZMhKE9-J",
+    previewImage:
+      "https://drive.google.com/thumbnail?id=1qtVieiPT09yhhM1LW_6EmBGsZMhKE9-J&sz=w800",
+  },
+  {
+    id: 4,
+    title: "Fluxo completo de upload para o S3 com Presigned URLs",
+    institution: "JStack",
+    date: "17/02/2025",
+    duration: "3h 1m",
+    type: "Curso",
+    link: "https://drive.google.com/file/d/1JJLEnhZNEkq6X1W1Z9GI0Wv4hrfkHcIh/view?usp=sharing",
+    downloadLink:
+      "https://drive.google.com/uc?export=download&id=1JJLEnhZNEkq6X1W1Z9GI0Wv4hrfkHcIh",
+    previewImage:
+      "https://drive.google.com/thumbnail?id=1JJLEnhZNEkq6X1W1Z9GI0Wv4hrfkHcIh&sz=w800",
+  },
+  {
+    id: 5,
+    title: "Login Social (Federated) com AWS Cognito",
+    institution: "JStack",
+    date: "02/02/2025",
+    duration: "4h 53m",
+    type: "Curso",
+    link: "https://drive.google.com/file/d/1MWpT2EN6KkGn0LKOPZPQ8PJMUaM4gj7P/view?usp=sharing",
+    downloadLink:
+      "https://drive.google.com/uc?export=download&id=1MWpT2EN6KkGn0LKOPZPQ8PJMUaM4gj7P",
+    previewImage:
+      "https://drive.google.com/thumbnail?id=1MWpT2EN6KkGn0LKOPZPQ8PJMUaM4gj7P&sz=w800",
+  },
+  {
+    id: 6,
+    title: "DynamoDB e Serverless Framework: o par perfeito",
+    institution: "JStack",
+    date: "14/06/2025",
+    duration: "2h 53m",
+    type: "Curso",
+    link: "https://drive.google.com/file/d/1MgFEEjHcpUiVRvJnfleyMJPSCvngRz98/view?usp=sharing",
+    downloadLink: "https://drive.google.com/uc?export=download&id=1MgFEEjHcpUiVRvJnfleyMJPSCvngRz98",
+    previewImage: "https://drive.google.com/thumbnail?id=1MgFEEjHcpUiVRvJnfleyMJPSCvngRz98&sz=w800",
+  },
+  {
+    id: 7,
+    title: "Autenticação em APIs com Serverless e AWS Cognito",
+    institution: "JStack",
+    date: "16/01/2025",
+    duration: "3h 22m",
+    type: "Curso",
+    link: "https://drive.google.com/file/d/1ViQZtT0NGeXng6OBWyrT7aZ6xrhDN3hP/view?usp=sharing",
+    downloadLink: "https://drive.google.com/uc?export=download&id=1ViQZtT0NGeXng6OBWyrT7aZ6xrhDN3hP",
+    previewImage: "https://drive.google.com/thumbnail?id=1ViQZtT0NGeXng6OBWyrT7aZ6xrhDN3hP&sz=w800",
+  },
+  {
+    id: 8,
+    title: "Bacharel em Engenharia Elétrica",
+    institution: "UFCG",
+    date: "03/02/2025",
+    type: "Diploma",
+    link: "https://drive.google.com/file/d/1U6kWFnVQIF-A8o2P8IXW-Nc2-Pr39qSe/view?usp=sharing",
+    downloadLink: "https://drive.google.com/uc?export=download&id=1U6kWFnVQIF-A8o2P8IXW-Nc2-Pr39qSe",
+    previewImage: "https://drive.google.com/thumbnail?id=1U6kWFnVQIF-A8o2P8IXW-Nc2-Pr39qSe&sz=w800",
+  },
+];
+
 export const navLinks: NavLink[] = [
   { name: "Sobre", href: "#about" },
   { name: "Experiência", href: "#experience" },
   { name: "Projetos", href: "#projects" },
   { name: "Tech Stack", href: "#techstack" },
+  { name: "Certificações", href: "#certifications" },
   { name: "Contacto", href: "#contact" },
 ];
