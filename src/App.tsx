@@ -24,8 +24,8 @@ function App() {
             <About />
             <Experience />
             <Projects />
-            <TechStack />
             <Certifications />
+            <TechStack />
             <Contact />
           </main>
           <Footer />

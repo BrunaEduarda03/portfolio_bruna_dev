@@ -504,7 +504,7 @@ export const navLinks: NavLink[] = [
   { name: "Sobre", href: "#about" },
   { name: "Experiência", href: "#experience" },
   { name: "Projetos", href: "#projects" },
-  { name: "Tech Stack", href: "#techstack" },
   { name: "Certificações", href: "#certifications" },
+  { name: "Tech Stack", href: "#techstack" },
   { name: "Contacto", href: "#contact" },
 ];

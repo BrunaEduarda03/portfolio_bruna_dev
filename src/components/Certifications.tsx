@@ -160,7 +160,7 @@ const CertCard: React.FC<CertCardProps> = ({ cert, index, onClick }) => {
           className="w-full h-full object-cover opacity-70 group-hover:opacity-95 group-hover:scale-105 transition-all duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
-        <span className="absolute top-3 left-3 text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-md bg-amber-500/20 border border-amber-500/30 text-amber-400 backdrop-blur-sm">
+        <span className="absolute top-3 left-3 text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-md bg-amber-800/30 border border-amber-500/40 text-amber-500 backdrop-blur-md">
           {cert.type}
         </span>
       </div>
@@ -222,9 +222,21 @@ const CertStats: React.FC<CertStatsProps> = ({
   const { t } = useLanguage();
 
   const stats = [
-    { value: `${total}`, label: t("certifications.statsCourses"), icon: BookOpen },
-    { value: formatTotalHours(totalMinutes), label: t("certifications.statsHours"), icon: Clock },
-    { value: `${institutions}`, label: t("certifications.statsInstitutions"), icon: GraduationCap },
+    {
+      value: `${total}`,
+      label: t("certifications.statsCourses"),
+      icon: BookOpen,
+    },
+    {
+      value: formatTotalHours(totalMinutes),
+      label: t("certifications.statsHours"),
+      icon: Clock,
+    },
+    {
+      value: `${institutions}`,
+      label: t("certifications.statsInstitutions"),
+      icon: GraduationCap,
+    },
   ];
 
   return (
@@ -391,7 +403,7 @@ const Certifications: React.FC = () => {
 
   const institutions = useMemo(
     () => [...new Set(certifications.map((c) => c.institution))],
-    []
+    [],
   );
 
   const filtered = useMemo(
@@ -399,7 +411,7 @@ const Certifications: React.FC = () => {
       filter === "All"
         ? certifications
         : certifications.filter((c) => c.institution === filter),
-    [filter]
+    [filter],
   );
 
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
@@ -413,7 +425,7 @@ const Certifications: React.FC = () => {
   const stats = useMemo(() => {
     const totalMinutes = certifications.reduce(
       (acc, c) => acc + (c.duration ? parseDurationMinutes(c.duration) : 0),
-      0
+      0,
     );
     return {
       total: certifications.length,
@@ -423,7 +435,10 @@ const Certifications: React.FC = () => {
   }, [institutions]);
 
   return (
-    <section id="certifications" className="relative py-24 md:py-32 bg-[#0a0a0a]">
+    <section
+      id="certifications"
+      className="relative py-24 md:py-32 bg-[#0a0a0a]"
+    >
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-amber-500/[0.02] rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
@@ -460,7 +475,12 @@ const Certifications: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <AnimatePresence mode="wait">
             {paginated.map((cert, i) => (
-              <CertCard key={cert.id} cert={cert} index={i} onClick={setSelected} />
+              <CertCard
+                key={cert.id}
+                cert={cert}
+                index={i}
+                onClick={setSelected}
+              />
             ))}
           </AnimatePresence>
         </div>

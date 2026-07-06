@@ -19,10 +19,19 @@ export const translations = {
       sectionNum: "01.",
       title: "Sobre Mim",
       whoAmI: "Quem sou eu",
-      bio: "Engenheira de Software com formação em Engenharia Elétrica e experiência sólida em desenvolvimento fullstack, mobile e cloud. Atua com React, React Native, Node.js e PHP/Laravel no dia a dia, com forte domínio de infraestrutura AWS — EC2, ECS, Lambda, API Gateway e CloudWatch. Interesse especial em arquitetura de sistemas escaláveis, interfaces de alta performance e boas práticas de engenharia de software. Atualmente cursando pós-graduação em Engenharia de Software.",
+      bioRole: "Engenheira de Software",
+      bioIntro:
+        "Engenheira de Software com experiência sólida em desenvolvimento fullstack, mobile e cloud, complementada por uma formação em Engenharia Elétrica.",
+      bioDetails:
+        "Atua com React, Vue, React Native, Node.js e PHP/Laravel no dia a dia, com forte domínio de infraestrutura AWS — EC2, ECS, Lambda, API Gateway e CloudWatch. Interesse especial em arquitetura de sistemas escaláveis, interfaces de alta performance e boas práticas de engenharia de software. Atualmente cursando pós-graduação em Engenharia de Software.",
       location: "Brasil",
       currentStudy: "Pós-graduação em Engenharia de Software",
       availabilityText: "Disponível",
+      availablePill: "Disponível para trabalho",
+      basedIn: "Baseada em",
+      studying: "Estudando",
+      techStackLabel: "Tech Stack",
+      educationLabel: "Formação",
       languages: "Idiomas",
       langPt: "Português",
       langPtLevel: "Nativo",
@@ -176,7 +185,7 @@ export const translations = {
       ],
     },
     techstack: {
-      sectionNum: "04.",
+      sectionNum: "05.",
       title: "Tech Stack",
       subtitle:
         "Tecnologias e ferramentas que utilizo para criar experiências digitais de alta qualidade.",
@@ -192,7 +201,7 @@ export const translations = {
       },
     },
     certifications: {
-      sectionNum: "05.",
+      sectionNum: "04.",
       title: "Certificações",
       subtitle: "Cursos e certificações concluídos ao longo da minha trajetória profissional.",
       copyLink: "Copiar link",
@@ -261,10 +270,19 @@ export const translations = {
       sectionNum: "01.",
       title: "About Me",
       whoAmI: "Who am I",
-      bio: "Software Engineer with a background in Electrical Engineering and hands-on experience in fullstack, mobile, and cloud development. Works daily with React, React Native, Node.js and PHP/Laravel, with strong AWS infrastructure skills — EC2, ECS, Lambda, API Gateway and CloudWatch. Passionate about scalable system architecture, high-performance interfaces and software engineering best practices. Currently pursuing a postgraduate degree in Software Engineering.",
+      bioRole: "Software Engineer",
+      bioIntro:
+        "Software Engineer with hands-on experience in fullstack, mobile, and cloud development, backed by a background in Electrical Engineering.",
+      bioDetails:
+        "Works daily with React, Vue, React Native, Node.js and PHP/Laravel, with strong AWS infrastructure skills — EC2, ECS, Lambda, API Gateway and CloudWatch. Passionate about scalable system architecture, high-performance interfaces and software engineering best practices. Currently pursuing a postgraduate degree in Software Engineering.",
       location: "Brazil",
       currentStudy: "Postgraduate in Software Engineering",
       availabilityText: "Available",
+      availablePill: "Available for work",
+      basedIn: "Based in",
+      studying: "Studying",
+      techStackLabel: "Tech Stack",
+      educationLabel: "Education",
       languages: "Languages",
       langPt: "Portuguese",
       langPtLevel: "Native",
@@ -418,7 +436,7 @@ export const translations = {
       ],
     },
     techstack: {
-      sectionNum: "04.",
+      sectionNum: "05.",
       title: "Tech Stack",
       subtitle:
         "Technologies and tools I use to create high-quality digital experiences.",
@@ -434,7 +452,7 @@ export const translations = {
       },
     },
     certifications: {
-      sectionNum: "05.",
+      sectionNum: "04.",
       title: "Certifications",
       subtitle: "Courses and certifications completed throughout my professional journey.",
       copyLink: "Copy link",
@@ -503,10 +521,19 @@ export const translations = {
       sectionNum: "01.",
       title: "Sobre Mí",
       whoAmI: "Quién soy",
-      bio: "Ingeniera de Software con formación en Ingeniería Eléctrica y experiencia sólida en desarrollo fullstack, mobile y cloud. Trabaja con React, React Native, Node.js y PHP/Laravel, con dominio de infraestructura AWS — EC2, ECS, Lambda, API Gateway y CloudWatch. Apasionada por la arquitectura de sistemas escalables, interfaces de alto rendimiento y buenas prácticas de ingeniería de software. Actualmente cursando posgrado en Ingeniería de Software.",
+      bioRole: "Ingeniera de Software",
+      bioIntro:
+        "Ingeniera de Software con experiencia sólida en desarrollo fullstack, mobile y cloud, respaldada por una formación en Ingeniería Eléctrica.",
+      bioDetails:
+        "Trabaja con React, Vue, React Native, Node.js y PHP/Laravel, con dominio de infraestructura AWS — EC2, ECS, Lambda, API Gateway y CloudWatch. Apasionada por la arquitectura de sistemas escalables, interfaces de alto rendimiento y buenas prácticas de ingeniería de software. Actualmente cursando posgrado en Ingeniería de Software.",
       location: "Brasil",
       currentStudy: "Posgrado en Ingeniería de Software",
       availabilityText: "Disponible",
+      availablePill: "Disponible para trabajar",
+      basedIn: "Ubicada en",
+      studying: "Estudiando",
+      techStackLabel: "Tech Stack",
+      educationLabel: "Formación",
       languages: "Idiomas",
       langPt: "Portugués",
       langPtLevel: "Nativo",
@@ -660,7 +687,7 @@ export const translations = {
       ],
     },
     techstack: {
-      sectionNum: "04.",
+      sectionNum: "05.",
       title: "Tech Stack",
       subtitle:
         "Tecnologías y herramientas que utilizo para crear experiencias digitales de alta calidad.",
@@ -676,7 +703,7 @@ export const translations = {
       },
     },
     certifications: {
-      sectionNum: "05.",
+      sectionNum: "04.",
       title: "Certificaciones",
       subtitle: "Cursos y certificaciones completados a lo largo de mi trayectoria profesional.",
       copyLink: "Copiar enlace",
