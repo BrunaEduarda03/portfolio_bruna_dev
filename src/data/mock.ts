@@ -456,8 +456,10 @@ export const certifications: Certification[] = [
     duration: "2h 53m",
     type: "Curso",
     link: "https://drive.google.com/file/d/1MgFEEjHcpUiVRvJnfleyMJPSCvngRz98/view?usp=sharing",
-    downloadLink: "https://drive.google.com/uc?export=download&id=1MgFEEjHcpUiVRvJnfleyMJPSCvngRz98",
-    previewImage: "https://drive.google.com/thumbnail?id=1MgFEEjHcpUiVRvJnfleyMJPSCvngRz98&sz=w800",
+    downloadLink:
+      "https://drive.google.com/uc?export=download&id=1MgFEEjHcpUiVRvJnfleyMJPSCvngRz98",
+    previewImage:
+      "https://drive.google.com/thumbnail?id=1MgFEEjHcpUiVRvJnfleyMJPSCvngRz98&sz=w800",
   },
   {
     id: 7,
@@ -467,8 +469,10 @@ export const certifications: Certification[] = [
     duration: "3h 22m",
     type: "Curso",
     link: "https://drive.google.com/file/d/1ViQZtT0NGeXng6OBWyrT7aZ6xrhDN3hP/view?usp=sharing",
-    downloadLink: "https://drive.google.com/uc?export=download&id=1ViQZtT0NGeXng6OBWyrT7aZ6xrhDN3hP",
-    previewImage: "https://drive.google.com/thumbnail?id=1ViQZtT0NGeXng6OBWyrT7aZ6xrhDN3hP&sz=w800",
+    downloadLink:
+      "https://drive.google.com/uc?export=download&id=1ViQZtT0NGeXng6OBWyrT7aZ6xrhDN3hP",
+    previewImage:
+      "https://drive.google.com/thumbnail?id=1ViQZtT0NGeXng6OBWyrT7aZ6xrhDN3hP&sz=w800",
   },
   {
     id: 8,
@@ -477,8 +481,22 @@ export const certifications: Certification[] = [
     date: "03/02/2025",
     type: "Diploma",
     link: "https://drive.google.com/file/d/1U6kWFnVQIF-A8o2P8IXW-Nc2-Pr39qSe/view?usp=sharing",
-    downloadLink: "https://drive.google.com/uc?export=download&id=1U6kWFnVQIF-A8o2P8IXW-Nc2-Pr39qSe",
-    previewImage: "https://drive.google.com/thumbnail?id=1U6kWFnVQIF-A8o2P8IXW-Nc2-Pr39qSe&sz=w800",
+    downloadLink:
+      "https://drive.google.com/uc?export=download&id=1U6kWFnVQIF-A8o2P8IXW-Nc2-Pr39qSe",
+    previewImage:
+      "https://drive.google.com/thumbnail?id=1U6kWFnVQIF-A8o2P8IXW-Nc2-Pr39qSe&sz=w800",
+  },
+  {
+    id: 9,
+    title: "Técnico em Desenvolvimento de Sistemas",
+    institution: "SENAI",
+    date: "22/10/2020",
+    type: "Diploma",
+    link: "https://drive.google.com/file/d/1ttb1-sxS9NGHqkokqShGln_abUhztSUg/view?usp=sharing",
+    downloadLink:
+      "https://drive.google.com/uc?export=download&id=1ttb1-sxS9NGHqkokqShGln_abUhztSUg",
+    previewImage:
+      "https://drive.google.com/thumbnail?id=1ttb1-sxS9NGHqkokqShGln_abUhztSUg&sz=w800",
   },
 ];
 
