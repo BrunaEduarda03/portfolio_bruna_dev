@@ -1,6 +1,7 @@
 import React from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { motion } from "framer-motion";
+import { Monitor, Server, Smartphone, Database, Layers, Cloud } from "lucide-react";
 
 const parseTags = (desc: string): string[] => {
   if (typeof desc !== "string") return [];
@@ -42,12 +43,12 @@ const About = () => {
   const { t } = useLanguage();
 
   const skillCards = [
-    { id: 1, abbr: "FE", title: t("about.frontend"), description: t("about.frontendDesc") },
-    { id: 2, abbr: "BE", title: t("about.backend"), description: t("about.backendDesc") },
-    { id: 3, abbr: "MO", title: t("about.mobile"), description: t("about.mobileDesc") },
-    { id: 4, abbr: "DB", title: t("about.databases"), description: t("about.databasesDesc") },
-    { id: 5, abbr: "AR", title: t("about.architecture"), description: t("about.architectureDesc") },
-    { id: 6, abbr: "OPS", title: t("about.devops"), description: t("about.devopsDesc") },
+    { id: 1, icon: Monitor, title: t("about.frontend"), description: t("about.frontendDesc") },
+    { id: 2, icon: Server, title: t("about.backend"), description: t("about.backendDesc") },
+    { id: 3, icon: Smartphone, title: t("about.mobile"), description: t("about.mobileDesc") },
+    { id: 4, icon: Database, title: t("about.databases"), description: t("about.databasesDesc") },
+    { id: 5, icon: Layers, title: t("about.architecture"), description: t("about.architectureDesc") },
+    { id: 6, icon: Cloud, title: t("about.devops"), description: t("about.devopsDesc") },
   ];
 
   const languages = [
@@ -173,14 +174,15 @@ const About = () => {
           <div>
             {skillCards.map((card) => {
               const tags = parseTags(card.description as string);
+              const IconComponent = card.icon;
               return (
                 <div
                   key={card.id}
                   className="grid grid-cols-1 sm:grid-cols-[190px_1fr] gap-3 sm:gap-6 py-4 px-3 -mx-3 border-t border-zinc-800/70 rounded-lg transition-colors duration-200 hover:bg-amber-500/[0.03]"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="w-6 h-6 shrink-0 grid place-items-center rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 font-mono text-[11px] font-semibold">
-                      {card.abbr}
+                    <span className="w-7 h-7 shrink-0 grid place-items-center rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400">
+                      <IconComponent className="w-3.5 h-3.5" />
                     </span>
                     <span className="font-mono text-xs font-semibold uppercase tracking-wider text-zinc-200">
                       {card.title}
