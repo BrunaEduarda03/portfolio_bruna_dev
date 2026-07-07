@@ -18,6 +18,7 @@ import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { toast } from "../hooks/use-toast";
 import { Toaster } from "./ui/toaster";
+import { trackEvent } from "../lib/analytics";
 
 const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY!;
 const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID!;
@@ -82,6 +83,7 @@ const Contact: React.FC = () => {
       });
 
       setIsSubmitted(true);
+      trackEvent("contact_form_submit");
       toast({
         title: t("contact.successTitle"),
         description: t("contact.successDesc"),
@@ -91,6 +93,7 @@ const Contact: React.FC = () => {
     } catch (error: unknown) {
       console.error("EmailJS error:", error);
       const errMsg = error instanceof Error ? error.message : String((error as { text?: string })?.text ?? error);
+      trackEvent("contact_form_error");
       toast({
         title: t("contact.errorTitle"),
         description: errMsg || t("contact.errorDesc"),

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 // @ts-ignore
 import "./App.css";
 import { LanguageProvider } from "./i18n/LanguageContext";
 import { ThemeProvider } from "./i18n/ThemeContext";
+import { initAnalytics } from "./lib/analytics";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -14,6 +15,10 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 function App() {
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+
   return (
     <ThemeProvider>
       <LanguageProvider>

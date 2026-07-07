@@ -16,6 +16,7 @@ import {
   GraduationCap,
   X,
 } from "lucide-react";
+import { trackEvent } from "../lib/analytics";
 
 // ─── constants ───────────────────────────────────────────────────────────────
 
@@ -370,6 +371,7 @@ const CertModal: React.FC<CertModalProps> = ({ cert, onClose }) => {
                 href={cert.downloadLink}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent("certificate_download", { title: cert.title })}
                 className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-zinc-800 text-xs font-mono text-zinc-400 hover:text-amber-400 hover:border-amber-500/30 transition-all duration-200"
               >
                 <Download className="w-3.5 h-3.5" />
@@ -381,6 +383,7 @@ const CertModal: React.FC<CertModalProps> = ({ cert, onClose }) => {
               href={cert.link}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent("certificate_external_view", { title: cert.title })}
               className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs font-mono text-amber-400 hover:bg-amber-500/20 transition-all duration-200 ml-auto"
             >
               <ExternalLink className="w-3.5 h-3.5" />
@@ -479,7 +482,10 @@ const Certifications: React.FC = () => {
                 key={cert.id}
                 cert={cert}
                 index={i}
-                onClick={setSelected}
+                onClick={(c) => {
+                  trackEvent("certificate_view", { title: c.title });
+                  setSelected(c);
+                }}
               />
             ))}
           </AnimatePresence>

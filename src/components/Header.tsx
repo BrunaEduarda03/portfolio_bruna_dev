@@ -3,6 +3,7 @@ import { personalInfo } from "../data/mock";
 import { useLanguage, LANGUAGES } from "../i18n/LanguageContext";
 import { Menu, X, Terminal, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { trackEvent } from "../lib/analytics";
 
 const Header = () => {
   const { t, language, changeLanguage } = useLanguage();
@@ -46,6 +47,7 @@ const Header = () => {
 
   const scrollToSection = (href: string) => {
     setMobileMenuOpen(false);
+    trackEvent("nav_click", { section: href.replace("#", ""), location: "header" });
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -133,6 +135,7 @@ const Header = () => {
                       key={lang.code}
                       onClick={() => {
                         changeLanguage(lang.code);
+                        trackEvent("language_change", { language: lang.code });
                         setLangMenuOpen(false);
                       }}
                       className={`w-full text-left px-4 py-2.5 text-xs font-mono flex items-center justify-between transition-all duration-200 ${
@@ -186,6 +189,7 @@ const Header = () => {
                       key={lang.code}
                       onClick={() => {
                         changeLanguage(lang.code);
+                        trackEvent("language_change", { language: lang.code });
                         setLangMenuOpen(false);
                       }}
                       className={`w-full text-left px-3 py-2 text-xs font-mono ${

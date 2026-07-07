@@ -2,6 +2,7 @@ import React from "react";
 import { personalInfo } from "../data/mock";
 import { useLanguage } from "../i18n/LanguageContext";
 import { Github, Linkedin, Mail, Heart, Terminal, ArrowUp } from "lucide-react";
+import { trackEvent } from "../lib/analytics";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -51,6 +52,7 @@ const Footer = () => {
                     className="text-xs text-zinc-600 hover:text-amber-400 transition-colors duration-300 font-mono"
                     onClick={(e) => {
                       e.preventDefault();
+                      trackEvent("nav_click", { section: link.href.replace("#", ""), location: "footer" });
                       const el = document.querySelector(link.href);
                       if (el) el.scrollIntoView({ behavior: "smooth" });
                     }}
@@ -72,6 +74,7 @@ const Footer = () => {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent("social_click", { network: "github", location: "footer" })}
                 className="w-9 h-9 rounded-lg border border-zinc-800 flex items-center justify-center text-zinc-600 hover:text-amber-400 hover:border-amber-500/30 transition-all duration-300"
               >
                 <Github className="w-4 h-4" />
@@ -80,12 +83,14 @@ const Footer = () => {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent("social_click", { network: "linkedin", location: "footer" })}
                 className="w-9 h-9 rounded-lg border border-zinc-800 flex items-center justify-center text-zinc-600 hover:text-amber-400 hover:border-amber-500/30 transition-all duration-300"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
                 href={`mailto:${personalInfo.email}`}
+                onClick={() => trackEvent("social_click", { network: "email", location: "footer" })}
                 className="w-9 h-9 rounded-lg border border-zinc-800 flex items-center justify-center text-zinc-600 hover:text-amber-400 hover:border-amber-500/30 transition-all duration-300"
               >
                 <Mail className="w-4 h-4" />

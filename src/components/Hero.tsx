@@ -4,6 +4,7 @@ import { useLanguage } from "../i18n/LanguageContext";
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { HeroScene } from "./Scene3D";
+import { trackEvent } from "../lib/analytics";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -73,6 +74,7 @@ const Hero = () => {
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent("social_click", { network: "github", location: "hero" })}
             className="p-3 rounded-xl border border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:text-amber-400 hover:border-amber-500/30 hover:bg-amber-500/5 transition-all duration-300"
           >
             <Github className="w-5 h-5" />
@@ -81,12 +83,14 @@ const Hero = () => {
             href={personalInfo.linkedin}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent("social_click", { network: "linkedin", location: "hero" })}
             className="p-3 rounded-xl border border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:text-amber-400 hover:border-amber-500/30 hover:bg-amber-500/5 transition-all duration-300"
           >
             <Linkedin className="w-5 h-5" />
           </a>
           <a
             href={`mailto:${personalInfo.email}`}
+            onClick={() => trackEvent("social_click", { network: "email", location: "hero" })}
             className="p-3 rounded-xl border border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:text-amber-400 hover:border-amber-500/30 hover:bg-amber-500/5 transition-all duration-300"
           >
             <Mail className="w-5 h-5" />

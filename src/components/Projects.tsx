@@ -3,6 +3,7 @@ import { projects } from "../data/mock";
 import { useLanguage } from "../i18n/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github, Code2 } from "lucide-react";
+import { trackEvent } from "../lib/analytics";
 
 const Projects: React.FC = () => {
   const { t } = useLanguage();
@@ -70,7 +71,10 @@ const Projects: React.FC = () => {
                             <a
                               href={project.github}
                               className="p-2 rounded-lg text-zinc-600 hover:text-amber-400 hover:bg-amber-500/10 transition-all duration-300"
-                              onClick={(e) => e.stopPropagation()}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                trackEvent("project_click", { project: item.title, type: "github" });
+                              }}
                             >
                               <Github className="w-4 h-4" />
                             </a>
@@ -81,7 +85,10 @@ const Projects: React.FC = () => {
                               target="_blank"
                               rel="noreferrer"
                               className="p-2 rounded-lg text-zinc-600 hover:text-amber-400 hover:bg-amber-500/10 transition-all duration-300"
-                              onClick={(e) => e.stopPropagation()}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                trackEvent("project_click", { project: item.title, type: "live" });
+                              }}
                             >
                               <ExternalLink className="w-4 h-4" />
                             </a>
