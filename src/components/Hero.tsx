@@ -2,12 +2,19 @@ import React from "react";
 import { personalInfo } from "../data/mock";
 import { useLanguage } from "../i18n/LanguageContext";
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import { HeroScene } from "./Scene3D";
 import { trackEvent } from "../lib/analytics";
 
+const CV_FILES: Record<string, string> = {
+  en: "/cv/Bruna-Eduarda-Maciel-CV-EN.pdf",
+  es: "/cv/Bruna-Eduarda-Maciel-CV-ES.pdf",
+};
+const CV_DEFAULT = "/cv/Bruna-Eduarda-Maciel-CV.pdf";
+
 const Hero = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const cvHref = CV_FILES[language] ?? CV_DEFAULT;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
@@ -94,6 +101,23 @@ const Hero = () => {
             className="p-3 rounded-xl border border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:text-amber-400 hover:border-amber-500/30 hover:bg-amber-500/5 transition-all duration-300"
           >
             <Mail className="w-5 h-5" />
+          </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.25 }}
+          className="mb-12 -mt-8"
+        >
+          <a
+            href={cvHref}
+            download
+            onClick={() => trackEvent("cv_download", { location: "hero", language })}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-amber-500/30 text-amber-400 text-sm font-mono hover:bg-amber-500/10 transition-all duration-300"
+          >
+            <Download className="w-4 h-4" />
+            {t("hero.downloadCV")}
           </a>
         </motion.div>
 

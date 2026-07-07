@@ -14,6 +14,7 @@ export const translations = {
       tagline: "Criando sistemas elegantes, acessíveis e de alta performance",
       availability: "Disponível",
       scroll: "Scroll",
+      downloadCV: "Baixar CV",
     },
     about: {
       sectionNum: "01.",
@@ -265,6 +266,7 @@ export const translations = {
       tagline: "Crafting elegant, accessible & high-performance systems",
       availability: "Available",
       scroll: "Scroll",
+      downloadCV: "Download CV",
     },
     about: {
       sectionNum: "01.",
@@ -516,6 +518,7 @@ export const translations = {
       tagline: "Creando interfaces elegantes, accesibles y de alto rendimiento",
       availability: "Disponible",
       scroll: "Scroll",
+      downloadCV: "Descargar CV",
     },
     about: {
       sectionNum: "01.",
