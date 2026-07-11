@@ -47,8 +47,7 @@ export const translations = {
       backendDesc:
         "Node.js • NestJS • Laravel • REST APIs • GraphQL • Authentication (JWT, cookies) • WebSockets • Payments (Stripe)",
       mobile: "Mobile",
-      mobileDesc:
-        "React Native • Expo • PWA • Push Notifications • Offline-first",
+      mobileDesc: "React Native • Expo • PWA • Push Notifications",
       databases: "Bases de Dados",
       databasesDesc: "PostgreSQL, MongoDB, MySQL, Prisma ORM",
       devops: "DevOps & Cloud",
@@ -57,11 +56,17 @@ export const translations = {
       architecture: "Arquitetura",
       architectureDesc:
         "Clean Architecture • SOLID • Microservices • DDD • Scalable SaaS systems • API Design",
+      ai: "Inteligência Artificial",
+      aiDesc:
+        "Prompt Engineering • RAG (Retrieval-Augmented Generation) • LLM APIs (OpenAI, Claude) • Embeddings & Busca Semântica",
+      testing: "Testes",
+      testingDesc:
+        "Vitest • Playwright • Cypress • Testes Unitários • Testes de Integração • Testes E2E",
       edu1Degree: "Bacharelado em Engenharia Elétrica",
       edu1Institution: "Universidade Federal de Campina Grande",
       edu1Period: "Jan 2018 - Dez 2024",
       edu1Highlights: [
-        "Ênfase em desenvolvimento de software, Eletrônica, controle e automação",
+        "Ênfase em desenvolvimento de software, eletrônica, controle e automação",
         "Bolsista no LIEC - projetos de integração hardware e software",
         "Bolsista na Trybe - curso de Web Development (fullstack)",
       ],
@@ -193,6 +198,8 @@ export const translations = {
       frontend: "Frontend",
       backend: "Backend",
       tools: "Ferramentas & DevOps",
+      ai: "Inteligência Artificial",
+      testing: "Testes",
       stats: {
         technologies: "Tecnologias",
         projects: "Projetos",
@@ -204,7 +211,8 @@ export const translations = {
     certifications: {
       sectionNum: "04.",
       title: "Certificações",
-      subtitle: "Cursos e certificações concluídos ao longo da minha trajetória profissional.",
+      subtitle:
+        "Cursos e certificações concluídos ao longo da minha trajetória profissional.",
       copyLink: "Copiar link",
       copied: "Copiado!",
       download: "Download",
@@ -299,8 +307,7 @@ export const translations = {
       backendDesc:
         "Node.js • NestJS • Laravel • REST APIs • GraphQL • Authentication (JWT, cookies) • WebSockets • Payments (Stripe)",
       mobile: "Mobile",
-      mobileDesc:
-        "React Native • Expo • PWA • Push Notifications • Offline-first",
+      mobileDesc: "React Native • Expo • PWA • Push Notifications",
       databases: "Databases",
       databasesDesc: "PostgreSQL, MongoDB, MySQL, Prisma ORM",
       devops: "DevOps & Cloud",
@@ -309,11 +316,17 @@ export const translations = {
       architecture: "Architecture",
       architectureDesc:
         "Clean Architecture • SOLID • Microservices • DDD • Scalable SaaS systems • API Design",
+      ai: "IA",
+      aiDesc:
+        "Prompt Engineering • RAG (Retrieval-Augmented Generation) • LLM APIs (OpenAI, Claude) • Embeddings & Semantic Search",
+      testing: "Testing",
+      testingDesc:
+        "Vitest • Playwright • Cypress • Unit Testing • Integration Testing • E2E Testing",
       edu1Degree: "Bachelor's in Electrical Engineering",
       edu1Institution: "Federal University of Campina Grande",
       edu1Period: "Jan 2018 - Dec 2024",
       edu1Highlights: [
-        "Emphasis on software development, Electronics, control and automation",
+        "Emphasis on software development, electronics, control, and automation",
         "Scholarship at LIEC - hardware and software integration projects",
         "Scholarship at Trybe - Web Development course (fullstack)",
       ],
@@ -445,6 +458,8 @@ export const translations = {
       frontend: "Frontend",
       backend: "Backend",
       tools: "Tools & DevOps",
+      ai: "IA",
+      testing: "Testing",
       stats: {
         technologies: "Technologies",
         projects: "Projects",
@@ -456,7 +471,8 @@ export const translations = {
     certifications: {
       sectionNum: "04.",
       title: "Certifications",
-      subtitle: "Courses and certifications completed throughout my professional journey.",
+      subtitle:
+        "Courses and certifications completed throughout my professional journey.",
       copyLink: "Copy link",
       copied: "Copied!",
       download: "Download",
@@ -492,7 +508,8 @@ export const translations = {
       successTitle: "Message sent!",
       successDesc: "Thanks for reaching out. I'll respond shortly!",
       errorTitle: "Failed to send",
-      errorDesc: "Something went wrong. Please try again or reach out via email.",
+      errorDesc:
+        "Something went wrong. Please try again or reach out via email.",
     },
     footer: {
       navigation: "Navigation",
@@ -551,8 +568,7 @@ export const translations = {
       backendDesc:
         "Node.js • NestJS • Laravel • REST APIs • GraphQL • Authentication (JWT, cookies) • WebSockets • Payments (Stripe)",
       mobile: "Mobile",
-      mobileDesc:
-        "React Native • Expo • PWA • Push Notifications • Offline-first",
+      mobileDesc: "React Native • Expo • PWA • Push Notifications",
       databases: "Bases de Datos",
       databasesDesc: "PostgreSQL, MongoDB, MySQL, Prisma ORM",
       devops: "DevOps & Cloud",
@@ -561,11 +577,17 @@ export const translations = {
       architecture: "Arquitectura",
       architectureDesc:
         "Clean Architecture • SOLID • Microservices • DDD • Scalable SaaS systems • API Design",
+      ai: "Inteligencia Artificial",
+      aiDesc:
+        "Prompt Engineering • RAG (Retrieval-Augmented Generation) • LLM APIs (OpenAI, Claude) • Embeddings y Búsqueda Semántica",
+      testing: "Pruebas",
+      testingDesc:
+        "Vitest • Playwright • Cypress • Pruebas Unitarias • Pruebas de Integración • Pruebas E2E",
       edu1Degree: "Licenciatura en Ingeniería Eléctrica",
       edu1Institution: "Universidad Federal de Campina Grande",
       edu1Period: "Ene 2018 - Dic 2024",
       edu1Highlights: [
-        "Énfasis en desarrollo de software, Electrónica, control y automatización",
+        "Énfasis en desarrollo de software, electrónica, control y automatización",
         "Becaria en LIEC - proyectos de integración hardware y software",
         "Becaria en Trybe - curso de Web Development (fullstack)",
       ],
@@ -697,6 +719,8 @@ export const translations = {
       frontend: "Frontend",
       backend: "Backend",
       tools: "Herramientas & DevOps",
+      ai: "Inteligencia Artificial",
+      testing: "Pruebas",
       stats: {
         technologies: "Tecnologías",
         projects: "Proyectos",
@@ -708,7 +732,8 @@ export const translations = {
     certifications: {
       sectionNum: "04.",
       title: "Certificaciones",
-      subtitle: "Cursos y certificaciones completados a lo largo de mi trayectoria profesional.",
+      subtitle:
+        "Cursos y certificaciones completados a lo largo de mi trayectoria profesional.",
       copyLink: "Copiar enlace",
       copied: "¡Copiado!",
       download: "Descargar",

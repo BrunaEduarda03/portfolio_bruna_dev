@@ -121,22 +121,29 @@ const Hero = () => {
           </a>
         </motion.div>
 
-        <motion.div
+        <motion.button
+          type="button"
+          onClick={() => {
+            trackEvent("nav_click", { section: "about", location: "hero_scroll" });
+            document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+          }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="flex flex-col items-center gap-2"
+          whileHover={{ scale: 1.1 }}
+          className="flex flex-col items-center gap-2 cursor-pointer group"
+          aria-label={t("hero.scroll")}
         >
-          <span className="text-xs font-mono text-zinc-600 tracking-widest uppercase">
+          <span className="text-xs font-mono text-zinc-600 group-hover:text-amber-400 tracking-widest uppercase transition-colors duration-300">
             {t("hero.scroll")}
           </span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <ArrowDown className="w-4 h-4 text-amber-500/40" />
+            <ArrowDown className="w-4 h-4 text-amber-500/40 group-hover:text-amber-400 transition-colors duration-300" />
           </motion.div>
-        </motion.div>
+        </motion.button>
       </div>
     </section>
   );

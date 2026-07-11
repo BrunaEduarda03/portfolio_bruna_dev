@@ -139,6 +139,42 @@ const TechStack = () => {
             </motion.div>
             <MarqueeRow items={techStack.tools} direction="left" speed={28} />
           </div>
+
+          <div>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex items-center gap-2 mb-3 px-1"
+            >
+              <div className="w-6 h-6 rounded-md bg-amber-500/10 flex items-center justify-center">
+                <Cpu className="w-3 h-3 text-amber-400" />
+              </div>
+              <span className="font-mono text-xs text-zinc-500 uppercase tracking-wider">
+                {t("techstack.ai")}
+              </span>
+            </motion.div>
+            <MarqueeRow items={techStack.ai} direction="right" speed={32} />
+          </div>
+
+          <div>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex items-center gap-2 mb-3 px-1"
+            >
+              <div className="w-6 h-6 rounded-md bg-amber-500/10 flex items-center justify-center">
+                <Cpu className="w-3 h-3 text-amber-400" />
+              </div>
+              <span className="font-mono text-xs text-zinc-500 uppercase tracking-wider">
+                {t("techstack.testing")}
+              </span>
+            </motion.div>
+            <MarqueeRow items={techStack.testing} direction="left" speed={26} />
+          </div>
         </div>
 
         {/* Stats Grid */}

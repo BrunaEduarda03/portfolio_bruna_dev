@@ -158,11 +158,11 @@ Layout mobile-first com breakpoints Tailwind:
 
 ## 📬 Contacto
 
-**Bruna Eduarda Maciel**
+**Bruna Eduarda Cruz Maciel**
 
 - 📧 [brunaecmaciel@gmail.com](mailto:brunaecmaciel@gmail.com)
-- 💼 [linkedin.com/in/brunaeduarda](https://linkedin.com/in/brunaeduarda)
-- �� [github.com/brunaeduarda](https://github.com/brunaeduarda)
+- 💼 [linkedin.com/in/brunaecmaciel](https://www.linkedin.com/in/brunaecmaciel/)
+- 🐙 [github.com/BrunaEduarda03](https://github.com/BrunaEduarda03)
 - 📍 Brasil — disponível para trabalho remoto
 
 ---

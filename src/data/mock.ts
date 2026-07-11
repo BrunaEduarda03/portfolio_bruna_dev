@@ -50,6 +50,8 @@ export interface TechStack {
   frontend: TechItem[];
   backend: TechItem[];
   tools: TechItem[];
+  ai: TechItem[];
+  testing: TechItem[];
 }
 
 export interface EducationItem {
@@ -72,7 +74,7 @@ export interface NavLink {
 }
 
 export const personalInfo: PersonalInfo = {
-  name: "Bruna Eduarda",
+  name: "Bruna Eduarda Cruz Maciel",
   role: "Software Engineer",
   tagline: "Crafting elegant, accessible & high-performance systems",
   bio: "Engenheira de Software com formação em Engenharia Elétrica e experiência sólida em desenvolvimento fullstack, mobile e cloud. Atua com React, React Native, Node.js e PHP/Laravel no dia a dia, com forte domínio de infraestrutura AWS — EC2, ECS, Lambda, API Gateway e CloudWatch. Interesse especial em arquitetura de sistemas escaláveis, interfaces de alta performance e boas práticas de engenharia de software. Atualmente cursando pós-graduação em Engenharia de Software.",
@@ -80,7 +82,7 @@ export const personalInfo: PersonalInfo = {
   phone: "+55 (83) 9 96635326",
   location: "Brasil",
   github: "https://github.com/BrunaEduarda03",
-  linkedin: "https://www.linkedin.com/in/bruna-eduarda-a06a1b18b/",
+  linkedin: "https://www.linkedin.com/in/brunaecmaciel/",
   availability: "Disponível para trabalho remoto",
   currentStudy: "Pós-graduação em Engenharia de Software",
 };
@@ -337,6 +339,20 @@ export const techStack: TechStack = {
     { name: "Redis", color: "#DC382D" },
     { name: "WebSockets", color: "#f59e0b" },
     { name: "RabbitMQ", color: "#FF6600" },
+  ],
+  ai: [
+    { name: "Prompt Engineering", color: "#10A37F" },
+    { name: "RAG (Retrieval-Augmented Generation)", color: "#8A63D2" },
+    { name: "LLM APIs (OpenAI, Claude)", color: "#D97757" },
+    { name: "Embeddings & Busca Semântica", color: "#3B82F6" },
+  ],
+  testing: [
+    { name: "Vitest", color: "#6E9F18" },
+    { name: "Playwright", color: "#2EAD33" },
+    { name: "Cypress", color: "#17202C" },
+    { name: "Testes Unitários", color: "#f59e0b" },
+    { name: "Testes de Integração", color: "#f59e0b" },
+    { name: "Testes E2E", color: "#f59e0b" },
   ],
 };
 
