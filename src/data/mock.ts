@@ -111,9 +111,9 @@ export const aboutCards: AboutCard[] = [
   },
   {
     id: 4,
-    title: "Bases de Dados",
-    description: "PostgreSQL, MongoDB, MySQL, Prisma ORM",
-    icon: "Database",
+    title: "Segurança & Observabilidade",
+    description: "Snyk, Sentry, Microsoft Clarity, New Relic, Google Analytics",
+    icon: "ShieldCheck",
     span: "col-span-1",
   },
   {

@@ -131,7 +131,7 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
           whileHover={{ scale: 1.1 }}
-          className="flex flex-col items-center gap-2 cursor-pointer group"
+          className="inline-flex flex-col items-center gap-2 cursor-pointer group mx-auto"
           aria-label={t("hero.scroll")}
         >
           <span className="text-xs font-mono text-zinc-600 group-hover:text-amber-400 tracking-widest uppercase transition-colors duration-300">

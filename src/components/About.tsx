@@ -1,7 +1,7 @@
 import React from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { motion } from "framer-motion";
-import { Monitor, Server, Smartphone, Database, Layers, Cloud, Brain, TestTube2 } from "lucide-react";
+import { Monitor, Server, Smartphone, ShieldCheck, Layers, Cloud, Brain, TestTube2 } from "lucide-react";
 
 const parseTags = (desc: string): string[] => {
   if (typeof desc !== "string") return [];
@@ -46,7 +46,7 @@ const About = () => {
     { id: 1, icon: Monitor, title: t("about.frontend"), description: t("about.frontendDesc") },
     { id: 2, icon: Server, title: t("about.backend"), description: t("about.backendDesc") },
     { id: 3, icon: Smartphone, title: t("about.mobile"), description: t("about.mobileDesc") },
-    { id: 4, icon: Database, title: t("about.databases"), description: t("about.databasesDesc") },
+    { id: 4, icon: ShieldCheck, title: t("about.databases"), description: t("about.databasesDesc") },
     { id: 5, icon: Layers, title: t("about.architecture"), description: t("about.architectureDesc") },
     { id: 6, icon: Cloud, title: t("about.devops"), description: t("about.devopsDesc") },
     { id: 7, icon: Brain, title: t("about.ai"), description: t("about.aiDesc") },

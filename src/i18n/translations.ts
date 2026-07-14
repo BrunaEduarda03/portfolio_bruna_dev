@@ -48,8 +48,8 @@ export const translations = {
         "Node.js • NestJS • Laravel • REST APIs • GraphQL • Authentication (JWT, cookies) • WebSockets • Payments (Stripe)",
       mobile: "Mobile",
       mobileDesc: "React Native • Expo • PWA • Push Notifications",
-      databases: "Bases de Dados",
-      databasesDesc: "PostgreSQL, MongoDB, MySQL, Prisma ORM",
+      databases: "Segurança & Observabilidade",
+      databasesDesc: "Snyk, Sentry, Microsoft Clarity, New Relic, Google Analytics",
       devops: "DevOps & Cloud",
       devopsDesc:
         "Docker • AWS (EC2, ECS, Lambda, API Gateway, S3, RDS, CloudWatch) • GitHub Actions CI/CD",
@@ -104,6 +104,7 @@ export const translations = {
           description: [
             "Reconstrução do zero do app mobile DentalUni com React Native.",
             "Desenvolvimento de interfaces mobile modernas, performáticas e acessíveis para gestão odontológica.",
+            "Responsável pela publicação dos apps em produção na Apple Store e Google Play.",
           ],
         },
         {
@@ -308,8 +309,8 @@ export const translations = {
         "Node.js • NestJS • Laravel • REST APIs • GraphQL • Authentication (JWT, cookies) • WebSockets • Payments (Stripe)",
       mobile: "Mobile",
       mobileDesc: "React Native • Expo • PWA • Push Notifications",
-      databases: "Databases",
-      databasesDesc: "PostgreSQL, MongoDB, MySQL, Prisma ORM",
+      databases: "Security & Observability",
+      databasesDesc: "Snyk, Sentry, Microsoft Clarity, New Relic, Google Analytics",
       devops: "DevOps & Cloud",
       devopsDesc:
         "Docker • AWS (EC2, ECS, Lambda, API Gateway, S3, RDS, CloudWatch) • GitHub Actions CI/CD",
@@ -364,6 +365,7 @@ export const translations = {
           description: [
             "Rebuilt the DentalUni mobile app from scratch using React Native.",
             "Developed modern, performant and accessible mobile interfaces for dental management.",
+            "Responsible for publishing the apps to production on the Apple Store and Google Play.",
           ],
         },
         {
@@ -569,8 +571,8 @@ export const translations = {
         "Node.js • NestJS • Laravel • REST APIs • GraphQL • Authentication (JWT, cookies) • WebSockets • Payments (Stripe)",
       mobile: "Mobile",
       mobileDesc: "React Native • Expo • PWA • Push Notifications",
-      databases: "Bases de Datos",
-      databasesDesc: "PostgreSQL, MongoDB, MySQL, Prisma ORM",
+      databases: "Seguridad & Observabilidad",
+      databasesDesc: "Snyk, Sentry, Microsoft Clarity, New Relic, Google Analytics",
       devops: "DevOps & Cloud",
       devopsDesc:
         "Docker • AWS (EC2, ECS, Lambda, API Gateway, S3, RDS, CloudWatch) • GitHub Actions CI/CD",
@@ -625,6 +627,7 @@ export const translations = {
           description: [
             "Reconstrucción desde cero de la app mobile DentalUni con React Native.",
             "Desarrollo de interfaces mobile modernas, performáticas y accesibles para gestión odontológica.",
+            "Responsable de la publicación de las apps en producción en Apple Store y Google Play.",
           ],
         },
         {
