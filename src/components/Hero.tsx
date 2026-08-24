@@ -7,14 +7,15 @@ import { HeroScene } from "./Scene3D";
 import { trackEvent } from "../lib/analytics";
 
 const CV_FILES: Record<string, string> = {
-  en: "/cv/Bruna-Eduarda-Maciel-CV-EN.pdf",
-  es: "/cv/Bruna-Eduarda-Maciel-CV-ES.pdf",
+  en: "Bruna-Maciel-CV-EN.pdf",
+  es: "Bruna-Maciel-CV-ES.pdf",
 };
-const CV_DEFAULT = "/cv/Bruna-Eduarda-Maciel-CV.pdf";
+const CV_DEFAULT = "Bruna-Maciel-CV.pdf";
 
 const Hero = () => {
   const { t, language } = useLanguage();
-  const cvHref = CV_FILES[language] ?? CV_DEFAULT;
+  const cvFile = CV_FILES[language] ?? CV_DEFAULT;
+  const cvHref = `${process.env.PUBLIC_URL}/cv/${cvFile}`;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
@@ -112,7 +113,7 @@ const Hero = () => {
         >
           <a
             href={cvHref}
-            download
+            download={cvFile}
             onClick={() => trackEvent("cv_download", { location: "hero", language })}
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-amber-500/30 text-amber-400 text-sm font-mono hover:bg-amber-500/10 transition-all duration-300"
           >
