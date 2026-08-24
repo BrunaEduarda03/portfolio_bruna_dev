@@ -34,6 +34,12 @@ function formatTotalHours(minutes: number): string {
   return `${Math.floor(minutes / 60)}h+`;
 }
 
+function getCertTypeLabel(type: string, t: (key: string) => any): string {
+  if (type === "Curso") return t("certifications.typeCourse");
+  if (type === "Diploma") return t("certifications.typeDiploma");
+  return type;
+}
+
 // ─── CertFilter ──────────────────────────────────────────────────────────────
 
 interface CertFilterProps {
@@ -47,6 +53,7 @@ const CertFilter: React.FC<CertFilterProps> = ({
   active,
   onChange,
 }) => {
+  const { t } = useLanguage();
   const options = ["All", ...institutions];
 
   return (
@@ -70,7 +77,9 @@ const CertFilter: React.FC<CertFilterProps> = ({
                 transition={{ type: "spring", damping: 28, stiffness: 320 }}
               />
             )}
-            <span className="relative">{opt}</span>
+            <span className="relative">
+              {opt === "All" ? t("certifications.all") : opt}
+            </span>
           </button>
         );
       })}
@@ -137,6 +146,7 @@ interface CertCardProps {
 }
 
 const CertCard: React.FC<CertCardProps> = ({ cert, index, onClick }) => {
+  const { t } = useLanguage();
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -162,7 +172,7 @@ const CertCard: React.FC<CertCardProps> = ({ cert, index, onClick }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
         <span className="absolute top-3 left-3 text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-md bg-amber-800/30 border border-amber-500/40 text-amber-500 backdrop-blur-md">
-          {cert.type}
+          {getCertTypeLabel(cert.type, t)}
         </span>
       </div>
 
@@ -306,7 +316,7 @@ const CertModal: React.FC<CertModalProps> = ({ cert, onClose }) => {
       >
         <button
           onClick={onClose}
-          aria-label="Fechar"
+          aria-label={t("certifications.close")}
           className="absolute top-4 right-4 z-10 w-8 h-8 rounded-lg bg-zinc-900/90 border border-zinc-800 flex items-center justify-center text-zinc-500 hover:text-amber-400 hover:border-amber-500/30 transition-all duration-200"
         >
           <X className="w-4 h-4" />
@@ -324,7 +334,7 @@ const CertModal: React.FC<CertModalProps> = ({ cert, onClose }) => {
         <div className="p-6 pt-5">
           <div className="flex items-center gap-2.5 mb-3">
             <span className="text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-md bg-amber-500/15 border border-amber-500/25 text-amber-400">
-              {cert.type}
+              {getCertTypeLabel(cert.type, t)}
             </span>
             <div className="flex items-center gap-1.5">
               <Award className="w-3 h-3 text-amber-500/60" />

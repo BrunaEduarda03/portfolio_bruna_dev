@@ -218,6 +218,10 @@ export const translations = {
       copied: "Copiado!",
       download: "Download",
       view: "Ver certificado",
+      close: "Fechar",
+      all: "Todos",
+      typeCourse: "Curso",
+      typeDiploma: "Diploma",
       statsCourses: "cursos",
       statsHours: "horas de conteúdo",
       statsInstitutions: "instituições",
@@ -227,6 +231,7 @@ export const translations = {
       title: "Contato",
       subtitle:
         "Interessado(a) em colaborar? Envie uma mensagem e responderei o mais breve possível.",
+      defaultSubject: "Contato via portfólio",
       info: "Informações",
       email: "Email",
       phone: "Telefone",
@@ -317,7 +322,7 @@ export const translations = {
       architecture: "Architecture",
       architectureDesc:
         "Clean Architecture • SOLID • Microservices • DDD • Scalable SaaS systems • API Design",
-      ai: "IA",
+      ai: "AI",
       aiDesc:
         "Prompt Engineering • RAG (Retrieval-Augmented Generation) • LLM APIs (OpenAI, Claude) • Embeddings & Semantic Search",
       testing: "Testing",
@@ -460,7 +465,7 @@ export const translations = {
       frontend: "Frontend",
       backend: "Backend",
       tools: "Tools & DevOps",
-      ai: "IA",
+      ai: "AI",
       testing: "Testing",
       stats: {
         technologies: "Technologies",
@@ -479,6 +484,10 @@ export const translations = {
       copied: "Copied!",
       download: "Download",
       view: "View certificate",
+      close: "Close",
+      all: "All",
+      typeCourse: "Course",
+      typeDiploma: "Diploma",
       statsCourses: "courses",
       statsHours: "hours of content",
       statsInstitutions: "institutions",
@@ -488,6 +497,7 @@ export const translations = {
       title: "Contact",
       subtitle:
         "Interested in collaborating? Send a message and I'll reply as soon as possible.",
+      defaultSubject: "Contact via portfolio",
       info: "Information",
       email: "Email",
       phone: "Phone",
@@ -623,7 +633,7 @@ export const translations = {
         {
           company: "Auclan Design",
           role: "Mobile Developer · Freelancer",
-          period: "Dic 2025 - May 2026",
+          period: "Anterior",
           description: [
             "Reconstrucción desde cero de la app mobile DentalUni con React Native.",
             "Desarrollo de interfaces mobile modernas, performáticas y accesibles para gestión odontológica.",
@@ -741,6 +751,10 @@ export const translations = {
       copied: "¡Copiado!",
       download: "Descargar",
       view: "Ver certificado",
+      close: "Cerrar",
+      all: "Todos",
+      typeCourse: "Curso",
+      typeDiploma: "Diploma",
       statsCourses: "cursos",
       statsHours: "horas de contenido",
       statsInstitutions: "instituciones",
@@ -750,6 +764,7 @@ export const translations = {
       title: "Contacto",
       subtitle:
         "¿Interesado(a) en colaborar? Envía un mensaje y responderé lo antes posible.",
+      defaultSubject: "Contacto vía portfolio",
       info: "Información",
       email: "Email",
       phone: "Teléfono",

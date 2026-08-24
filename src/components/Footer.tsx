@@ -35,7 +35,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-xs text-zinc-600 leading-relaxed max-w-xs">
-              {personalInfo.tagline}
+              {t("hero.tagline")}
             </p>
           </div>
 

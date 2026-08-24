@@ -69,7 +69,7 @@ const Contact: React.FC = () => {
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
-        subject: formData.subject || "Contato via portfólio",
+        subject: formData.subject || t("contact.defaultSubject"),
         message: formData.message,
         to_email: "brunaecmaciel@gmail.com",
         reply_to: formData.email,
@@ -185,7 +185,7 @@ const Contact: React.FC = () => {
                     {t("contact.locationLabel")}
                   </p>
                   <span className="text-sm text-zinc-300">
-                    {personalInfo.location}
+                    {t("about.location")}
                   </span>
                 </div>
               </div>
