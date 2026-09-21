@@ -1,5 +1,21 @@
 export const translations = {
   pt: {
+    identity: {
+      skip: "Pular abertura",
+      skipContent: "Ir para o conteúdo",
+      intro: "Código que conecta ideias.",
+      signature: "FULL STACK · MOBILE · CLOUD",
+      based: "BRASIL / PARA O MUNDO",
+      statement: "Entre a precisão da engenharia e a sensibilidade do design. Construo experiências digitais do primeiro esboço ao último deploy.",
+      explore: "Explorar projetos",
+      craft: "Lógica no traço. Intenção em cada detalhe.",
+      bridge: "ENGENHARIA + DESIGN + CÓDIGO",
+      scroll: "Conheça meu trabalho",
+      openMenu: "Abrir menu",
+      closeMenu: "Fechar menu",
+      language: "Selecionar idioma",
+      backTop: "Voltar ao topo"
+    },
     nav: {
       about: "Sobre",
       experience: "Experiência",
@@ -22,9 +38,9 @@ export const translations = {
       whoAmI: "Quem sou eu",
       bioRole: "Engenheira de Software",
       bioIntro:
-        "Engenheira de Software com experiência sólida em desenvolvimento fullstack, mobile e cloud, complementada por uma formação em Engenharia Elétrica.",
+        "Engenheira de Software com experiência em desenvolvimento full stack, mobile e cloud, da concepção de interfaces e APIs à implantação e manutenção de aplicações em produção. Combino uma formação em Engenharia Elétrica com uma visão integrada de produto, arquitetura e infraestrutura para transformar necessidades de negócio em soluções escaláveis.",
       bioDetails:
-        "Atua com React, Vue, React Native, Node.js e PHP/Laravel no dia a dia, com forte domínio de infraestrutura AWS — EC2, ECS, Lambda, API Gateway e CloudWatch. Interesse especial em arquitetura de sistemas escaláveis, interfaces de alta performance e boas práticas de engenharia de software. Atualmente cursando pós-graduação em Engenharia de Software.",
+        "Trabalho com React, TypeScript, Vue, React Native, Node.js e PHP/Laravel, além de infraestrutura AWS — EC2, ECS, Lambda, API Gateway e CloudWatch. Foco em performance, acessibilidade, componentes reutilizáveis e code review, trabalhando com Scrum / Kanban e testes automatizados com Vitest, Playwright e Cypress. Atualmente cursando pós-graduação em Engenharia de Software.",
       location: "Brasil",
       currentStudy: "Pós-graduação em Engenharia de Software",
       availabilityText: "Disponível",
@@ -42,7 +58,7 @@ export const translations = {
       langEsLevel: "Intermediário",
       frontend: "Frontend",
       frontendDesc:
-        "React, Vue, Next.js, Nuxt, TailwindCSS, Shadcn/UI, React Hook Form, Zustand, Zod, Framer Motion, TanStack Query",
+        "React, TypeScript, Vue, Next.js, Nuxt, TailwindCSS, Shadcn/UI, React Hook Form, Zustand, Zod, Framer Motion, TanStack Query",
       backend: "Backend",
       backendDesc:
         "Node.js • NestJS • Laravel • REST APIs • GraphQL • Authentication (JWT, cookies) • WebSockets • Payments (Stripe)",
@@ -88,7 +104,7 @@ export const translations = {
       jobs: [
         {
           company: "CopanestRIO",
-          role: "Software Developer",
+          role: "Software Engineer",
           period: "Atual",
           description: [
             "Desenvolvimento e manutenção de landing page e sistema de gestão da cooperativa utilizando Vue, HTML, CSS e JavaScript.",
@@ -266,6 +282,22 @@ export const translations = {
   },
 
   en: {
+    identity: {
+      skip: "Skip intro",
+      skipContent: "Skip to content",
+      intro: "Code that connects ideas.",
+      signature: "FULL STACK · MOBILE · CLOUD",
+      based: "BRAZIL / BUILT FOR EVERYWHERE",
+      statement: "Where engineering precision meets thoughtful design. I build digital experiences from the first sketch to the final deployment.",
+      explore: "Explore projects",
+      craft: "Logic in every line. Purpose in every detail.",
+      bridge: "ENGINEERING + DESIGN + CODE",
+      scroll: "Discover my work",
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
+      language: "Select language",
+      backTop: "Back to top"
+    },
     nav: {
       about: "About",
       experience: "Experience",
@@ -288,9 +320,9 @@ export const translations = {
       whoAmI: "Who am I",
       bioRole: "Software Engineer",
       bioIntro:
-        "Software Engineer with hands-on experience in fullstack, mobile, and cloud development, backed by a background in Electrical Engineering.",
+        "Software Engineer with experience across full stack, mobile, and cloud development, from designing interfaces and APIs to deploying and maintaining production applications. I combine a background in Electrical Engineering with an integrated approach to product, architecture, and infrastructure to turn business needs into scalable software.",
       bioDetails:
-        "Works daily with React, Vue, React Native, Node.js and PHP/Laravel, with strong AWS infrastructure skills — EC2, ECS, Lambda, API Gateway and CloudWatch. Passionate about scalable system architecture, high-performance interfaces and software engineering best practices. Currently pursuing a postgraduate degree in Software Engineering.",
+        "I work with React, TypeScript, Vue, React Native, Node.js and PHP/Laravel, alongside AWS infrastructure — EC2, ECS, Lambda, API Gateway and CloudWatch. Focused on performance, accessibility, reusable components and code review, working with Scrum / Kanban and automated testing using Vitest, Playwright and Cypress. Currently pursuing a postgraduate degree in Software Engineering.",
       location: "Brazil",
       currentStudy: "Postgraduate in Software Engineering",
       availabilityText: "Available",
@@ -308,7 +340,7 @@ export const translations = {
       langEsLevel: "Intermediate",
       frontend: "Frontend",
       frontendDesc:
-        "React, Vue, Next.js, Nuxt, TailwindCSS, Shadcn/UI, React Hook Form, Zustand, Zod, Framer Motion, TanStack Query",
+        "React, TypeScript, Vue, Next.js, Nuxt, TailwindCSS, Shadcn/UI, React Hook Form, Zustand, Zod, Framer Motion, TanStack Query",
       backend: "Backend",
       backendDesc:
         "Node.js • NestJS • Laravel • REST APIs • GraphQL • Authentication (JWT, cookies) • WebSockets • Payments (Stripe)",
@@ -354,7 +386,7 @@ export const translations = {
       jobs: [
         {
           company: "CopanestRIO",
-          role: "Software Developer",
+          role: "Software Engineer",
           period: "Current",
           description: [
             "Development and maintenance of landing page and cooperative management system using Vue, HTML, CSS and JavaScript.",
@@ -533,6 +565,22 @@ export const translations = {
   },
 
   es: {
+    identity: {
+      skip: "Saltar introducción",
+      skipContent: "Ir al contenido",
+      intro: "Código que conecta ideas.",
+      signature: "FULL STACK · MOBILE · CLOUD",
+      based: "BRASIL / PARA EL MUNDO",
+      statement: "Entre la precisión de la ingeniería y la sensibilidad del diseño. Creo experiencias digitales desde el primer boceto hasta el último despliegue.",
+      explore: "Explorar proyectos",
+      craft: "Lógica en cada trazo. Intención en cada detalle.",
+      bridge: "INGENIERÍA + DISEÑO + CÓDIGO",
+      scroll: "Conoce mi trabajo",
+      openMenu: "Abrir menú",
+      closeMenu: "Cerrar menú",
+      language: "Seleccionar idioma",
+      backTop: "Volver arriba"
+    },
     nav: {
       about: "Sobre mí",
       experience: "Experiencia",
@@ -555,9 +603,9 @@ export const translations = {
       whoAmI: "Quién soy",
       bioRole: "Ingeniera de Software",
       bioIntro:
-        "Ingeniera de Software con experiencia sólida en desarrollo fullstack, mobile y cloud, respaldada por una formación en Ingeniería Eléctrica.",
+        "Ingeniera de Software con experiencia en desarrollo full stack, mobile y cloud, desde el diseño de interfaces y APIs hasta el despliegue y mantenimiento de aplicaciones en producción. Combino una formación en Ingeniería Eléctrica con una visión integral de producto, arquitectura e infraestructura para transformar necesidades de negocio en soluciones escalables.",
       bioDetails:
-        "Trabaja con React, Vue, React Native, Node.js y PHP/Laravel, con dominio de infraestructura AWS — EC2, ECS, Lambda, API Gateway y CloudWatch. Apasionada por la arquitectura de sistemas escalables, interfaces de alto rendimiento y buenas prácticas de ingeniería de software. Actualmente cursando posgrado en Ingeniería de Software.",
+        "Trabajo con React, TypeScript, Vue, React Native, Node.js y PHP/Laravel, además de infraestructura AWS — EC2, ECS, Lambda, API Gateway y CloudWatch. Enfoque en rendimiento, accesibilidad, componentes reutilizables y code review, trabajando con Scrum / Kanban y pruebas automatizadas con Vitest, Playwright y Cypress. Actualmente cursando posgrado en Ingeniería de Software.",
       location: "Brasil",
       currentStudy: "Posgrado en Ingeniería de Software",
       availabilityText: "Disponible",
@@ -575,7 +623,7 @@ export const translations = {
       langEsLevel: "Intermedio",
       frontend: "Frontend",
       frontendDesc:
-        "React, Vue, Next.js, Nuxt, TailwindCSS, Shadcn/UI, React Hook Form, Zustand, Zod, Framer Motion, TanStack Query",
+        "React, TypeScript, Vue, Next.js, Nuxt, TailwindCSS, Shadcn/UI, React Hook Form, Zustand, Zod, Framer Motion, TanStack Query",
       backend: "Backend",
       backendDesc:
         "Node.js • NestJS • Laravel • REST APIs • GraphQL • Authentication (JWT, cookies) • WebSockets • Payments (Stripe)",
@@ -621,7 +669,7 @@ export const translations = {
       jobs: [
         {
           company: "CopanestRIO",
-          role: "Software Developer",
+          role: "Software Engineer",
           period: "Actual",
           description: [
             "Desarrollo y mantenimiento de landing page y sistema de gestión de la cooperativa utilizando Vue, HTML, CSS y JavaScript.",

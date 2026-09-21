@@ -137,7 +137,7 @@ export const experiences: Experience[] = [
   {
     id: 1,
     company: "CopanestRIO",
-    role: "Software Developer",
+    role: "Software Engineer",
     period: "Atual",
     description: [
       "Desenvolvimento e manutenção de landing page e sistema de gestão da cooperativa utilizando Vue, HTML, CSS e JavaScript.",
@@ -312,11 +312,11 @@ export const projects: Project[] = [
 export const techStack: TechStack = {
   frontend: [
     { name: "React", color: "#61DAFB" },
+    { name: "TypeScript", color: "#3178C6" },
     { name: "Vue", color: "#4FC08D" },
     { name: "Next.js", color: "#ffffff" },
     { name: "Nuxt", color: "#00DC82" },
     { name: "TailwindCSS", color: "#06B6D4" },
-    { name: "TypeScript", color: "#3178C6" },
     { name: "Vite", color: "#646CFF" },
     { name: "Shadcn/UI", color: "#ffffff" },
   ],

@@ -13,7 +13,7 @@ html {
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+  background: #f4b544;
   opacity: 0.4;
 }
 
@@ -24,7 +24,7 @@ html {
 
 /* Focus visible for accessibility */
 *:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid #f4b544;
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -36,8 +36,8 @@ html {
   left: 16px;
   z-index: 100;
   padding: 8px 16px;
-  background: var(--accent);
-  color: var(--btn-text);
+  background: #f4b544;
+  color: #18140d;
   font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
   border-radius: 0 0 8px 8px;
@@ -55,4 +55,99 @@ html {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Spatial identity: the existing amber universe, with an angular BM monogram. */
+.App { --brand-gold: #fbbf24; }
+.App main > section { scroll-margin-top: 90px; }
+.brand-lockup { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; }
+.brand-mark { display: block; color: #fbbf24; flex: none; }
+.brand-lockup > .brand-mark { width: 55px; height: 34px; filter: drop-shadow(0 0 7px #f59e0b30); }
+.brand-wordmark { color: #d4d4d8; font: 13px 'JetBrains Mono', monospace; letter-spacing: -.4px; }
+.brand-dot { color: #fbbf24; }
+a:hover .brand-wordmark { color: #fbbf24; }
+.space-hero { min-height: 100svh; }
+.brand-intro { position: fixed; inset: 0; width: 100%; height: 100%; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 28px 36px; border: 0; overflow: hidden; background: #0a0a0a; color: #e4e4e7; }
+.brand-intro[open] { display: flex; flex-direction: column;  }
+.brand-intro::backdrop { background: transparent; }
+.brand-intro::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 48% 42%, #30221560, transparent 42%), radial-gradient(ellipse at 70% 65%, #15243b45, transparent 45%); }
+.intro-stars { position: absolute; inset: 0; pointer-events: none; }
+.intro-stars i { position: absolute; display: block; border-radius: 50%; background: #f8ecd4; opacity: .45; box-shadow: 0 0 7px #fbbf2440; animation: star-breathe 2s ease-in-out infinite alternate; }
+.intro-top, .intro-bottom { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 24px; font: 11px 'JetBrains Mono', monospace; letter-spacing: 1.3px; color: #a1a1aa; z-index: 2; }
+.intro-top button { padding: 12px 0 12px 16px; font-size: 13px; letter-spacing: 0; color: #d4d4d8; }
+.intro-top button:hover { color: #fbbf24; }
+.intro-center { position: relative; flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 0; }
+.orbital-stage { position: relative; width: min(80vw, 600px); aspect-ratio: 1.5; flex-shrink: 1; min-height: 0; }
+.orbital-halo { position: absolute; width: 48%; aspect-ratio: 1; left: 26%; top: 14%; border-radius: 50%; background: radial-gradient(circle, #f59e0b10, transparent 70%); box-shadow: 0 0 80px #f59e0b09; }
+.orbital-tracks { position: absolute; inset: 0; width: 100%; height: 100%; color: #f59e0b; opacity: .2; stroke-width: .65; animation: orbit-arrive 1.6s ease .3s both; }
+.orbital-tracks ellipse:nth-child(2) { opacity: .5; stroke-dasharray: 3 9; }
+.orbital-spark { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: #fbbf24; box-shadow: 0 0 10px #f59e0b; }
+.spark-one { left: 12%; top: 58%; opacity: .8; }.spark-two { right: 12%; top: 36%; opacity: .45; }
+.intro-caption { text-align: center; position: relative; margin-top: -18px; padding: 0 12px; animation: caption-arrive .5s ease .5s both; }
+.intro-caption h2 { font: 500 clamp(22px, 3vw, 30px) 'JetBrains Mono', monospace; letter-spacing: -.8px; }
+.intro-caption h2 span { color: #fbbf24; }
+.intro-caption p { margin-top: 14px; font-size: 14px; color: #a1a1aa; }
+@keyframes orbit-arrive { from { opacity: 0; transform: scale(.92) rotate(-8deg); } to { opacity: .2; transform: scale(1) rotate(0); } }
+@keyframes star-breathe { to { opacity: .9; } }
+@keyframes caption-arrive { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 640px) {
+  .brand-lockup { gap: 6px; }.brand-lockup > .brand-mark { width: 47px; }.brand-wordmark { font-size: 12px; }
+  .brand-intro { padding: 16px 24px 24px; }
+  .intro-top, .intro-bottom { font-size: 10px; letter-spacing: .6px; }
+  .intro-bottom > span:last-child { max-width: 140px; text-align: right; line-height: 1.7; }
+  .orbital-stage { width: 100vw; }
+  .intro-caption { margin-top: 0; }
+}
+@media (max-height: 480px) {
+  .orbital-stage { width: min(54vh, 340px); }
+  .intro-caption h2 { font-size: 20px; }.intro-caption p { margin-top: 5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .space-monogram, .constellation-nodes, .orbital-tracks, .intro-stars i { animation: none; }
+}
+
+.space-monogram { position: absolute; width: 64%; height: 60%; left: 18%; top: 20%; color: #fbbf24; filter: drop-shadow(0 0 7px #f59e0b40); animation: monogram-illuminate .7s ease 1.55s both; }
+.constellation-nodes { animation: constellation-light .5s ease 1.35s both; }
+@keyframes monogram-illuminate { 0%, 100% { filter: drop-shadow(0 0 7px #f59e0b40); } 50% { filter: drop-shadow(0 0 15px #fbbf2490); } }
+@keyframes constellation-light { from { opacity: 0; } to { opacity: .9; } }
+
+/* One timeline: the intro dissolves as the hero begins, without remounting its universe. */
+.App > header { transition: opacity 800ms ease, transform 800ms cubic-bezier(.22,1,.36,1), background-color 500ms; }
+.App[data-intro-phase="intro"] > header { opacity: 0; transform: translateY(-8px); }
+.App[data-intro-phase="reveal"] > header { transition-delay: 220ms; }
+.hero-universe { transform: scale(1); opacity: 1; transition: transform var(--intro-reveal-duration, 1100ms) cubic-bezier(.22,1,.36,1), opacity 900ms ease; }
+.App[data-intro-phase="intro"] .hero-universe { transform: scale(1.055); opacity: .35; }
+.brand-intro { opacity: 1; transition: opacity var(--intro-reveal-duration, 1100ms) cubic-bezier(.4,0,.2,1); }
+.brand-intro[data-phase="reveal"] { opacity: 0; }
+.brand-intro .orbital-stage { transition: transform var(--intro-reveal-duration, 1100ms) cubic-bezier(.22,1,.36,1), filter 900ms ease; }
+.brand-intro[data-phase="reveal"] .orbital-stage { transform: scale(1.14); filter: blur(4px); }
+.brand-intro .intro-caption, .brand-intro .intro-top, .brand-intro .intro-bottom { transition: opacity 450ms ease; }
+.brand-intro[data-phase="reveal"] .intro-caption, .brand-intro[data-phase="reveal"] .intro-top, .brand-intro[data-phase="reveal"] .intro-bottom { animation: none; opacity: 0; }
+.brand-intro .intro-stars { transition: transform var(--intro-reveal-duration, 1100ms) ease; }
+.brand-intro[data-phase="reveal"] .intro-stars { transform: scale(1.1); }
+.monogram-code-brackets { opacity: .45; }
+.code-constellation { position: absolute; inset: 0; pointer-events: none; color: #fbbf24; }
+.code-connections { width: 100%; height: 100%; position: absolute; inset: 0; stroke: currentColor; stroke-width: .6; opacity: .18; }
+.code-node { position: absolute; display: flex; flex-direction: column; gap: 5px; font: 12px 'JetBrains Mono', monospace; color: #cdb684; line-height: 1.5; }
+.code-node b { font-weight: 400; }.code-node small { font-size: 9px; letter-spacing: .5px; color: #8a8a94; }
+.node-ui { left: 8%; top: 17%; }.node-api { right: 7%; top: 19%; }
+.node-logic { left: 5%; bottom: 17%; }.node-cloud { right: 1%; bottom: 17%; }
+.brand-intro .code-node { animation: code-node-enter .6s ease both; }
+.brand-intro .node-ui { animation-delay: .3s; }.brand-intro .node-api { animation-delay: .5s; }
+.brand-intro .node-logic { animation-delay: .7s; }.brand-intro .node-cloud { animation-delay: .9s; }
+.hero-code-system { position: absolute; inset: 8% 5%; opacity: .45; }
+.hero-code-system .code-connections { opacity: .07; }
+.hero-code-system .node-ui { left: 1%; top: 27%; }.hero-code-system .node-api { right: 2%; top: 22%; }
+.hero-code-system .node-logic { left: 6%; bottom: 14%; }.hero-code-system .node-cloud { right: 0; bottom: 20%; }
+@keyframes code-node-enter { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 640px) {
+  .brand-intro .code-node { font-size: 10px; }.brand-intro .code-node small { display: none; }
+  .hero-code-system { inset: 6% 5%; opacity: .3; }
+  .hero-code-system .node-ui { top: 8%; }.hero-code-system .node-api { top: 9%; }
+  .hero-code-system .node-logic { bottom: 4%; }.hero-code-system .node-cloud { bottom: 4%; }
+  .hero-code-system .code-node small, .hero-code-system .code-connections { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .App > header, .hero-universe, .brand-intro, .brand-intro .orbital-stage { transition: none; transform: none; }
+  .brand-intro .code-node { animation: none; }
 }

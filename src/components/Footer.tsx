@@ -1,7 +1,8 @@
 import React from "react";
 import { personalInfo } from "../data/mock";
 import { useLanguage } from "../i18n/LanguageContext";
-import { Github, Linkedin, Mail, Heart, Terminal, ArrowUp } from "lucide-react";
+import { Github, Linkedin, Mail, Heart, ArrowUp } from "lucide-react";
+import Brand from "./Brand";
 import { trackEvent } from "../lib/analytics";
 
 const Footer = () => {
@@ -26,14 +27,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
-                <Terminal className="w-4 h-4 text-amber-400" />
-              </div>
-              <span className="font-mono text-sm text-zinc-300">
-                {personalInfo.name.split(" ")[0].toLowerCase()}.dev
-              </span>
-            </div>
+            <div className="mb-5"><Brand /></div>
             <p className="text-xs text-zinc-600 leading-relaxed max-w-xs">
               {t("hero.tagline")}
             </p>
@@ -113,6 +107,7 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} {t("footer.rights")}
           </p>
           <button
+            aria-label={t("identity.backTop")}
             onClick={scrollToTop}
             className="p-2 rounded-lg border border-zinc-800 text-zinc-600 hover:text-amber-400 hover:border-amber-500/30 transition-all duration-300"
           >

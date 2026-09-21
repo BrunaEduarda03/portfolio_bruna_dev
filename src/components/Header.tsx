@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { personalInfo } from "../data/mock";
+import Brand from "./Brand";
 import { useLanguage, LANGUAGES } from "../i18n/LanguageContext";
-import { Menu, X, Terminal, Globe } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { trackEvent } from "../lib/analytics";
 
@@ -65,6 +65,7 @@ const Header = () => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         <motion.a
           href="#"
+          aria-label="Bruna Maciel"
           className="flex items-center gap-2 group"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -74,17 +75,12 @@ const Header = () => {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
-            <Terminal className="w-4 h-4 text-amber-400" />
-          </div>
-          <span className="font-mono text-sm text-zinc-300 group-hover:text-amber-400 transition-colors duration-300">
-            {personalInfo.name.split(" ")[0].toLowerCase()}.dev
-          </span>
+          <Brand />
         </motion.a>
 
         {/* Desktop Nav */}
         <motion.ul
-          className="hidden md:flex items-center gap-1"
+          className="hidden xl:flex items-center gap-1"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -93,7 +89,7 @@ const Header = () => {
             <li key={link.href}>
               <button
                 onClick={() => scrollToSection(link.href)}
-                className="relative px-4 py-2 text-sm font-mono text-zinc-400 hover:text-amber-400 transition-colors duration-300 group"
+                className="relative px-2 py-2 text-sm font-mono text-zinc-400 hover:text-amber-400 transition-colors duration-300 group"
               >
                 <span className="text-amber-500/60 text-xs mr-1">
                   0{index + 1}.
@@ -107,7 +103,7 @@ const Header = () => {
 
         {/* Right side: Language switcher + CTA */}
         <motion.div
-          className="hidden md:flex items-center gap-3"
+          className="hidden xl:flex items-center gap-3"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
@@ -115,6 +111,8 @@ const Header = () => {
           {/* Language Switcher */}
           <div className="relative lang-switcher">
             <button
+              aria-label={t("identity.language")}
+              aria-expanded={langMenuOpen}
               onClick={() => setLangMenuOpen(!langMenuOpen)}
               className="flex items-center gap-1.5 px-3 py-2 text-xs font-mono border border-zinc-800 text-zinc-400 rounded-lg hover:border-amber-500/30 hover:text-amber-400 transition-all duration-300"
             >
@@ -167,9 +165,11 @@ const Header = () => {
         </motion.div>
 
         {/* Mobile: Language + Menu */}
-        <div className="md:hidden flex items-center gap-2">
+        <div className="xl:hidden flex items-center gap-2">
           <div className="relative lang-switcher">
             <button
+              aria-label={t("identity.language")}
+              aria-expanded={langMenuOpen}
               onClick={() => setLangMenuOpen(!langMenuOpen)}
               className="flex items-center gap-1 px-2 py-1.5 text-xs font-mono border border-zinc-800 text-zinc-400 rounded-lg"
             >
@@ -206,6 +206,8 @@ const Header = () => {
             </AnimatePresence>
           </div>
           <button
+            aria-label={mobileMenuOpen ? t("identity.closeMenu") : t("identity.openMenu")}
+            aria-expanded={mobileMenuOpen}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 text-zinc-400 hover:text-amber-400 transition-colors"
           >
@@ -225,7 +227,7 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-amber-500/10 overflow-hidden"
+            className="xl:hidden bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-amber-500/10 overflow-hidden"
           >
             <ul className="px-4 py-4 space-y-1">
               {navLinks.map((link, index) => (

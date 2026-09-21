@@ -3,6 +3,7 @@ import { personalInfo } from "../data/mock";
 import { useLanguage } from "../i18n/LanguageContext";
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
+import CodeConstellation from "./CodeConstellation";
 import { HeroScene } from "./Scene3D";
 import { trackEvent } from "../lib/analytics";
 
@@ -12,26 +13,27 @@ const CV_FILES: Record<string, string> = {
 };
 const CV_DEFAULT = "Bruna-Maciel-CV.pdf";
 
-const Hero = () => {
+const Hero = ({ introReady = true }: { introReady?: boolean }) => {
   const { t, language } = useLanguage();
   const cvFile = CV_FILES[language] ?? CV_DEFAULT;
   const cvHref = `${process.env.PUBLIC_URL}/cv/${cvFile}`;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
+    <section className="space-hero relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
       {/* 3D Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="hero-universe absolute inset-0 z-0">
         <HeroScene />
+        <div className="hero-code-system"><CodeConstellation /></div>
       </div>
 
       <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#0a0a0a] opacity-60" />
       <div className="absolute bottom-0 left-0 right-0 z-[1] h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      <div className="hero-content relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-28 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          animate={introReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+          transition={{ duration: 0.8, delay: 0.08 }}
           className="mb-6"
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-400 text-xs font-mono tracking-wider">
@@ -42,8 +44,8 @@ const Hero = () => {
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          animate={introReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+          transition={{ duration: 0.8, delay: 0.18 }}
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
         >
           <span className="text-zinc-100">Bruna </span>
@@ -55,8 +57,8 @@ const Hero = () => {
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
+          animate={introReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+          transition={{ duration: 0.8, delay: 0.28 }}
           className="text-base md:text-xl text-zinc-400 max-w-2xl mx-auto mb-4 font-mono"
         >
           {t("hero.role")}
@@ -64,8 +66,8 @@ const Hero = () => {
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
+          animate={introReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+          transition={{ duration: 0.8, delay: 0.38 }}
           className="text-sm md:text-base text-zinc-500 max-w-xl mx-auto mb-10 leading-relaxed"
         >
           {t("hero.tagline")}
@@ -74,11 +76,12 @@ const Hero = () => {
         {/* Social Links */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.1 }}
+          animate={introReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+          transition={{ duration: 0.8, delay: 0.48 }}
           className="flex items-center justify-center gap-4 mb-12"
         >
           <a
+            aria-label="GitHub"
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
@@ -88,6 +91,7 @@ const Hero = () => {
             <Github className="w-5 h-5" />
           </a>
           <a
+            aria-label="LinkedIn"
             href={personalInfo.linkedin}
             target="_blank"
             rel="noopener noreferrer"
@@ -97,6 +101,7 @@ const Hero = () => {
             <Linkedin className="w-5 h-5" />
           </a>
           <a
+            aria-label="Email"
             href={`mailto:${personalInfo.email}`}
             onClick={() => trackEvent("social_click", { network: "email", location: "hero" })}
             className="p-3 rounded-xl border border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:text-amber-400 hover:border-amber-500/30 hover:bg-amber-500/5 transition-all duration-300"
@@ -107,8 +112,8 @@ const Hero = () => {
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.25 }}
+          animate={introReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+          transition={{ duration: 0.8, delay: 0.58 }}
           className="mb-12 -mt-8"
         >
           <a
@@ -129,8 +134,8 @@ const Hero = () => {
             document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
           }}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
+          animate={{ opacity: introReady ? 1 : 0 }}
+          transition={{ duration: 1, delay: 0.68 }}
           whileHover={{ scale: 1.1 }}
           className="inline-flex flex-col items-center gap-2 cursor-pointer group mx-auto"
           aria-label={t("hero.scroll")}

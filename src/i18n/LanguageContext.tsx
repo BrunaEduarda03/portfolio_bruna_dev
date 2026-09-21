@@ -3,6 +3,7 @@ import React, {
   useContext,
   useState,
   useCallback,
+  useEffect,
   ReactNode,
 } from "react";
 import { translations } from "./translations";
@@ -39,6 +40,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       ? (saved as LanguageCode)
       : "en";
   });
+
+  useEffect(() => {
+    document.documentElement.lang = language === "pt" ? "pt-BR" : language;
+  }, [language]);
 
   const changeLanguage = useCallback((lang: LanguageCode) => {
     setLanguage(lang);

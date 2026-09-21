@@ -6,6 +6,13 @@ import React, {
   ReactNode,
 } from "react";
 
+import { useReducedMotion } from "framer-motion";
+
+const HERO_PARTICLES = Array.from({ length: 32 }, (_, i) => ({
+  top: 10 + ((i * 37 + 17) % 80), left: 5 + ((i * 53 + 7) % 90),
+  delay: (i % 10) / 2, duration: 2 + (i % 5), depth: 5 + (i % 11),
+}));
+
 interface GeometricShapeProps {
   className?: string;
   style?: CSSProperties;
@@ -25,6 +32,7 @@ const GeometricShape: React.FC<GeometricShapeProps> = ({
 };
 
 export function HeroScene() {
+  const reduceMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState<{ x: number; y: number }>({
     x: 0,
@@ -32,6 +40,10 @@ export function HeroScene() {
   });
 
   useEffect(() => {
+    if (reduceMotion) {
+      setMousePos({ x: 0, y: 0 });
+      return;
+    }
     const handleMouseMove = (e: MouseEvent) => {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
@@ -42,7 +54,7 @@ export function HeroScene() {
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [reduceMotion]);
 
   return (
     <div
@@ -173,16 +185,16 @@ export function HeroScene() {
       </GeometricShape>
 
       {/* Dots/particles */}
-      {Array.from({ length: 20 }).map((_, i) => (
+      {HERO_PARTICLES.map((particle, i) => (
         <div
           key={i}
           className="absolute w-1 h-1 rounded-full bg-amber-500/20 animate-twinkle"
           style={{
-            top: `${10 + Math.random() * 80}%`,
-            left: `${5 + Math.random() * 90}%`,
-            animationDelay: `${Math.random() * 5}s`,
-            animationDuration: `${2 + Math.random() * 4}s`,
-            transform: `translate3d(${mousePos.x * (5 + Math.random() * 10)}px, ${mousePos.y * (5 + Math.random() * 10)}px, 0)`,
+            top: `${particle.top}%`,
+            left: `${particle.left}%`,
+            animationDelay: `${particle.delay}s`,
+            animationDuration: `${particle.duration}s`,
+            transform: `translate3d(${mousePos.x * particle.depth}px, ${mousePos.y * particle.depth}px, 0)`,
             transition: "transform 0.5s ease-out",
           }}
         />
