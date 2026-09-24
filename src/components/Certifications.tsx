@@ -7,8 +7,6 @@ import {
   BookOpen,
   Calendar,
   CheckCheck,
-  ChevronLeft,
-  ChevronRight,
   Clock,
   Copy,
   Download,
@@ -16,11 +14,12 @@ import {
   GraduationCap,
   X,
 } from "lucide-react";
+import SectionPagination, { SECTION_PAGE_SIZE } from "./SectionPagination";
 import { trackEvent } from "../lib/analytics";
 
 // ─── constants ───────────────────────────────────────────────────────────────
 
-const PAGE_SIZE = 6;
+const PAGE_SIZE = SECTION_PAGE_SIZE;
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 
@@ -83,56 +82,6 @@ const CertFilter: React.FC<CertFilterProps> = ({
           </button>
         );
       })}
-    </div>
-  );
-};
-
-// ─── CertPagination ──────────────────────────────────────────────────────────
-
-interface CertPaginationProps {
-  page: number;
-  totalPages: number;
-  onChange: (p: number) => void;
-}
-
-const CertPagination: React.FC<CertPaginationProps> = ({
-  page,
-  totalPages,
-  onChange,
-}) => {
-  if (totalPages <= 1) return null;
-
-  return (
-    <div className="flex items-center justify-center gap-3 mt-10">
-      <button
-        onClick={() => onChange(page - 1)}
-        disabled={page === 1}
-        className="w-9 h-9 rounded-lg border border-zinc-800 flex items-center justify-center text-zinc-500 hover:text-amber-400 hover:border-amber-500/30 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
-      >
-        <ChevronLeft className="w-4 h-4" />
-      </button>
-
-      {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
-        <button
-          key={n}
-          onClick={() => onChange(n)}
-          className={`w-9 h-9 rounded-lg border text-xs font-mono transition-all duration-200 ${
-            n === page
-              ? "border-amber-500/40 bg-amber-500/10 text-amber-400"
-              : "border-zinc-800 text-zinc-500 hover:text-zinc-300 hover:border-zinc-700"
-          }`}
-        >
-          {n}
-        </button>
-      ))}
-
-      <button
-        onClick={() => onChange(page + 1)}
-        disabled={page === totalPages}
-        className="w-9 h-9 rounded-lg border border-zinc-800 flex items-center justify-center text-zinc-500 hover:text-amber-400 hover:border-amber-500/30 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
-      >
-        <ChevronRight className="w-4 h-4" />
-      </button>
     </div>
   );
 };
@@ -485,7 +434,7 @@ const Certifications: React.FC = () => {
         />
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div id="certifications-grid" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 scroll-mt-28">
           <AnimatePresence mode="wait">
             {paginated.map((cert, i) => (
               <CertCard
@@ -502,7 +451,9 @@ const Certifications: React.FC = () => {
         </div>
 
         {/* Pagination */}
-        <CertPagination
+        <SectionPagination
+          controlsId="certifications-grid"
+          label={t("certifications.title")}
           page={page}
           totalPages={totalPages}
           onChange={setPage}

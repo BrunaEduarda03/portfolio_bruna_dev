@@ -253,7 +253,7 @@ export const projects: Project[] = [
     subtitle: "Medical Billing Platform",
     description:
       "Landing Page e Sistema de Faturamento Médico. Interface moderna para gestão de faturamento hospitalar.",
-    technologies: ["React", "TailwindCSS", "Node.js", "PostgreSQL"],
+    technologies: ["React", "Vue", "TypeScript", "Laravel", "MySQL", "AWS"],
     image: null,
     link: "https://horusfat.com/",
   },
@@ -263,7 +263,7 @@ export const projects: Project[] = [
     subtitle: "Cooperative Management System",
     description:
       "Desenvolvimento da landing page e do sistema para a cooperativa de anestesiologistas.",
-    technologies: ["Vue", "Nuxt", "Laravel", "PostgreSQL", "Docker"],
+    technologies: ["Nuxt 4", "Vue 3", "TypeScript", "PHP", "Tailwind CSS", "Pinia"],
     image: null,
     link: "https://www.coopanestrio.org.br/",
   },

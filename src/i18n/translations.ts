@@ -1,5 +1,12 @@
 export const translations = {
   pt: {
+    pagination: {
+      navigation: "Paginação",
+      previous: "Página anterior",
+      next: "Próxima página",
+      page: "Página",
+      of: "de",
+    },
     identity: {
       skip: "Pular abertura",
       skipContent: "Ir para o conteúdo",
@@ -177,9 +184,9 @@ export const translations = {
         },
         {
           title: "CoopanestRIO",
-          subtitle: "Sistema de Gestão Cooperativa",
+          subtitle: "Landing page + Portal do Cooperado",
           description:
-            "Desenvolvimento e manutenção do sistema para a cooperativa de anestesiologistas.",
+            "Dois subprojetos: site institucional e portal com guias, indicadores e consultas financeiras.",
         },
         {
           title: "EVOLUIR",
@@ -282,6 +289,13 @@ export const translations = {
   },
 
   en: {
+    pagination: {
+      navigation: "Pagination",
+      previous: "Previous page",
+      next: "Next page",
+      page: "Page",
+      of: "of",
+    },
     identity: {
       skip: "Skip intro",
       skipContent: "Skip to content",
@@ -459,9 +473,9 @@ export const translations = {
         },
         {
           title: "CoopanestRIO",
-          subtitle: "Cooperative Management System",
+          subtitle: "Website + Member Portal",
           description:
-            "Development and maintenance of the system for the anesthesiologists cooperative.",
+            "Two subprojects: an institutional website and a member portal with claims, indicators and financial queries.",
         },
         {
           title: "EVOLUIR",
@@ -565,6 +579,13 @@ export const translations = {
   },
 
   es: {
+    pagination: {
+      navigation: "Paginación",
+      previous: "Página anterior",
+      next: "Página siguiente",
+      page: "Página",
+      of: "de",
+    },
     identity: {
       skip: "Saltar introducción",
       skipContent: "Ir al contenido",
@@ -742,9 +763,9 @@ export const translations = {
         },
         {
           title: "CoopanestRIO",
-          subtitle: "Sistema de Gestión Cooperativa",
+          subtitle: "Sitio + Portal del Cooperado",
           description:
-            "Desarrollo y mantenimiento del sistema para la cooperativa de anestesiólogos.",
+            "Dos subproyectos: sitio institucional y portal con guías, indicadores y consultas financieras.",
         },
         {
           title: "EVOLUIR",

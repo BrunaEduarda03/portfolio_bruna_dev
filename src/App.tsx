@@ -1,12 +1,15 @@
 import React, { useEffect } from "react";
 // @ts-ignore
 import "./App.css";
+import "./cases.css";
 import { LanguageProvider, useLanguage } from "./i18n/LanguageContext";
 import { ThemeProvider } from "./i18n/ThemeContext";
 import { initAnalytics } from "./lib/analytics";
 import { MotionConfig } from "framer-motion";
 import { useIntroSequence, INTRO_REVEAL } from "./hooks/use-intro-sequence";
 import SplashScreen from "./components/SplashScreen";
+import CaseStudyPage from "./components/CaseStudyPage";
+import { usePortfolioRoute } from "./hooks/use-portfolio-route";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -22,11 +25,9 @@ function SkipLink() {
   return <a className="skip-link" href="#main-content">{t("identity.skipContent")}</a>;
 }
 
-function App() {
+function HomePortfolio() {
   const { phase, reveal } = useIntroSequence();
   useEffect(() => {
-    initAnalytics();
-
     if (window.location.hash) {
       const id = window.location.hash.slice(1);
       const timer = setTimeout(() => {
@@ -37,28 +38,32 @@ function App() {
   }, []);
 
   return (
-    <MotionConfig reducedMotion="user">
-      <ThemeProvider>
-        <LanguageProvider>
-          <div data-intro-phase={phase} style={{ "--intro-reveal-duration": `${INTRO_REVEAL}ms` } as React.CSSProperties} className="App bg-[var(--page-bg)] min-h-screen transition-colors duration-300">
-            <SkipLink />
-            <Header />
-            <main id="main-content" tabIndex={-1}>
-              <Hero introReady={phase !== "intro"} />
-              <About />
-              <Experience />
-              <Projects />
-              <Certifications />
-              <TechStack />
-              <Contact />
-            </main>
-            <Footer />
-            <SplashScreen phase={phase} onSkip={reveal} />
-          </div>
-        </LanguageProvider>
-      </ThemeProvider>
-    </MotionConfig>
+    <div data-intro-phase={phase} style={{ "--intro-reveal-duration": `${INTRO_REVEAL}ms` } as React.CSSProperties} className="App bg-[var(--page-bg)] min-h-screen transition-colors duration-300">
+      <SkipLink />
+      <Header />
+      <main id="main-content" tabIndex={-1}>
+        <Hero introReady={phase !== "intro"} />
+        <About />
+        <Experience />
+        <Projects />
+        <Certifications />
+        <TechStack />
+        <Contact />
+      </main>
+      <Footer />
+      <SplashScreen phase={phase} onSkip={reveal} />
+    </div>
   );
+}
+
+function PortfolioRouter() {
+  const route = usePortfolioRoute();
+  return route.page === "case" ? <CaseStudyPage key={route.slug} slug={route.slug} /> : <HomePortfolio />;
+}
+
+function App() {
+  useEffect(() => { initAnalytics(); }, []);
+  return <MotionConfig reducedMotion="user"><ThemeProvider><LanguageProvider><PortfolioRouter /></LanguageProvider></ThemeProvider></MotionConfig>;
 }
 
 export default App;

@@ -1,14 +1,23 @@
 import React, { useState } from "react";
+import SectionPagination, { SECTION_PAGE_SIZE } from "./SectionPagination";
+import CasePreview from "./CasePreview";
+import { findCaseByProject, localize } from "../data/caseStudies";
+import { caseStudyCopy } from "../data/caseStudyCopy";
 import { projects } from "../data/mock";
 import { useLanguage } from "../i18n/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, Code2 } from "lucide-react";
+import { ExternalLink, Github, Code2, ArrowUpRight } from "lucide-react";
 import { trackEvent } from "../lib/analytics";
 
 const Projects: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [page, setPage] = useState(1);
   const projectItems = t("projects.items");
+  const items: { title: string; subtitle: string; description: string }[] = Array.isArray(projectItems) ? projectItems : [];
+  const totalPages = Math.ceil(items.length / SECTION_PAGE_SIZE);
+  const pageStart = (page - 1) * SECTION_PAGE_SIZE;
+  const visibleItems = items.slice(pageStart, pageStart + SECTION_PAGE_SIZE);
 
   return (
     <section id="projects" className="relative py-24 md:py-32 bg-[#0a0a0a]">
@@ -38,21 +47,26 @@ const Projects: React.FC = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {Array.isArray(projectItems) &&
-            projectItems.map((item, index) => {
+        <div id="projects-grid" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 scroll-mt-28">
+          {visibleItems.map((item, localIndex) => {
+              const index = pageStart + localIndex;
               const project = projects[index];
+              const study = project ? findCaseByProject(project.id) : undefined;
               return (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.5, delay: localIndex * 0.1 }}
                   onMouseEnter={() => setHoveredId(index)}
                   onMouseLeave={() => setHoveredId(null)}
                   className="group relative p-6 rounded-2xl border border-zinc-800/80 bg-zinc-900/20 backdrop-blur-sm hover:border-amber-500/20 hover:bg-amber-500/[0.02] transition-all duration-500 flex flex-col"
                 >
+                  {study && <a href={`#/cases/${study.slug}`} className="project-case-preview" aria-label={`${localize(caseStudyCopy.open, language)}: ${study.title}`} style={{ "--case-accent": study.accent } as React.CSSProperties}>
+                    <CasePreview study={study} compact />
+                    <span className="project-mock-tag">{localize(caseStudyCopy[study.subprojects ? "subprojects" : "mock"], language)}</span>
+                  </a>}
                   {/* Project icon area */}
                   <div className="flex items-center justify-between mb-5">
                     <div className="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/15 transition-colors duration-300">
@@ -70,6 +84,7 @@ const Projects: React.FC = () => {
                           {project.github && (
                             <a
                               href={project.github}
+                              aria-label={`${item.title} — GitHub`}
                               className="p-2 rounded-lg text-zinc-600 hover:text-amber-400 hover:bg-amber-500/10 transition-all duration-300"
                               onClick={(e) => {
                                 e.stopPropagation();
@@ -82,6 +97,7 @@ const Projects: React.FC = () => {
                           {project.link && (
                             <a
                               href={project.link}
+                              aria-label={`${item.title} — website`}
                               target="_blank"
                               rel="noreferrer"
                               className="p-2 rounded-lg text-zinc-600 hover:text-amber-400 hover:bg-amber-500/10 transition-all duration-300"
@@ -99,7 +115,7 @@ const Projects: React.FC = () => {
                   </div>
 
                   <h3 className="text-lg font-semibold text-zinc-100 group-hover:text-amber-300 transition-colors duration-300 mb-1 font-mono">
-                    {item.title}
+                    {study ? <a href={`#/cases/${study.slug}`}>{item.title}</a> : item.title}
                   </h3>
                   <p className={`text-xs font-mono text-amber-500/60 ${project?.wip ? "mb-1" : "mb-3"}`}>
                     {item.subtitle}
@@ -126,6 +142,7 @@ const Projects: React.FC = () => {
                     </div>
                   )}
 
+                  {study && <a className="project-case-link" href={`#/cases/${study.slug}`} onClick={() => trackEvent("case_open", { project: study.title })}>{localize(caseStudyCopy.open, language)}<ArrowUpRight size={18} /></a>}
                   {/* Hover glow effect */}
                   <AnimatePresence>
                     {hoveredId === index && (
@@ -141,6 +158,7 @@ const Projects: React.FC = () => {
               );
             })}
         </div>
+        <SectionPagination page={page} totalPages={totalPages} controlsId="projects-grid" label={t("projects.title")} onChange={next => { setPage(next); setHoveredId(null); }} />
       </div>
     </section>
   );
