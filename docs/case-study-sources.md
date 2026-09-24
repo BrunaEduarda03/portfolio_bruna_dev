@@ -98,6 +98,20 @@ PHP incluído no resumo do case, card e stack/responsabilidades do portal por co
 - Capturas originais fornecidas na conversa: `welcome.png`, `home.png`, `portals.png`. Home recebe desfoque visual leve; arquivos originais não foram anonimizados.
 - IDUCS removido da listagem, do case e das menções na experiência, conforme solicitação.
 
+## EconoWise / SmartAir — 24/09/2026
+- Case reestruturado em `src/data/econowiseCase.ts`, com galeria de imagens no mesmo modelo do Dental Uni.
+- Fonte pública consultada somente leitura: https://github.com/BrunaEduarda03/SmartAir (README.md, platformio.ini, src/main.cpp), em 24/09/2026.
+- Firmware real: ESP32 com framework Arduino via PlatformIO; sensor DHT11, display OLED SSD1306, par de sensores TCRT5000 para contagem de pessoas, e IRremoteESP8266/IRsend enviando códigos RAW capturados para um ar-condicionado específico (liga/desliga e cada temperatura de 16°C a 32°C).
+- Conectividade real é a plataforma Blynk (pinos virtuais e BlynkTimer a cada 1s), não um servidor HTTP/WebSocket próprio nem MQTT — corrige a suposição anterior do case (que deixava o protocolo como "a confirmar").
+- O aplicativo mobile (React Native CLI, TypeScript, React Navigation, Axios, Context API/AsyncStorage) é descrito apenas no README; o código-fonte do app não está neste repositório, que contém só o firmware. Mantido como evidência "public", não "repository".
+- Nove imagens publicadas pela autora no README foram baixadas sem edição para `public/cases/econowise/`: `splash.png`, `onboarding.png`, `auth.png`, `home.png`, `device.png`, `network.png`, `menu.png` (telas do app) e `schematic.png`/`circuit.jpg` (diagrama e montagem do circuito). As telas mostram a marca "ECONOWISE", confirmando o nome usado no portfólio.
+- Credenciais de exemplo (Wi-Fi e token do Blynk) hardcoded no firmware público não foram reproduzidas neste case.
+- Pendências documentadas no case (não implementadas nem confirmadas): testes automatizados (Jest/testes de unidade), validação com outros modelos de ar-condicionado, confirmação do código-fonte do app e medições reais de consumo de energia.
+
+## Evoluir e Dental Uni — links institucionais, 24/09/2026
+- Evoluir: adicionada a fonte "Grupo Neiva · MVC Editora" (`https://mvceditora.com.br/`) em `src/data/evoluirCase.ts`, e o resumo do subprojeto "Sistema Evoluir" passou a citar explicitamente que a plataforma é do Grupo Neiva. O link foi indicado pela autora; não foi verificado se o domínio pertence formalmente ao Grupo Neiva ou à MVC Editora enquanto empresas distintas.
+- Dental Uni: adicionada a fonte "Auclan Design" (`https://auclandesign.com/`) em `src/data/dentalUniCase.ts`. O papel da Auclan Design já constava no `role` e na `category` do case; a fonte só torna o link clicável na seção de referências.
+
 ## Horus — atualização 24/09/2026
 - Case reestruturado em `src/data/horusCase.ts`, no mesmo modelo de subprojetos usado por CoopanestRIO e Evoluir. O bloco antigo em `caseStudies.ts` e o componente `HorusReferences` (mock de login e imagem institucional) foram removidos, junto das classes CSS `.horus-references`/`.horus-login-mock`, que ficaram sem uso.
 - Capturas reais fornecidas pela autora substituem a reconstrução visual: `public/cases/horus/landing.png` (site público) e `public/cases/horus/login.png` (tela real de login de app.horusfat.com). Nenhuma autenticação foi realizada; login foi escolhido como capa do card, no mesmo tratamento dado ao CoopanestRIO.

@@ -77,6 +77,15 @@ test("Dental Uni presents the new app, pending backend and publication, and a so
   expect(container.querySelector('.feature-image-softened img').getAttribute('src')).toContain('/dental-uni/home.png');
   expect(container.querySelector('.case-metrics')).toBeNull();
 });
+test("EconoWise shows the SmartAir repository stack and real app/circuit screenshots", () => {
+  act(() => root.render(<CaseStudyPage slug="econowise" />));
+  expect(container.querySelector('a[href="https://github.com/BrunaEduarda03/SmartAir"]')).not.toBeNull();
+  expect(container.textContent).toContain("Blynk");
+  expect(container.textContent).not.toContain("MOCK DE INTERFACE");
+  expect(container.querySelector('.feature-image-link img').getAttribute('src')).toContain('splash.png');
+  act(() => container.querySelectorAll('.feature-thumbnails button')[5].click());
+  expect(container.querySelector('.feature-image-link img').getAttribute('src')).toContain('schematic.png');
+});
 test("Evoluir groups PNLD with website and system without Coopanest-specific labels", () => {
   act(() => root.render(<CaseStudyPage slug="evoluir" />));
   expect(container.querySelectorAll('.case-subproject')).toHaveLength(3);

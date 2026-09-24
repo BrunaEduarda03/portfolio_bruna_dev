@@ -1,6 +1,7 @@
 import { evoluirCase } from "./evoluirCase";
 import { dentalUniCase } from "./dentalUniCase";
 import { horusCase } from "./horusCase";
+import { econowiseCase } from "./econowiseCase";
 import { coopanestProjects } from "./coopanestProjects";
 export type CaseCopy = [pt: string, en: string, es: string];
 export const localize = (value: CaseCopy, language: string) => value[language === "pt" ? 0 : language === "es" ? 2 : 1];
@@ -227,21 +228,7 @@ export const caseStudies: CaseStudy[] = [
   subprojects: coopanestProjects
 },
   evoluirCase,
-  {
-    slug: "econowise", projectId: 4, title: "ECONOWISE", kind: "iot", accent: "#96dfb4",
-    category: ["Automação · Mobile + IoT", "Automation · Mobile + IoT", "Automatización · Mobile + IoT"],
-    summary: ["Aplicação de TCC para controle e automação de ar-condicionado, integrando React Native e ESP32.", "A capstone application for air-conditioning control and automation, integrating React Native and ESP32.", "Aplicación de fin de grado para controlar aire acondicionado, integrando React Native y ESP32."],
-    role: "Software Developer · UFCG / TCC",
-    challenge: ["Conectar uma interface mobile a dispositivos físicos para controle de climatização.", "Connect a mobile interface to physical devices for climate control.", "Conectar una interfaz móvil a dispositivos físicos para controlar la climatización."],
-    contributions: [["Aplicação mobile em React Native integrada a um microcontrolador ESP32.", "A React Native mobile application integrated with an ESP32 microcontroller.", "Aplicación React Native integrada con un microcontrolador ESP32."], ["Projeto de integração entre software e hardware para automação.", "Software/hardware integration for automation.", "Integración software/hardware para automatización."]],
-    layers: [
-      { name: "Mobile", tech: "React Native", detail: ["Interface de controle.", "Control interface.", "Interfaz de control."], evidence: "portfolio" },
-      { name: "Device", tech: "ESP32", detail: ["Microcontrolador citado no CV.", "Microcontroller documented in the CV.", "Microcontrolador documentado en el CV."], evidence: "portfolio" },
-      { name: "Backend / Data", tech: "Node.js · MongoDB", detail: ["Stack do card atual; confirmar participação no fluxo final.", "Stack from the current project card; confirm its role in the final flow.", "Stack de la tarjeta actual; confirmar su rol en el flujo final."], evidence: "portfolio" },
-    ],
-    decisions: [{ title: ["Comunicação com o dispositivo", "Device communication", "Comunicación con el dispositivo"], detail: ["Protocolo, confirmação de comandos e comportamento offline ainda precisam ser documentados; não assumimos MQTT ou WebSockets.", "Protocol, command acknowledgement and offline behavior still need documentation; MQTT or WebSockets are not assumed.", "Protocolo, confirmación de comandos y modo offline por documentar; no se asume MQTT ni WebSockets."], evidence: "mock" }],
-    pending: [["Confirmar protocolo, esquema elétrico, backend e mecanismos de falha segura.", "Confirm protocol, wiring, backend and fail-safe behavior.", "Confirmar protocolo, esquema eléctrico, backend y manejo seguro de fallos."], ["Inserir demonstração real e medições de consumo, se disponíveis.", "Add a real demo and energy measurements, if available.", "Añadir una demo real y mediciones de consumo, si existen."]], sources: [],
-  },
+  econowiseCase,
 
 ];
 

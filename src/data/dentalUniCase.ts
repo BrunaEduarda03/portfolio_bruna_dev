@@ -155,7 +155,9 @@ export const dentalUniCase: CaseStudy = {
       "Publicación de la nueva versión; la app existente ya está en producción."
     ]
   ],
-  "sources": [],
+  "sources": [
+    { "label": "Auclan Design", "url": "https://auclandesign.com/" }
+  ],
   "gallery": {
     "id": "dental-uni",
     "title": [

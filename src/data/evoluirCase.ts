@@ -123,6 +123,10 @@ export const evoluirCase: CaseStudy = {
     {
       "label": "MVC · PNLD",
       "url": "https://mvcpnld.com.br/"
+    },
+    {
+      "label": "Grupo Neiva · MVC Editora",
+      "url": "https://mvceditora.com.br/"
     }
   ],
   "subprojects": [
@@ -242,9 +246,9 @@ export const evoluirCase: CaseStudy = {
       ],
       "url": "https://app.plataformaevoluir.com.br/",
       "summary": [
-        "Plataforma educacional com interfaces em Vue 2 e Vue 3 e backend em PHP/Laravel.",
-        "Education platform with Vue 2 and Vue 3 interfaces and a PHP/Laravel backend.",
-        "Plataforma educativa con interfaces Vue 2 y Vue 3 y backend PHP/Laravel."
+        "Plataforma educacional do Grupo Neiva, com interfaces em Vue 2 e Vue 3 e backend em PHP/Laravel.",
+        "Education platform owned by Grupo Neiva, with Vue 2 and Vue 3 interfaces and a PHP/Laravel backend.",
+        "Plataforma educativa del Grupo Neiva, con interfaces Vue 2 y Vue 3 y backend PHP/Laravel."
       ],
       "challenge": [
         "Evoluir interfaces e integrações de uma plataforma educacional já existente, atendendo diferentes perfis da comunidade escolar.",
