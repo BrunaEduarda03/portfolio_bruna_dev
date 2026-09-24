@@ -74,7 +74,7 @@ a:hover .brand-wordmark { color: #fbbf24; }
 .intro-stars { position: absolute; inset: 0; pointer-events: none; }
 .intro-stars i { position: absolute; display: block; border-radius: 50%; background: #f8ecd4; opacity: .45; box-shadow: 0 0 7px #fbbf2440; animation: star-breathe 2s ease-in-out infinite alternate; }
 .intro-top, .intro-bottom { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 24px; font: 11px 'JetBrains Mono', monospace; letter-spacing: 1.3px; color: #a1a1aa; z-index: 2; }
-.intro-top button { padding: 12px 0 12px 16px; font-size: 13px; letter-spacing: 0; color: #d4d4d8; }
+.intro-top button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; border-radius: 8px; font-size: 13px; line-height: 1; letter-spacing: 0; color: #d4d4d8; }
 .intro-top button:hover { color: #fbbf24; }
 .intro-center { position: relative; flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 0; }
 .orbital-stage { position: relative; width: min(80vw, 600px); aspect-ratio: 1.5; flex-shrink: 1; min-height: 0; }

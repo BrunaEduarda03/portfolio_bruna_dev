@@ -38,9 +38,6 @@
 .case-context-grid p, .case-contributions { font-size: 16px; color: #a1a1aa; line-height: 1.8; }
 .case-contributions { display: grid; gap: 12px; }.case-contributions li { display: flex; gap: 12px; }
 .case-contributions svg { flex: none; color: var(--case-accent); margin-top: 7px; }
-.case-context-grid .case-evidence { margin-top: 18px; }
-.case-evidence { display: inline-block; border: 1px solid #3f3f46; border-radius: 4px; padding: 4px 7px; font: 10px 'JetBrains Mono', monospace; color: #c4c4ca; white-space: nowrap; }
-.evidence-public { color: #a5dfd4; border-color: #a5dfd430; }.evidence-mock { color: #f7c773; border-color: #f7c77330; }
 .case-table-scroll { overflow-x: auto; }.case-stack-table { border-collapse: collapse; width: 100%; text-align: left; min-width: 560px; }
 .case-stack-table thead th { font: 11px 'JetBrains Mono', monospace; color: #a1a1aa; padding: 0 16px 16px 0; border-bottom: 1px solid #3f3f46; }
 .case-stack-table tbody th, .case-stack-table td { border-bottom: 1px solid #26262d; padding: 22px 24px 22px 0; vertical-align: top; }

@@ -38,7 +38,7 @@ export default function SplashScreen({ phase, onSkip }: SplashScreenProps) {
       <div className="intro-stars" aria-hidden="true">
         {STARS.map((star, index) => <i key={index} style={{ left: `${star.x}%`, top: `${star.y}%`, width: star.size, height: star.size, animationDelay: `${index % 6 * .2}s` }} />)}
       </div>
-      <div className="intro-top"><span>BM / PORTFOLIO</span><button type="button" onClick={onSkip}>{t("identity.skip")} ↗</button></div>
+      <div className="intro-top"><span>BM / PORTFOLIO</span><button type="button" onClick={onSkip}><span>{t("identity.skip")}</span><span aria-hidden="true">↗</span></button></div>
       <div className="intro-center">
         <div className="orbital-stage" aria-hidden="true">
           <div className="orbital-halo" />
