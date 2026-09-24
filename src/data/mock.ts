@@ -163,20 +163,10 @@ export const experiences: Experience[] = [
     role: "Mobile Developer · Freelancer",
     period: "Anterior",
     description: [
-      "Reconstrução do zero do app mobile DentalUni com React Native.",
+      "Desenvolvimento de um novo app Dental Uni com novo design e base white label em React Native e Expo.",
       "Desenvolvimento de interfaces mobile modernas, performáticas e acessíveis para gestão odontológica.",
     ],
-    technologies: [
-      "React Native",
-      "Expo",
-      "TypeScript",
-      "Zustand",
-      "React Hook Form",
-      "Zod",
-      "TanStack Query",
-      "Expo Router",
-      "Reanimated",
-    ],
+    technologies: ["React Native", "Expo SDK 54", "TypeScript", "Expo Router", "Context API", "Reanimated", "Axios"],
   },
   {
     id: 3,
@@ -207,7 +197,7 @@ export const experiences: Experience[] = [
     period: "Anterior",
     description: [
       "Projetos com Vue, Nuxt, Laravel, PHP, MySQL, React Native.",
-      "Desenvolvimento de landing pages e sistemas como Evoluir EAD, PNLD, IDUCS.",
+      "Desenvolvimento de landing pages e sistemas como Evoluir EAD, PNLD.",
       "Participação ativa em code reviews, melhorias de UX e deploy contínuo.",
     ],
     technologies: ["Vue", "Nuxt", "Laravel", "PHP", "MySQL", "React Native"],
@@ -232,17 +222,8 @@ export const projects: Project[] = [
     title: "DENTAL UNI",
     subtitle: "Dental Management Mobile App",
     description:
-      "App mobile em desenvolvimento para a Auclan Design, voltado à gestão de planos odontológicos. Arquitetura moderna com navegação fluida e experiência de usuário otimizada.",
-    technologies: [
-      "React Native",
-      "Expo",
-      "TypeScript",
-      "Zustand",
-      "TanStack Query",
-      "Expo Router",
-      "Reanimated",
-      "Zod",
-    ],
+      "Novo app Dental Uni para a Auclan Design, com novo design e base white label. Backend para integração e publicação pendentes; já existe um app em produção.",
+    technologies: ["React Native", "Expo SDK 54", "TypeScript", "Expo Router", "Context API", "Reanimated", "Axios"],
     image: null,
     link: "https://www.planosdentaluni.com.br/",
     wip: true,
@@ -272,8 +253,8 @@ export const projects: Project[] = [
     title: "EVOLUIR",
     subtitle: "EAD Platform",
     description:
-      "Sistema EAD e Landing Page para a plataforma Evoluir de ensino à distância.",
-    technologies: ["Vue", "Nuxt", "Laravel", "MySQL"],
+      "Landing page, sistema educacional e catálogo PNLD de 2024, reunidos em três projetos.",
+    technologies: ["Nuxt 3", "Vue 2 / 3", "TypeScript", "PHP", "Laravel"],
     image: null,
     link: "https://plataformaevoluir.com.br/",
   },
@@ -286,26 +267,6 @@ export const projects: Project[] = [
     technologies: ["React Native", "Node.js", "IoT", "MongoDB"],
     image: null,
     github: "https://github.com/BrunaEduarda03/SmartAir",
-  },
-  {
-    id: 5,
-    title: "PNLD",
-    subtitle: "Book Platform",
-    description:
-      "Landing Page para a plataforma de livros da instituição. Design responsivo e acessível.",
-    technologies: ["Vue", "TailwindCSS", "Laravel"],
-    image: null,
-    link: "https://mvcpnld.com.br/",
-  },
-  {
-    id: 6,
-    title: "IDUCS",
-    subtitle: "Book Marketplace",
-    description:
-      "Marketplace de livros para a instituição, com sistema de busca e categorização.",
-    technologies: ["React", "Node.js", "MongoDB"],
-    image: null,
-    link: "https://dev.iducs.com.br/login",
   },
 ];
 

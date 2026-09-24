@@ -3,7 +3,7 @@ import { CaseStudy } from "../data/caseStudies";
 
 export default function CasePreview({ study, compact = false }: { study: CaseStudy; compact?: boolean }) {
   const photo = study.coverImage ? { src: study.coverImage } : study.subprojects?.flatMap(project => project.images)[0];
-  if (photo) return <img className="case-real-preview" src={`${process.env.PUBLIC_URL}${photo.src}`} alt="" loading="lazy" />;
+  if (photo) return <img className={`case-real-preview${study.gallery?.portrait ? " case-real-preview-mobile" : ""}`} src={`${process.env.PUBLIC_URL}${photo.src}`} alt="" loading="lazy" />;
   return (
     <div className={`case-product-visual visual-${study.kind} ${compact ? "is-compact" : ""}`} aria-hidden="true">
       <div className="mock-orbit" />

@@ -87,3 +87,36 @@ O usuário identifica esses produtos como projetos que desenvolve para a empresa
 
 ### PHP — esclarecimento da autora
 PHP incluído no resumo do case, card e stack/responsabilidades do portal por confirmação explícita da autora. Atuação atualizada para full stack, sem inferir framework PHP ou detalhes de implementação do backend.
+
+## Dental Uni / Auclan Design — 24/09/2026
+- Repositório consultado somente para leitura: `/Users/brunaeduarda/Documents/workspace/Auclan/dental-uni-mobile-rn`.
+- `package.json`: React Native 0.81.5, React 19.1, Expo SDK 54, TypeScript 5.9, Expo Router 6, React Navigation, Axios, Reanimated 4, Gesture Handler, Bottom Sheet, React Native Maps, Expo Camera e Image Picker. Zustand, React Hook Form, Zod e TanStack Query removidos das stacks deste projeto/experiência porque não constam no manifesto consultado.
+- `src/app`, `src/features`, `src/ui`: organização por funcionalidades com rotas e componentes compartilhados separados.
+- `src/ui/styles/theme/index.ts`: tema centralizado com cores e tipografia. `src/config/portal.config.ts`: campos e textos por perfil; `src/hooks/usePortalLogin.ts`: formulário orientado por configuração. `src/contexts/AuthContext.tsx`: perfil e estado em memória, sem autenticação de backend implementada nesse contexto.
+- Arquitetura white label informada pela autora; documentação descreve a base reutilizável encontrada (tema, UI e configurações), sem alegar múltiplas marcas publicadas ou provisionamento de tenants. `app.config.ts` ainda define a identidade Dental Uni.
+- Status fornecido pela autora: novo app e novo design, distinto do app já em produção; desenvolvimento do backend para integração e publicação da nova versão pendentes.
+- Capturas originais fornecidas na conversa: `welcome.png`, `home.png`, `portals.png`. Home recebe desfoque visual leve; arquivos originais não foram anonimizados.
+- IDUCS removido da listagem, do case e das menções na experiência, conforme solicitação.
+
+## Horus — atualização 24/09/2026
+- Case reestruturado em `src/data/horusCase.ts`, no mesmo modelo de subprojetos usado por CoopanestRIO e Evoluir. O bloco antigo em `caseStudies.ts` e o componente `HorusReferences` (mock de login e imagem institucional) foram removidos, junto das classes CSS `.horus-references`/`.horus-login-mock`, que ficaram sem uso.
+- Capturas reais fornecidas pela autora substituem a reconstrução visual: `public/cases/horus/landing.png` (site público) e `public/cases/horus/login.png` (tela real de login de app.horusfat.com). Nenhuma autenticação foi realizada; login foi escolhido como capa do card, no mesmo tratamento dado ao CoopanestRIO.
+- Repositórios consultados somente para leitura em `/Users/brunaeduarda/Documents/workspace/Horus`:
+  - `landing-page-horus-faturamento/package.json`: Vue 3.5, Vite 7, Tailwind CSS 4, VueUse, reka-ui, axios, maska, vue-sonner.
+  - `portal-frontend/package.json`: React 19, TanStack Router/Query/Table, Zustand, Zod, react-hook-form, Radix UI, ApexCharts, Axios.
+  - `backend/composer.json`: PHP 8.2, Laravel 12, Sanctum, php-open-source-saver/jwt-auth, Spatie Permission, Laravel Horizon, Laravel Pulse, Laravel Auditing, Sentry, chrismcintosh/laravel-log-s3-driver; `pestphp/pest` e diretório `tests/` confirmam testes automatizados no backend.
+  - `landing-page-horus-faturamento/index.html`: Google Tag Manager (GTM-TR838XG7), gtag (Google Ads AW-17998115881 e GA4 G-MMQBS55Y2H), Microsoft Clarity (v6l2fmmddt) e Meta Pixel confirmados no código, além de `CookieConsentBar.vue` e `ThankYouTrackingPage.vue`. O consentimento salva a preferência em localStorage, mas não bloqueia o carregamento desses scripts — os três repositórios usam SonarQube (`sonar-project.properties` + workflow) para análise estática.
+  - Não encontrados em nenhum dos três repositórios: Snyk (ou scanner de vulnerabilidades equivalente), Jest, Playwright ou Vitest no frontend.
+- Por decisão explícita da autora, esta atualização ficou restrita ao conteúdo do portfólio: nenhuma alteração foi feita nos repositórios reais do Horus. Os itens de Snyk e testes Jest/Playwright pedidos para adição entram como pendências documentadas no case (`pending`), em vez de serem descritos como já implementados.
+- Mesmo tratamento de pendências (Snyk e testes automatizados) foi acrescentado aos cases CoopanestRIO (`pending` em `caseStudies.ts`) e Evoluir (`pending` em `evoluirCase.ts`), sem inventar o estado atual desses repositórios além do que já constava neste documento.
+- `CaseStudyPage.tsx` ganhou uma seção de pendências para cases com subprojetos (antes só existia para cases sem subprojetos), reaproveitando o estilo `.case-review` já usado nessa página.
+
+## Evoluir / PNLD — 24/09/2026
+- PNLD reunido como subprojeto do Evoluir por instrução da autora. Removido o card/case independente; a rota antiga `#/cases/pnld` abre o case Evoluir.
+- Três seções: landing page Evoluir, sistema Evoluir e PNLD (projeto de 2024).
+- Fontes públicas: https://mvcpnld.com.br/, https://plataformaevoluir.com.br/ e https://app.plataformaevoluir.com.br/.
+- Capturas atuais realizadas com Playwright. A data do projeto não é a data das capturas; o site PNLD atual inclui conteúdo de edições posteriores a 2024.
+- Print do login enviado pela autora preservado em `public/cases/evoluir/system-login.png` e usado na galeria do sistema. Sem autenticação nem acesso às telas internas.
+- Stack do PNLD informada pela autora como equivalente à landing page CoopanestRIO, com Nuxt 3 e versões antigas em 2024. Mantidos Vue 3, TypeScript, Tailwind CSS, PrimeVue, Pinia, Axios/useFetch, Strapi, Analytics e Clarity sem inventar números de versão das bibliotecas.
+- Landing page Evoluir: Vue/Nuxt conforme experiência previamente registrada. Sistema: Vue 2, Vue 3, PHP/Laravel explicitamente informados pela autora. Não se atribui migração completa nem arquitetura interna não observada.
+- Dados do case em `src/data/evoluirCase.ts`; imagens em `public/cases/evoluir/` para substituição posterior, se desejada.

@@ -65,7 +65,7 @@ const Projects: React.FC = () => {
                 >
                   {study && <a href={`#/cases/${study.slug}`} className="project-case-preview" aria-label={`${localize(caseStudyCopy.open, language)}: ${study.title}`} style={{ "--case-accent": study.accent } as React.CSSProperties}>
                     <CasePreview study={study} compact />
-                    <span className="project-mock-tag">{localize(caseStudyCopy[study.subprojects ? "subprojects" : "mock"], language)}</span>
+                    <span className="project-mock-tag">{localize(caseStudyCopy[study.subprojects ? "subprojects" : study.gallery ? "productScreen" : "mock"], language)}</span>
                   </a>}
                   {/* Project icon area */}
                   <div className="flex items-center justify-between mb-5">

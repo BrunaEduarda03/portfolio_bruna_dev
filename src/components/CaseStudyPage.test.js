@@ -15,21 +15,20 @@ beforeEach(() => {
   root = createRoot(container);
 });
 afterEach(() => { act(() => root.unmount()); container.remove(); });
-test("Horus shows public sources, mock labels and no invented outcome metrics", () => {
+test("Horus exposes both deliveries with real screenshots and a pending checklist", () => {
+  window.matchMedia = jest.fn(() => ({ matches: true }));
+  Element.prototype.scrollIntoView = jest.fn();
   act(() => root.render(<CaseStudyPage slug="horus" />));
   expect(container.querySelector('a[href="https://horusfat.com/"]')).not.toBeNull();
   expect(container.querySelector('a[href="https://app.horusfat.com/auth/login"]')).not.toBeNull();
-  expect(container.textContent).toContain("MOCK DE INTERFACE");
-  expect(container.textContent).toContain("Node.js/PostgreSQL");
-  expect([...container.querySelectorAll(".case-metrics strong")].map(item => item.textContent)).toEqual(["—", "—", "—"]);
-  expect(container.querySelector("form")).toBeNull();
-});
-test("architecture selection shows the matching technical detail", () => {
-  act(() => root.render(<CaseStudyPage slug="horus" />));
-  const buttons = container.querySelectorAll(".architecture-layers button");
-  act(() => buttons[2].click());
-  expect(buttons[2].getAttribute("aria-pressed")).toBe("true");
-  expect(container.querySelector("#layer-detail").textContent).toContain("PHP · Laravel · REST");
+  expect(container.querySelectorAll(".case-subproject")).toHaveLength(2);
+  expect(container.textContent).not.toContain("MOCK DE INTERFACE");
+  expect(container.textContent).toContain("Microsoft Clarity");
+  expect(container.textContent).toContain("Snyk");
+  expect(container.textContent).toContain("Jest e Playwright");
+  const [website, app] = container.querySelectorAll(".feature-gallery");
+  expect(website.querySelector(".feature-image-link img").getAttribute("src")).toContain("landing.png");
+  expect(app.querySelector(".feature-image-link img").getAttribute("src")).toContain("login.png");
 });
 test("an unknown case provides a working return link", () => {
   act(() => root.render(<CaseStudyPage slug="unknown" />));
@@ -65,4 +64,28 @@ test("feature gallery changes the screenshot, wraps and keeps project galleries 
   expect(website.querySelector('.feature-image-link img').getAttribute('src')).toContain('landing-page.png');
   act(() => website.querySelector('[aria-label="Funcionalidade anterior"]').click());
   expect(website.querySelector('.feature-image-link img').getAttribute('src')).toContain('newsletter.png');
+});
+test("Dental Uni presents the new app, pending backend and publication, and a softened home", () => {
+  act(() => root.render(<CaseStudyPage slug="dental-uni" />));
+  expect(container.textContent).toContain('Backend e publicação pendentes');
+  expect(container.textContent).toContain('Existe um app em produção');
+  expect(container.textContent).toContain('Base white label reutilizável');
+  expect(container.textContent).toContain('React Native 0.81');
+  expect(container.textContent).not.toContain('Zustand');
+  expect(container.textContent).not.toContain('MOCK DE INTERFACE');
+  act(() => container.querySelectorAll('.feature-thumbnails button')[1].click());
+  expect(container.querySelector('.feature-image-softened img').getAttribute('src')).toContain('/dental-uni/home.png');
+  expect(container.querySelector('.case-metrics')).toBeNull();
+});
+test("Evoluir groups PNLD with website and system without Coopanest-specific labels", () => {
+  act(() => root.render(<CaseStudyPage slug="evoluir" />));
+  expect(container.querySelectorAll('.case-subproject')).toHaveLength(3);
+  expect(container.textContent).toContain('Nuxt 3');
+  expect(container.textContent).toContain('Vue 2 · Vue 3 · PHP · Laravel');
+  expect(container.querySelector('.case-project-grid').textContent).not.toContain('COOPANESTRIO');
+  expect(container.querySelector('.case-draft').textContent).toContain('3 subprojetos');
+  expect(container.querySelector('a[href="https://mvcpnld.com.br/"]')).not.toBeNull();
+  expect(container.querySelector('#case-stack h2').textContent).toContain('EVOLUIR');
+  act(() => root.render(<CaseStudyPage slug="pnld" />));
+  expect(container.querySelector('h1').textContent).toBe('EVOLUIR.');
 });

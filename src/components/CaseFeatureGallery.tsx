@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Layers, Maximize2 } from "lucide-react";
-import { CaseSubproject, localize } from "../data/caseStudies";
+import { CaseGallery, localize } from "../data/caseStudies";
 import { caseStudyCopy } from "../data/caseStudyCopy";
 import { useLanguage } from "../i18n/LanguageContext";
 
-export default function CaseFeatureGallery({ project }: { project: CaseSubproject }) {
+export default function CaseFeatureGallery({ project }: { project: CaseGallery }) {
   const { language } = useLanguage();
   const [selected, setSelected] = useState(0);
   const touchStart = useRef<number | null>(null);
@@ -13,7 +13,7 @@ export default function CaseFeatureGallery({ project }: { project: CaseSubprojec
   const move = (step: number) => setSelected(current => (current + step + project.features.length) % project.features.length);
   if (!feature) return null;
 
-  return <section className="feature-gallery" aria-label={`${ui("gallery")}: ${localize(project.title, language)}`}>
+  return <section className={`feature-gallery${project.portrait ? " feature-gallery-portrait" : ""}`} aria-label={`${ui("gallery")}: ${localize(project.title, language)}`}>
     <div className="feature-gallery-top"><span>{ui("gallery")}</span><span>{String(selected + 1).padStart(2, "0")} / {String(project.features.length).padStart(2, "0")}</span></div>
     <div className="feature-gallery-stage" id={`${project.id}-feature`}>
       <div className="feature-gallery-visual" onTouchStart={event => { touchStart.current = event.touches[0].clientX; }} onTouchEnd={event => {
@@ -23,7 +23,7 @@ export default function CaseFeatureGallery({ project }: { project: CaseSubprojec
         }
         touchStart.current = null;
       }}>
-        {feature.image ? <div className="feature-browser"><div className="feature-browser-bar"><span aria-hidden="true">● ● ●</span><small>{new URL(project.url).hostname}</small>{!feature.softened && <a href={`${process.env.PUBLIC_URL}${feature.image}`} target="_blank" rel="noreferrer" aria-label={`${ui("expand")}: ${localize(feature.title, language)}`}><Maximize2 size={15} /></a>}</div>{feature.softened ? <div className="feature-image-link feature-image-softened"><img src={`${process.env.PUBLIC_URL}${feature.image}`} alt={localize(feature.title, language)} width="1440" height="960" draggable={false} /></div> : <a className="feature-image-link" href={`${process.env.PUBLIC_URL}${feature.image}`} target="_blank" rel="noreferrer" aria-label={`${ui("expand")}: ${localize(feature.title, language)}`}><img src={`${process.env.PUBLIC_URL}${feature.image}`} alt={localize(feature.title, language)} width="1440" height="960" /></a>}</div> : <div className="feature-module"><span className="feature-module-icon"><Layers size={30} /></span><small>{ui("functionalOverview")}</small><strong>{localize(feature.title, language)}</strong><div>{feature.tags.map(tag => <span key={tag}>{tag}</span>)}</div><a href={project.url} target="_blank" rel="noreferrer">{ui("visit")}<ArrowUpRight size={15} /></a></div>}
+        {feature.image && feature.secondaryImage ? <div className="feature-image-pair">{[feature.image, feature.secondaryImage].map((src, index) => <div className="feature-browser" key={src}>{feature.softened ? <div className="feature-image-link feature-image-softened"><img src={`${process.env.PUBLIC_URL}${src}`} alt={localize(index === 1 && feature.secondaryImageTitle ? feature.secondaryImageTitle : feature.title, language)} width="348" height="761" draggable={false} /></div> : <a className="feature-image-link" href={`${process.env.PUBLIC_URL}${src}`} target="_blank" rel="noreferrer" aria-label={`${ui("expand")}: ${localize(index === 1 && feature.secondaryImageTitle ? feature.secondaryImageTitle : feature.title, language)}`}><img src={`${process.env.PUBLIC_URL}${src}`} alt={localize(index === 1 && feature.secondaryImageTitle ? feature.secondaryImageTitle : feature.title, language)} width="348" height="761" /></a>}</div>)}</div> : feature.image ? <div className="feature-browser"><div className="feature-browser-bar"><span aria-hidden="true">● ● ●</span><small>{new URL(project.url).hostname}</small>{!feature.softened && <a href={`${process.env.PUBLIC_URL}${feature.image}`} target="_blank" rel="noreferrer" aria-label={`${ui("expand")}: ${localize(feature.title, language)}`}><Maximize2 size={15} /></a>}</div>{feature.softened ? <div className="feature-image-link feature-image-softened"><img src={`${process.env.PUBLIC_URL}${feature.image}`} alt={localize(feature.title, language)} width="1440" height="960" draggable={false} /></div> : <a className="feature-image-link" href={`${process.env.PUBLIC_URL}${feature.image}`} target="_blank" rel="noreferrer" aria-label={`${ui("expand")}: ${localize(feature.title, language)}`}><img src={`${process.env.PUBLIC_URL}${feature.image}`} alt={localize(feature.title, language)} width="1440" height="960" /></a>}</div> : <div className="feature-module"><span className="feature-module-icon"><Layers size={30} /></span><small>{ui("functionalOverview")}</small><strong>{localize(feature.title, language)}</strong><div>{feature.tags.map(tag => <span key={tag}>{tag}</span>)}</div><a href={project.url} target="_blank" rel="noreferrer">{ui("visit")}<ArrowUpRight size={15} /></a></div>}
       </div>
       <div className="feature-gallery-description"><div aria-live="polite" aria-atomic="true"><span className="feature-overline">{ui(feature.image ? "productScreen" : "functionalOverview")}</span><h3>{localize(feature.title, language)}</h3><p>{localize(feature.description, language)}</p><div className="feature-tags">{feature.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div><div className="feature-gallery-controls"><span>{ui("browseFeatures")}</span><div><button type="button" onClick={() => move(-1)} aria-label={ui("previousFeature")} aria-controls={`${project.id}-feature`}><ArrowLeft size={18} /></button><button type="button" onClick={() => move(1)} aria-label={ui("nextFeature")} aria-controls={`${project.id}-feature`}><ArrowRight size={18} /></button></div></div></div>
     </div>

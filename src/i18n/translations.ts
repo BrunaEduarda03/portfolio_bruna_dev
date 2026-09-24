@@ -125,7 +125,7 @@ export const translations = {
           role: "Mobile Developer · Freelancer",
           period: "Anterior",
           description: [
-            "Reconstrução do zero do app mobile DentalUni com React Native.",
+            "Desenvolvimento de um novo app Dental Uni com novo design e base white label em React Native e Expo.",
             "Desenvolvimento de interfaces mobile modernas, performáticas e acessíveis para gestão odontológica.",
             "Responsável pela publicação dos apps em produção na Apple Store e Google Play.",
           ],
@@ -147,7 +147,7 @@ export const translations = {
           period: "Anterior",
           description: [
             "Projetos com Vue, Nuxt, Laravel, PHP, MySQL, React Native.",
-            "Desenvolvimento de landing pages e sistemas como Evoluir EAD, PNLD, IDUCS.",
+            "Desenvolvimento de landing pages e sistemas como Evoluir EAD, PNLD.",
             "Participação ativa em code reviews, melhorias de UX e deploy contínuo.",
           ],
         },
@@ -174,7 +174,7 @@ export const translations = {
           title: "DENTAL UNI",
           subtitle: "App Mobile de Gestão Odontológica",
           description:
-            "App mobile em desenvolvimento para a Auclan Design, voltado à gestão de planos odontológicos. Arquitetura moderna com navegação fluida e experiência de usuário otimizada.",
+            "Novo aplicativo Dental Uni desenvolvido para a Auclan Design, com novo design e base white label em React Native e Expo. Existe um app em produção; esta nova versão aguarda o desenvolvimento do backend para integração e a publicação.",
         },
         {
           title: "HORUS",
@@ -192,25 +192,13 @@ export const translations = {
           title: "EVOLUIR",
           subtitle: "Plataforma EAD",
           description:
-            "Sistema EAD e Landing Page para a plataforma Evoluir de ensino à distância.",
+            "Landing page Evoluir, sistema educacional e catálogo PNLD de 2024: três projetos no mesmo case.",
         },
         {
           title: "ECONOWISE",
           subtitle: "Sistema de Automação IoT",
           description:
             "Aplicação de automação, monitoramento e controle de ar-condicionados. Projeto de TCC.",
-        },
-        {
-          title: "PNLD",
-          subtitle: "Plataforma de Livros",
-          description:
-            "Landing Page para a plataforma de livros da instituição. Design responsivo e acessível.",
-        },
-        {
-          title: "IDUCS",
-          subtitle: "Marketplace de Livros",
-          description:
-            "Marketplace de livros para a instituição, com sistema de busca e categorização.",
         },
       ],
     },
@@ -414,7 +402,7 @@ export const translations = {
           role: "Mobile Developer · Freelancer",
           period: "Previous",
           description: [
-            "Rebuilt the DentalUni mobile app from scratch using React Native.",
+            "Development of a new Dental Uni app with a new design and white-label foundation in React Native and Expo.",
             "Developed modern, performant and accessible mobile interfaces for dental management.",
             "Responsible for publishing the apps to production on the Apple Store and Google Play.",
           ],
@@ -436,7 +424,7 @@ export const translations = {
           period: "Previous",
           description: [
             "Projects with Vue, Nuxt, Laravel, PHP, MySQL, React Native.",
-            "Development of landing pages and systems like Evoluir EAD, PNLD, IDUCS.",
+            "Development of landing pages and systems like Evoluir EAD, PNLD.",
             "Active participation in code reviews, UX improvements and continuous deployment.",
           ],
         },
@@ -463,7 +451,7 @@ export const translations = {
           title: "DENTAL UNI",
           subtitle: "Dental Management Mobile App",
           description:
-            "Mobile app in development for Auclan Design, focused on dental plan management. Modern architecture with smooth navigation and optimized user experience.",
+            "New Dental Uni app developed for Auclan Design, with a new design and a white-label foundation in React Native and Expo. An app is already in production; this new version awaits backend development for integration and publication.",
         },
         {
           title: "HORUS",
@@ -481,25 +469,13 @@ export const translations = {
           title: "EVOLUIR",
           subtitle: "E-Learning Platform",
           description:
-            "E-Learning system and Landing Page for the Evoluir distance education platform.",
+            "Evoluir website, education system and 2024 PNLD catalog: three projects in one case.",
         },
         {
           title: "ECONOWISE",
           subtitle: "IoT Automation System",
           description:
             "Automation, monitoring and control application for air conditioners. Final thesis project.",
-        },
-        {
-          title: "PNLD",
-          subtitle: "Book Platform",
-          description:
-            "Landing Page for the institution's book platform. Responsive and accessible design.",
-        },
-        {
-          title: "IDUCS",
-          subtitle: "Book Marketplace",
-          description:
-            "Book marketplace for the institution, with search and categorization system.",
         },
       ],
     },
@@ -704,7 +680,7 @@ export const translations = {
           role: "Mobile Developer · Freelancer",
           period: "Anterior",
           description: [
-            "Reconstrucción desde cero de la app mobile DentalUni con React Native.",
+            "Desarrollo de una nueva app Dental Uni con nuevo diseño y base white label en React Native y Expo.",
             "Desarrollo de interfaces mobile modernas, performáticas y accesibles para gestión odontológica.",
             "Responsable de la publicación de las apps en producción en Apple Store y Google Play.",
           ],
@@ -726,7 +702,7 @@ export const translations = {
           period: "Anterior",
           description: [
             "Proyectos con Vue, Nuxt, Laravel, PHP, MySQL, React Native.",
-            "Desarrollo de landing pages y sistemas como Evoluir EAD, PNLD, IDUCS.",
+            "Desarrollo de landing pages y sistemas como Evoluir EAD, PNLD.",
             "Participación activa en code reviews, mejoras de UX y deploy continuo.",
           ],
         },
@@ -753,7 +729,7 @@ export const translations = {
           title: "DENTAL UNI",
           subtitle: "App Mobile de Gestión Odontológica",
           description:
-            "App mobile en desarrollo para Auclan Design, orientado a la gestión de planes dentales. Arquitectura moderna con navegación fluida y experiencia de usuario optimizada.",
+            "Nueva app Dental Uni desarrollada para Auclan Design, con nuevo diseño y base white label en React Native y Expo. Ya existe una app en producción; esta nueva versión espera el desarrollo del backend para integración y publicación.",
         },
         {
           title: "HORUS",
@@ -771,25 +747,13 @@ export const translations = {
           title: "EVOLUIR",
           subtitle: "Plataforma E-Learning",
           description:
-            "Sistema EAD y Landing Page para la plataforma Evoluir de enseñanza a distancia.",
+            "Sitio Evoluir, sistema educativo y catálogo PNLD de 2024: tres proyectos en un caso.",
         },
         {
           title: "ECONOWISE",
           subtitle: "Sistema de Automatización IoT",
           description:
             "Aplicación de automatización, monitoreo y control de aires acondicionados. Proyecto de TCC.",
-        },
-        {
-          title: "PNLD",
-          subtitle: "Plataforma de Libros",
-          description:
-            "Landing Page para la plataforma de libros de la institución. Diseño responsivo y accesible.",
-        },
-        {
-          title: "IDUCS",
-          subtitle: "Marketplace de Libros",
-          description:
-            "Marketplace de libros para la institución, con sistema de búsqueda y categorización.",
         },
       ],
     },
