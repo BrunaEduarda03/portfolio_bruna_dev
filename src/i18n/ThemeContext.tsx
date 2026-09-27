@@ -19,19 +19,15 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
-    const saved = localStorage.getItem("portfolio_theme");
+    let saved: string | null = null;
+    try { saved = localStorage.getItem("portfolio_theme"); } catch { /* Storage may be unavailable. */ }
     if (saved && ["light", "dark"].includes(saved)) return saved as Theme;
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: light)").matches
-    ) {
-      return "light";
-    }
     return "dark";
   });
 
   useEffect(() => {
     const root = document.documentElement;
+    root.style.colorScheme = theme;
     if (theme === "dark") {
       root.classList.add("dark");
       root.classList.remove("light");
@@ -39,7 +35,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       root.classList.add("light");
       root.classList.remove("dark");
     }
-    localStorage.setItem("portfolio_theme", theme);
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "dark" ? "#0a0a0a" : "#e9e5dd");
+    try { localStorage.setItem("portfolio_theme", theme); } catch { /* Theme still works without storage. */ }
   }, [theme]);
 
   const toggleTheme = useCallback(() => {

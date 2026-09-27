@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Brand from "./Brand";
+import ThemeToggle from "./ThemeToggle";
 import { useLanguage, LANGUAGES } from "../i18n/LanguageContext";
 import { Menu, X, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -58,7 +59,7 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-[#0a0a0a]/90 backdrop-blur-xl border-b border-amber-500/10"
+          ? "bg-page/90 backdrop-blur-xl border-b border-amber-500/10"
           : "bg-transparent"
       }`}
     >
@@ -89,9 +90,9 @@ const Header = () => {
             <li key={link.href}>
               <button
                 onClick={() => scrollToSection(link.href)}
-                className="relative px-2 py-2 text-sm font-mono text-zinc-400 hover:text-amber-400 transition-colors duration-300 group"
+                className="relative px-2 py-2 text-sm font-mono text-ink-400 hover:text-gold-400 transition-colors duration-300 group"
               >
-                <span className="text-amber-500/60 text-xs mr-1">
+                <span className="text-gold-500/60 text-xs mr-1">
                   0{index + 1}.
                 </span>
                 {link.name}
@@ -108,13 +109,14 @@ const Header = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
+          <ThemeToggle />
           {/* Language Switcher */}
           <div className="relative lang-switcher">
             <button
               aria-label={t("identity.language")}
               aria-expanded={langMenuOpen}
               onClick={() => setLangMenuOpen(!langMenuOpen)}
-              className="flex items-center gap-1.5 px-3 py-2 text-xs font-mono border border-zinc-800 text-zinc-400 rounded-lg hover:border-amber-500/30 hover:text-amber-400 transition-all duration-300"
+              className="flex items-center gap-1.5 px-3 py-2 text-xs font-mono border border-surface-800 text-ink-400 rounded-lg hover:border-amber-500/30 hover:text-gold-400 transition-all duration-300"
             >
               <Globe className="w-3.5 h-3.5" />
               {language.toUpperCase()}
@@ -126,7 +128,7 @@ const Header = () => {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 4, scale: 0.95 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute right-0 top-full mt-2 bg-[#141414] border border-zinc-800 rounded-lg overflow-hidden shadow-xl shadow-black/40 min-w-[140px]"
+                  className="absolute right-0 top-full mt-2 bg-panel border border-surface-800 rounded-lg overflow-hidden shadow-xl shadow-black/40 min-w-[140px]"
                 >
                   {LANGUAGES.map((lang) => (
                     <button
@@ -138,12 +140,12 @@ const Header = () => {
                       }}
                       className={`w-full text-left px-4 py-2.5 text-xs font-mono flex items-center justify-between transition-all duration-200 ${
                         language === lang.code
-                          ? "text-amber-400 bg-amber-500/5"
-                          : "text-zinc-400 hover:text-amber-400 hover:bg-amber-500/5"
+                          ? "text-gold-400 bg-amber-500/5"
+                          : "text-ink-400 hover:text-gold-400 hover:bg-amber-500/5"
                       }`}
                     >
                       <span>{lang.fullLabel}</span>
-                      <span className="text-zinc-600">{lang.label}</span>
+                      <span className="text-ink-600">{lang.label}</span>
                     </button>
                   ))}
                 </motion.div>
@@ -154,7 +156,7 @@ const Header = () => {
           {/* CTA */}
           <a
             href="#contact"
-            className="flex items-center gap-2 px-4 py-2 text-sm font-mono border border-amber-500/30 text-amber-400 rounded-lg hover:bg-amber-500/10 transition-all duration-300"
+            className="flex items-center gap-2 px-4 py-2 text-sm font-mono border border-amber-500/30 text-gold-400 rounded-lg hover:bg-amber-500/10 transition-all duration-300"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection("#contact");
@@ -166,12 +168,13 @@ const Header = () => {
 
         {/* Mobile: Language + Menu */}
         <div className="xl:hidden flex items-center gap-2">
+          <ThemeToggle />
           <div className="relative lang-switcher">
             <button
               aria-label={t("identity.language")}
               aria-expanded={langMenuOpen}
               onClick={() => setLangMenuOpen(!langMenuOpen)}
-              className="flex items-center gap-1 px-2 py-1.5 text-xs font-mono border border-zinc-800 text-zinc-400 rounded-lg"
+              className="flex items-center gap-1 px-2 py-1.5 text-xs font-mono border border-surface-800 text-ink-400 rounded-lg"
             >
               <Globe className="w-3 h-3" />
               {language.toUpperCase()}
@@ -182,7 +185,7 @@ const Header = () => {
                   initial={{ opacity: 0, y: 4 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 4 }}
-                  className="absolute right-0 top-full mt-2 bg-[#141414] border border-zinc-800 rounded-lg overflow-hidden shadow-xl shadow-black/40 min-w-[130px] z-50"
+                  className="absolute right-0 top-full mt-2 bg-panel border border-surface-800 rounded-lg overflow-hidden shadow-xl shadow-black/40 min-w-[130px] z-50"
                 >
                   {LANGUAGES.map((lang) => (
                     <button
@@ -194,8 +197,8 @@ const Header = () => {
                       }}
                       className={`w-full text-left px-3 py-2 text-xs font-mono ${
                         language === lang.code
-                          ? "text-amber-400 bg-amber-500/5"
-                          : "text-zinc-400 hover:text-amber-400"
+                          ? "text-gold-400 bg-amber-500/5"
+                          : "text-ink-400 hover:text-gold-400"
                       }`}
                     >
                       {lang.fullLabel}
@@ -209,7 +212,7 @@ const Header = () => {
             aria-label={mobileMenuOpen ? t("identity.closeMenu") : t("identity.openMenu")}
             aria-expanded={mobileMenuOpen}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-zinc-400 hover:text-amber-400 transition-colors"
+            className="p-2 text-ink-400 hover:text-gold-400 transition-colors"
           >
             {mobileMenuOpen ? (
               <X className="w-5 h-5" />
@@ -227,16 +230,16 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="xl:hidden bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-amber-500/10 overflow-hidden"
+            className="xl:hidden bg-page/95 backdrop-blur-xl border-b border-amber-500/10 overflow-hidden"
           >
             <ul className="px-4 py-4 space-y-1">
               {navLinks.map((link, index) => (
                 <li key={link.href}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="w-full text-left px-4 py-3 text-sm font-mono text-zinc-400 hover:text-amber-400 hover:bg-amber-500/5 rounded-lg transition-all duration-300"
+                    className="w-full text-left px-4 py-3 text-sm font-mono text-ink-400 hover:text-gold-400 hover:bg-amber-500/5 rounded-lg transition-all duration-300"
                   >
-                    <span className="text-amber-500/60 mr-2">
+                    <span className="text-gold-500/60 mr-2">
                       0{index + 1}.
                     </span>
                     {link.name}

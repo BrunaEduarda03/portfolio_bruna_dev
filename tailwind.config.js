@@ -13,6 +13,23 @@ module.exports = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
+            'page': 'rgb(var(--page-rgb) / <alpha-value>)',
+            'panel': 'rgb(var(--panel-rgb) / <alpha-value>)',
+            'footer': 'rgb(var(--footer-rgb) / <alpha-value>)',
+            'ink-100': 'rgb(var(--ink-100-rgb) / <alpha-value>)',
+            'ink-200': 'rgb(var(--ink-200-rgb) / <alpha-value>)',
+            'ink-300': 'rgb(var(--ink-300-rgb) / <alpha-value>)',
+            'ink-400': 'rgb(var(--ink-400-rgb) / <alpha-value>)',
+            'ink-500': 'rgb(var(--ink-500-rgb) / <alpha-value>)',
+            'ink-600': 'rgb(var(--ink-600-rgb) / <alpha-value>)',
+            'ink-700': 'rgb(var(--ink-700-rgb) / <alpha-value>)',
+            'surface-800': 'rgb(var(--surface-800-rgb) / <alpha-value>)',
+            'surface-900': 'rgb(var(--surface-900-rgb) / <alpha-value>)',
+            'surface-950': 'rgb(var(--surface-950-rgb) / <alpha-value>)',
+            'gold-300': 'rgb(var(--gold-300-rgb) / <alpha-value>)',
+            'gold-400': 'rgb(var(--gold-400-rgb) / <alpha-value>)',
+            'gold-500': 'rgb(var(--gold-500-rgb) / <alpha-value>)',
+
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -36,7 +53,7 @@ module.exports = {
   				foreground: 'hsl(var(--muted-foreground))'
   			},
   			accent: {
-  				DEFAULT: 'hsl(var(--accent))',
+                DEFAULT: 'hsl(var(--ui-accent))',
   				foreground: 'hsl(var(--accent-foreground))'
   			},
   			destructive: {

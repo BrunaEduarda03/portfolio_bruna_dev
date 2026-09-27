@@ -105,7 +105,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="relative py-24 md:py-32 bg-[#0a0a0a]">
+    <section id="contact" className="relative py-24 md:py-32 bg-page">
       <div className="absolute top-0 left-1/3 w-96 h-96 bg-amber-500/[0.02] rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
@@ -118,15 +118,15 @@ const Contact: React.FC = () => {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-4 flex-wrap">
-            <span className="text-amber-500 font-mono text-sm">
+            <span className="text-gold-500 font-mono text-sm">
               {t("contact.sectionNum")}
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-zinc-100">
+            <h2 className="text-3xl md:text-4xl font-bold text-ink-100">
               {t("contact.title")}
             </h2>
-            <div className="flex-1 min-w-[2rem] h-[1px] bg-zinc-800 ml-4" />
+            <div className="flex-1 min-w-[2rem] h-[1px] bg-surface-800 ml-4" />
           </div>
-          <p className="text-zinc-500 text-sm max-w-lg">
+          <p className="text-ink-500 text-sm max-w-lg">
             {t("contact.subtitle")}
           </p>
         </motion.div>
@@ -140,22 +140,22 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-2 space-y-6"
           >
-            <div className="p-6 rounded-2xl border border-zinc-800/80 bg-zinc-900/20 space-y-7">
-              <h3 className="font-mono text-sm text-amber-400 uppercase tracking-wider mb-10">
+            <div className="p-6 rounded-2xl border border-surface-800/80 bg-surface-900/20 space-y-7">
+              <h3 className="font-mono text-sm text-gold-400 uppercase tracking-wider mb-10">
                 {t("contact.info")}
               </h3>
 
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-4 h-4 text-amber-400" />
+                  <Mail className="w-4 h-4 text-gold-400" />
                 </div>
                 <div>
-                  <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider mb-1">
+                  <p className="text-xs text-ink-500 font-mono uppercase tracking-wider mb-1">
                     {t("contact.email")}
                   </p>
                   <a
                     href={`mailto:${personalInfo.email}`}
-                    className="text-sm text-zinc-300 hover:text-amber-400 transition-colors break-all"
+                    className="text-sm text-ink-300 hover:text-gold-400 transition-colors break-all"
                   >
                     {personalInfo.email}
                   </a>
@@ -164,13 +164,13 @@ const Contact: React.FC = () => {
 
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-4 h-4 text-amber-400" />
+                  <Phone className="w-4 h-4 text-gold-400" />
                 </div>
                 <div>
-                  <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider mb-1">
+                  <p className="text-xs text-ink-500 font-mono uppercase tracking-wider mb-1">
                     {t("contact.phone")}
                   </p>
-                  <span className="text-sm text-zinc-300">
+                  <span className="text-sm text-ink-300">
                     {personalInfo.phone}
                   </span>
                 </div>
@@ -178,39 +178,39 @@ const Contact: React.FC = () => {
 
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-4 h-4 text-amber-400" />
+                  <MapPin className="w-4 h-4 text-gold-400" />
                 </div>
                 <div>
-                  <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider mb-1">
+                  <p className="text-xs text-ink-500 font-mono uppercase tracking-wider mb-1">
                     {t("contact.locationLabel")}
                   </p>
-                  <span className="text-sm text-zinc-300">
+                  <span className="text-sm text-ink-300">
                     {t("about.location")}
                   </span>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0">
-                  <Linkedin className="w-4 h-4 text-amber-400" />
+                  <Linkedin className="w-4 h-4 text-gold-400" />
                 </div>
                 <div>
-                  <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider mb-1">
+                  <p className="text-xs text-ink-500 font-mono uppercase tracking-wider mb-1">
                     {t("contact.linkedinLabel")}
                   </p>
-                  <span className="text-sm text-zinc-300">
+                  <span className="text-sm text-ink-300">
                     {personalInfo.linkedin}
                   </span>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0">
-                  <Github className="w-4 h-4 text-amber-400" />
+                  <Github className="w-4 h-4 text-gold-400" />
                 </div>
                 <div>
-                  <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider mb-1">
+                  <p className="text-xs text-ink-500 font-mono uppercase tracking-wider mb-1">
                     {t("contact.githubLabel")}
                   </p>
-                  <span className="text-sm text-zinc-300">
+                  <span className="text-sm text-ink-300">
                     {personalInfo.github}
                   </span>
                 </div>
@@ -228,11 +228,11 @@ const Contact: React.FC = () => {
           >
             <form
               onSubmit={handleSubmit}
-              className="p-6 md:p-8 rounded-2xl border border-zinc-800/80 bg-zinc-900/20 space-y-5"
+              className="p-6 md:p-8 rounded-2xl border border-surface-800/80 bg-surface-900/20 space-y-5"
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-mono text-ink-500 uppercase tracking-wider mb-2">
                     {t("contact.nameLabel")} *
                   </label>
                   <Input
@@ -240,11 +240,11 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder={t("contact.namePlaceholder")}
-                    className="bg-zinc-900/50 border-zinc-800 text-zinc-200 placeholder:text-zinc-700 focus:border-amber-500/40 focus:ring-amber-500/20 h-11"
+                    className="bg-surface-900/50 border-surface-800 text-ink-200 placeholder:text-ink-700 focus:border-amber-500/40 focus:ring-amber-500/20 h-11"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-mono text-ink-500 uppercase tracking-wider mb-2">
                     {t("contact.emailLabel")} *
                   </label>
                   <Input
@@ -253,13 +253,13 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder={t("contact.emailPlaceholder")}
-                    className="bg-zinc-900/50 border-zinc-800 text-zinc-200 placeholder:text-zinc-700 focus:border-amber-500/40 focus:ring-amber-500/20 h-11"
+                    className="bg-surface-900/50 border-surface-800 text-ink-200 placeholder:text-ink-700 focus:border-amber-500/40 focus:ring-amber-500/20 h-11"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">
+                <label className="block text-xs font-mono text-ink-500 uppercase tracking-wider mb-2">
                   {t("contact.subjectLabel")}
                 </label>
                 <Input
@@ -267,12 +267,12 @@ const Contact: React.FC = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   placeholder={t("contact.subjectPlaceholder")}
-                  className="bg-zinc-900/50 border-zinc-800 text-zinc-200 placeholder:text-zinc-700 focus:border-amber-500/40 focus:ring-amber-500/20 h-11"
+                  className="bg-surface-900/50 border-surface-800 text-ink-200 placeholder:text-ink-700 focus:border-amber-500/40 focus:ring-amber-500/20 h-11"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">
+                <label className="block text-xs font-mono text-ink-500 uppercase tracking-wider mb-2">
                   {t("contact.messageLabel")} *
                 </label>
                 <Textarea
@@ -281,7 +281,7 @@ const Contact: React.FC = () => {
                   onChange={handleChange}
                   placeholder={t("contact.messagePlaceholder")}
                   rows={5}
-                  className="bg-zinc-900/50 border-zinc-800 text-zinc-200 placeholder:text-zinc-700 focus:border-amber-500/40 focus:ring-amber-500/20 resize-none"
+                  className="bg-surface-900/50 border-surface-800 text-ink-200 placeholder:text-ink-700 focus:border-amber-500/40 focus:ring-amber-500/20 resize-none"
                 />
               </div>
 

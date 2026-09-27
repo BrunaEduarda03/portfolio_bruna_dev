@@ -8,6 +8,8 @@ export const translations = {
       of: "de",
     },
     identity: {
+      lightMode: "Ativar modo claro",
+      darkMode: "Ativar modo escuro",
       skip: "Pular abertura",
       skipContent: "Ir para o conteúdo",
       intro: "Código que conecta ideias.",
@@ -285,6 +287,8 @@ export const translations = {
       of: "of",
     },
     identity: {
+      lightMode: "Switch to light mode",
+      darkMode: "Switch to dark mode",
       skip: "Skip intro",
       skipContent: "Skip to content",
       intro: "Code that connects ideas.",
@@ -563,6 +567,8 @@ export const translations = {
       of: "de",
     },
     identity: {
+      lightMode: "Activar modo claro",
+      darkMode: "Activar modo oscuro",
       skip: "Saltar introducción",
       skipContent: "Ir al contenido",
       intro: "Código que conecta ideas.",

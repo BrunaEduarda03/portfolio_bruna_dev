@@ -20,7 +20,7 @@ const Projects: React.FC = () => {
   const visibleItems = items.slice(pageStart, pageStart + SECTION_PAGE_SIZE);
 
   return (
-    <section id="projects" className="relative py-24 md:py-32 bg-[#0a0a0a]">
+    <section id="projects" className="relative py-24 md:py-32 bg-page">
       <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/[0.02] rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
@@ -33,15 +33,15 @@ const Projects: React.FC = () => {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-4 flex-wrap">
-            <span className="text-amber-500 font-mono text-sm">
+            <span className="text-gold-500 font-mono text-sm">
               {t("projects.sectionNum")}
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-zinc-100">
+            <h2 className="text-3xl md:text-4xl font-bold text-ink-100">
               {t("projects.title")}
             </h2>
-            <div className="flex-1 min-w-[2rem] h-[1px] bg-zinc-800 ml-4" />
+            <div className="flex-1 min-w-[2rem] h-[1px] bg-surface-800 ml-4" />
           </div>
-          <p className="text-zinc-500 text-sm max-w-lg">
+          <p className="text-ink-500 text-sm max-w-lg">
             {t("projects.subtitle")}
           </p>
         </motion.div>
@@ -61,7 +61,7 @@ const Projects: React.FC = () => {
                   transition={{ duration: 0.5, delay: localIndex * 0.1 }}
                   onMouseEnter={() => setHoveredId(index)}
                   onMouseLeave={() => setHoveredId(null)}
-                  className="group relative p-6 rounded-2xl border border-zinc-800/80 bg-zinc-900/20 backdrop-blur-sm hover:border-amber-500/20 hover:bg-amber-500/[0.02] transition-all duration-500 flex flex-col"
+                  className="group relative p-6 rounded-2xl border border-surface-800/80 bg-surface-900/20 backdrop-blur-sm hover:border-amber-500/20 hover:bg-amber-500/[0.02] transition-all duration-500 flex flex-col"
                 >
                   {study && <a href={`#/cases/${study.slug}`} className="project-case-preview" aria-label={`${localize(caseStudyCopy.open, language)}: ${study.title}`} style={{ "--case-accent": study.accent } as React.CSSProperties}>
                     <CasePreview study={study} compact />
@@ -70,11 +70,11 @@ const Projects: React.FC = () => {
                   {/* Project icon area */}
                   <div className="flex items-center justify-between mb-5">
                     <div className="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/15 transition-colors duration-300">
-                      <Code2 className="w-5 h-5 text-amber-400" />
+                      <Code2 className="w-5 h-5 text-gold-400" />
                     </div>
                     <div className="flex items-center gap-2">
                       {project?.wip && (
-                        <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono border border-amber-500/25 bg-amber-500/5 text-amber-400">
+                        <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono border border-amber-500/25 bg-amber-500/5 text-gold-400">
                           <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
                           {t("projects.wipLabel")}
                         </span>
@@ -85,7 +85,7 @@ const Projects: React.FC = () => {
                             <a
                               href={project.github}
                               aria-label={`${item.title} — GitHub`}
-                              className="p-2 rounded-lg text-zinc-600 hover:text-amber-400 hover:bg-amber-500/10 transition-all duration-300"
+                              className="p-2 rounded-lg text-ink-600 hover:text-gold-400 hover:bg-amber-500/10 transition-all duration-300"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 trackEvent("project_click", { project: item.title, type: "github" });
@@ -100,7 +100,7 @@ const Projects: React.FC = () => {
                               aria-label={`${item.title} — website`}
                               target="_blank"
                               rel="noreferrer"
-                              className="p-2 rounded-lg text-zinc-600 hover:text-amber-400 hover:bg-amber-500/10 transition-all duration-300"
+                              className="p-2 rounded-lg text-ink-600 hover:text-gold-400 hover:bg-amber-500/10 transition-all duration-300"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 trackEvent("project_click", { project: item.title, type: "live" });
@@ -114,18 +114,18 @@ const Projects: React.FC = () => {
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-semibold text-zinc-100 group-hover:text-amber-300 transition-colors duration-300 mb-1 font-mono">
+                  <h3 className="text-lg font-semibold text-ink-100 group-hover:text-gold-300 transition-colors duration-300 mb-1 font-mono">
                     {study ? <a href={`#/cases/${study.slug}`}>{item.title}</a> : item.title}
                   </h3>
-                  <p className={`text-xs font-mono text-amber-500/60 ${project?.wip ? "mb-1" : "mb-3"}`}>
+                  <p className={`text-xs font-mono text-gold-500/60 ${project?.wip ? "mb-1" : "mb-3"}`}>
                     {item.subtitle}
                   </p>
                   {project?.wip && (
-                    <p className="text-[10px] font-mono text-zinc-600 mb-3">
+                    <p className="text-[10px] font-mono text-ink-600 mb-3">
                       Auclan Design · Freelancer
                     </p>
                   )}
-                  <p className="text-sm text-zinc-500 leading-relaxed mb-5 flex-1">
+                  <p className="text-sm text-ink-500 leading-relaxed mb-5 flex-1">
                     {item.description}
                   </p>
 
@@ -134,7 +134,7 @@ const Projects: React.FC = () => {
                       {project.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-2 py-0.5 text-[10px] font-mono rounded-md bg-zinc-800/70 text-zinc-500 border border-zinc-800"
+                          className="px-2 py-0.5 text-[10px] font-mono rounded-md bg-surface-800/70 text-ink-500 border border-surface-800"
                         >
                           {tech}
                         </span>

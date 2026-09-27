@@ -65,8 +65,8 @@ const CertFilter: React.FC<CertFilterProps> = ({
             onClick={() => onChange(opt)}
             className={`relative px-4 py-1.5 rounded-lg text-xs font-mono tracking-wide transition-all duration-200 ${
               isActive
-                ? "text-amber-400 border border-amber-500/40 bg-amber-500/10"
-                : "text-zinc-500 border border-zinc-800 hover:text-zinc-300 hover:border-zinc-700"
+                ? "text-gold-400 border border-amber-500/40 bg-amber-500/10"
+                : "text-ink-500 border border-surface-800 hover:text-ink-300 hover:border-surface-800"
             }`}
           >
             {isActive && (
@@ -106,11 +106,11 @@ const CertCard: React.FC<CertCardProps> = ({ cert, index, onClick }) => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={() => onClick(cert)}
-      className="group relative cursor-pointer rounded-2xl border border-zinc-800/80 bg-zinc-900/20 overflow-hidden hover:border-amber-500/20 hover:bg-amber-500/[0.02] transition-all duration-500 flex flex-col"
+      className="group relative cursor-pointer rounded-2xl border border-surface-800/80 bg-surface-900/20 overflow-hidden hover:border-amber-500/20 hover:bg-amber-500/[0.02] transition-all duration-500 flex flex-col"
     >
       {/* Thumbnail */}
       <div
-        className="relative overflow-hidden bg-zinc-950"
+        className="relative overflow-hidden bg-surface-950"
         style={{ aspectRatio: "16/9" }}
       >
         <img
@@ -119,8 +119,8 @@ const CertCard: React.FC<CertCardProps> = ({ cert, index, onClick }) => {
           loading="lazy"
           className="w-full h-full object-cover opacity-70 group-hover:opacity-95 group-hover:scale-105 transition-all duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
-        <span className="absolute top-3 left-3 text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-md bg-amber-800/30 border border-amber-500/40 text-amber-500 backdrop-blur-md">
+        <div className="absolute inset-0 bg-gradient-to-t from-surface-950 via-surface-950/20 to-transparent" />
+        <span className="absolute top-3 left-3 text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-md bg-amber-800/30 border border-amber-500/40 text-gold-500 backdrop-blur-md">
           {getCertTypeLabel(cert.type, t)}
         </span>
       </div>
@@ -129,16 +129,16 @@ const CertCard: React.FC<CertCardProps> = ({ cert, index, onClick }) => {
       <div className="flex flex-col flex-1 p-5">
         <div className="flex items-center gap-2 mb-2.5">
           <div className="w-1.5 h-1.5 rounded-full bg-amber-500/60" />
-          <span className="font-mono text-xs text-amber-400/80 tracking-wide">
+          <span className="font-mono text-xs text-gold-400/80 tracking-wide">
             {cert.institution}
           </span>
         </div>
 
-        <h3 className="text-sm font-semibold text-zinc-300 group-hover:text-zinc-100 transition-colors duration-300 leading-snug mb-auto line-clamp-2">
+        <h3 className="text-sm font-semibold text-ink-300 group-hover:text-ink-100 transition-colors duration-300 leading-snug mb-auto line-clamp-2">
           {cert.title}
         </h3>
 
-        <div className="flex items-center gap-4 mt-4 text-xs text-zinc-600">
+        <div className="flex items-center gap-4 mt-4 text-xs text-ink-600">
           <span className="flex items-center gap-1.5">
             <Calendar className="w-3 h-3" />
             {cert.date}
@@ -210,13 +210,13 @@ const CertStats: React.FC<CertStatsProps> = ({
       {stats.map(({ value, label, icon: Icon }) => (
         <div
           key={label}
-          className="flex flex-col items-center justify-center gap-1.5 p-5 rounded-2xl border border-zinc-800/80 bg-zinc-900/20 hover:border-amber-500/15 transition-all duration-300"
+          className="flex flex-col items-center justify-center gap-1.5 p-5 rounded-2xl border border-surface-800/80 bg-surface-900/20 hover:border-amber-500/15 transition-all duration-300"
         >
-          <Icon className="w-4 h-4 text-amber-500/50 mb-0.5" />
-          <span className="text-2xl md:text-3xl font-bold font-mono text-amber-400">
+          <Icon className="w-4 h-4 text-gold-500/50 mb-0.5" />
+          <span className="text-2xl md:text-3xl font-bold font-mono text-gold-400">
             {value}
           </span>
-          <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider text-center">
+          <span className="text-[10px] font-mono text-ink-500 uppercase tracking-wider text-center">
             {label}
           </span>
         </div>
@@ -257,7 +257,7 @@ const CertModal: React.FC<CertModalProps> = ({ cert, onClose }) => {
       />
 
       <motion.div
-        className="relative w-full max-w-2xl bg-[#0f0f0f] border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl shadow-black/70"
+        className="relative w-full max-w-2xl bg-panel border border-surface-800 rounded-2xl overflow-hidden shadow-2xl shadow-black/70"
         initial={{ opacity: 0, scale: 0.94, y: 24 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.94, y: 24 }}
@@ -266,38 +266,38 @@ const CertModal: React.FC<CertModalProps> = ({ cert, onClose }) => {
         <button
           onClick={onClose}
           aria-label={t("certifications.close")}
-          className="absolute top-4 right-4 z-10 w-8 h-8 rounded-lg bg-zinc-900/90 border border-zinc-800 flex items-center justify-center text-zinc-500 hover:text-amber-400 hover:border-amber-500/30 transition-all duration-200"
+          className="absolute top-4 right-4 z-10 w-8 h-8 rounded-lg bg-surface-900/90 border border-surface-800 flex items-center justify-center text-ink-500 hover:text-gold-400 hover:border-amber-500/30 transition-all duration-200"
         >
           <X className="w-4 h-4" />
         </button>
 
-        <div className="relative bg-zinc-950 flex items-center justify-center min-h-[220px]">
+        <div className="relative bg-surface-950 flex items-center justify-center min-h-[220px]">
           <img
             src={cert.previewImage}
             alt={cert.title}
             className="w-full object-contain max-h-72"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-panel via-transparent to-transparent pointer-events-none" />
         </div>
 
         <div className="p-6 pt-5">
           <div className="flex items-center gap-2.5 mb-3">
-            <span className="text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-md bg-amber-500/15 border border-amber-500/25 text-amber-400">
+            <span className="text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-md bg-amber-500/15 border border-amber-500/25 text-gold-400">
               {getCertTypeLabel(cert.type, t)}
             </span>
             <div className="flex items-center gap-1.5">
-              <Award className="w-3 h-3 text-amber-500/60" />
-              <span className="text-xs font-mono text-amber-400/70">
+              <Award className="w-3 h-3 text-gold-500/60" />
+              <span className="text-xs font-mono text-gold-400/70">
                 {cert.institution}
               </span>
             </div>
           </div>
 
-          <h3 className="text-base font-bold text-zinc-100 leading-snug mb-3">
+          <h3 className="text-base font-bold text-ink-100 leading-snug mb-3">
             {cert.title}
           </h3>
 
-          <div className="flex items-center gap-5 text-xs text-zinc-500 mb-6">
+          <div className="flex items-center gap-5 text-xs text-ink-500 mb-6">
             <span className="flex items-center gap-1.5">
               <Calendar className="w-3.5 h-3.5" />
               {cert.date}
@@ -313,7 +313,7 @@ const CertModal: React.FC<CertModalProps> = ({ cert, onClose }) => {
           <div className="flex flex-wrap gap-2.5">
             <button
               onClick={copyLink}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-zinc-800 text-xs font-mono text-zinc-400 hover:text-amber-400 hover:border-amber-500/30 transition-all duration-200"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-surface-800 text-xs font-mono text-ink-400 hover:text-gold-400 hover:border-amber-500/30 transition-all duration-200"
             >
               {copied ? (
                 <CheckCheck className="w-3.5 h-3.5 text-green-400" />
@@ -331,7 +331,7 @@ const CertModal: React.FC<CertModalProps> = ({ cert, onClose }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent("certificate_download", { title: cert.title })}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-zinc-800 text-xs font-mono text-zinc-400 hover:text-amber-400 hover:border-amber-500/30 transition-all duration-200"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-surface-800 text-xs font-mono text-ink-400 hover:text-gold-400 hover:border-amber-500/30 transition-all duration-200"
               >
                 <Download className="w-3.5 h-3.5" />
                 {t("certifications.download")}
@@ -343,7 +343,7 @@ const CertModal: React.FC<CertModalProps> = ({ cert, onClose }) => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackEvent("certificate_external_view", { title: cert.title })}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs font-mono text-amber-400 hover:bg-amber-500/20 transition-all duration-200 ml-auto"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs font-mono text-gold-400 hover:bg-amber-500/20 transition-all duration-200 ml-auto"
             >
               <ExternalLink className="w-3.5 h-3.5" />
               {t("certifications.view")}
@@ -399,7 +399,7 @@ const Certifications: React.FC = () => {
   return (
     <section
       id="certifications"
-      className="relative py-24 md:py-32 bg-[#0a0a0a]"
+      className="relative py-24 md:py-32 bg-page"
     >
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-amber-500/[0.02] rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
 
@@ -413,15 +413,15 @@ const Certifications: React.FC = () => {
           className="mb-10"
         >
           <div className="flex items-center gap-3 mb-4 flex-wrap">
-            <span className="text-amber-500 font-mono text-sm">
+            <span className="text-gold-500 font-mono text-sm">
               {t("certifications.sectionNum")}
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-zinc-100">
+            <h2 className="text-3xl md:text-4xl font-bold text-ink-100">
               {t("certifications.title")}
             </h2>
-            <div className="flex-1 min-w-[2rem] h-[1px] bg-zinc-800 ml-4" />
+            <div className="flex-1 min-w-[2rem] h-[1px] bg-surface-800 ml-4" />
           </div>
-          <p className="text-zinc-500 text-sm max-w-lg">
+          <p className="text-ink-500 text-sm max-w-lg">
             {t("certifications.subtitle")}
           </p>
         </motion.div>

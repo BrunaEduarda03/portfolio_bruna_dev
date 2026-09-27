@@ -151,3 +151,21 @@ a:hover .brand-wordmark { color: #fbbf24; }
   .App > header, .hero-universe, .brand-intro, .brand-intro .orbital-stage { transition: none; transform: none; }
   .brand-intro .code-node { animation: none; }
 }
+
+/* Warm mineral surfaces and copper accents for the daylight identity. */
+.light .App { --brand-gold: var(--accent); }
+.light .brand-mark, .light .brand-dot, .light a:hover .brand-wordmark,
+.light .space-monogram, .light .code-constellation,
+.light .intro-caption h2 span, .light .intro-top button:hover { color: var(--accent); }
+.light .brand-wordmark, .light .intro-top button { color: var(--text-heading); }
+.light .brand-intro { background: var(--page-bg); color: var(--text-heading); }
+.light .brand-intro::before { background: radial-gradient(ellipse at 48% 42%, #b5915320, transparent 50%), radial-gradient(ellipse at 70% 65%, #8f9a9420, transparent 50%); }
+.light .intro-top, .light .intro-bottom, .light .intro-caption p,
+.light .code-node small { color: var(--text-muted); }
+.light .code-node { color: #896b3b; }
+.light .intro-stars i, .light .orbital-spark { background: var(--accent); }
+.light .orbital-tracks { color: var(--accent); }
+.light .space-hero { background-image: radial-gradient(ellipse at 50% 36%, #f6f0e580, transparent 65%); }
+.light .project-case-link { color: var(--accent-text); }
+.light input, .light textarea { background-color: var(--input-bg); }
+.light .theme-toggle { background: var(--card-bg-subtle); }

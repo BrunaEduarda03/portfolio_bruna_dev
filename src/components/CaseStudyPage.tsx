@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowUpRight, ArrowRight, Layers, ExternalLink, Check, Code2 } from "lucide-react";
 import Brand from "./Brand";
+import ThemeToggle from "./ThemeToggle";
 import CaseFeatureGallery from "./CaseFeatureGallery";
 import CaseSubprojects from "./CaseSubprojects";
 import CasePreview from "./CasePreview";
@@ -32,9 +33,9 @@ export default function CaseStudyPage({ slug }: { slug: string }) {
   const activeLayer = study?.layers[selectedLayer];
 
   return (
-    <div className="case-page App" style={{ "--case-accent": study?.accent ?? "#fbbf24" } as React.CSSProperties}>
+    <div className="case-page App" style={{ "--project-accent": study?.accent ?? "#fbbf24" } as React.CSSProperties}>
       <button type="button" className="skip-link" onClick={() => heading.current?.focus()}>{ui("summary")}</button>
-      <header className="case-header"><a href="#projects" aria-label="Bruna Maciel"><Brand /></a><div className="case-header-actions"><a href="#projects" className="case-back"><ArrowLeft size={15} /><span>{ui("back")}</span></a><div className="case-languages" aria-label="Language">{LANGUAGES.map(item => <button type="button" key={item.code} onClick={() => changeLanguage(item.code)} aria-pressed={language === item.code} aria-label={item.fullLabel}>{item.label}</button>)}</div></div></header>
+      <header className="case-header"><a href="#projects" aria-label="Bruna Maciel"><Brand /></a><div className="case-header-actions"><ThemeToggle /><a href="#projects" className="case-back"><ArrowLeft size={15} /><span>{ui("back")}</span></a><div className="case-languages" aria-label="Language">{LANGUAGES.map(item => <button type="button" key={item.code} onClick={() => changeLanguage(item.code)} aria-pressed={language === item.code} aria-label={item.fullLabel}>{item.label}</button>)}</div></div></header>
       {!study ? <main className="case-not-found"><h1 ref={heading} tabIndex={-1}>{ui("notFound")}</h1><a href="#projects">{ui("back")} <ArrowRight size={18} /></a></main> : (
         <main id="case-content" className="case-content">
           <div className="case-breadcrumb"><a href="#projects">{ui("back")}</a><span>/</span><span>{study.title}</span></div>

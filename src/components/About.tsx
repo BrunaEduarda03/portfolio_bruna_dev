@@ -37,7 +37,7 @@ const renderRich = (
 };
 
 const labelClass =
-  "font-mono text-[10px] uppercase tracking-[0.18em] text-zinc-500 font-medium block mb-2";
+  "font-mono text-[10px] uppercase tracking-[0.18em] text-ink-500 font-medium block mb-2";
 
 const About = () => {
   const { t } = useLanguage();
@@ -75,7 +75,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="relative py-24 md:py-32 bg-[#0a0a0a]">
+    <section id="about" className="relative py-24 md:py-32 bg-page">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
@@ -86,13 +86,13 @@ const About = () => {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-4 flex-wrap">
-            <span className="text-amber-500 font-mono text-sm">
+            <span className="text-gold-500 font-mono text-sm">
               {t("about.sectionNum")}
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-zinc-100">
+            <h2 className="text-3xl md:text-4xl font-bold text-ink-100">
               {t("about.title")}
             </h2>
-            <div className="flex-1 min-w-[2rem] h-[1px] bg-zinc-800 ml-4" />
+            <div className="flex-1 min-w-[2rem] h-[1px] bg-surface-800 ml-4" />
           </div>
         </motion.div>
 
@@ -106,21 +106,21 @@ const About = () => {
         >
           <div>
             <span className={labelClass}>{t("about.whoAmI")}</span>
-            <p className="text-xl md:text-2xl leading-snug text-zinc-100/95">
+            <p className="text-xl md:text-2xl leading-snug text-ink-100/95">
               {renderRich(t("about.bioIntro"), [
-                { keyword: t("about.bioRole"), className: "font-semibold text-amber-400" },
+                { keyword: t("about.bioRole"), className: "font-semibold text-gold-400" },
               ])}
             </p>
-            <p className="mt-5 text-sm leading-7 text-zinc-500 max-w-[62ch]">
+            <p className="mt-5 text-sm leading-7 text-ink-500 max-w-[62ch]">
               {renderRich(
                 t("about.bioDetails"),
-                TECH_KEYWORDS.map((k) => ({ keyword: k, className: "text-amber-400" }))
+                TECH_KEYWORDS.map((k) => ({ keyword: k, className: "text-gold-400" }))
               )}
             </p>
           </div>
 
-          <div className="lg:border-l lg:border-zinc-800/80 lg:pl-8 flex flex-col gap-6">
-            <span className="inline-flex self-start items-center gap-2 pl-2.5 pr-3 py-1.5 rounded-full bg-amber-500/5 border border-amber-500/20 font-mono text-[11px] text-amber-300">
+          <div className="lg:border-l lg:border-surface-800/80 lg:pl-8 flex flex-col gap-6">
+            <span className="inline-flex self-start items-center gap-2 pl-2.5 pr-3 py-1.5 rounded-full bg-amber-500/5 border border-amber-500/20 font-mono text-[11px] text-gold-300">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-400" />
@@ -130,12 +130,12 @@ const About = () => {
 
             <div>
               <span className={labelClass}>{t("about.basedIn")}</span>
-              <span className="text-sm text-zinc-200">{t("about.location")}</span>
+              <span className="text-sm text-ink-200">{t("about.location")}</span>
             </div>
 
             <div>
               <span className={labelClass}>{t("about.studying")}</span>
-              <span className="text-sm text-zinc-200 leading-snug">
+              <span className="text-sm text-ink-200 leading-snug">
                 {t("about.currentStudy")}
               </span>
             </div>
@@ -146,10 +146,10 @@ const About = () => {
                 {languages.map((lang) => (
                   <div key={lang.name}>
                     <div className="flex justify-between text-xs mb-1.5">
-                      <span className="text-zinc-300 font-medium">{lang.name}</span>
-                      <span className="text-zinc-500 font-mono">{lang.level}</span>
+                      <span className="text-ink-300 font-medium">{lang.name}</span>
+                      <span className="text-ink-500 font-mono">{lang.level}</span>
                     </div>
-                    <div className="w-full h-[2px] bg-zinc-800 rounded-full overflow-hidden">
+                    <div className="w-full h-[2px] bg-surface-800 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${lang.percentage}%` }}
@@ -180,13 +180,13 @@ const About = () => {
               return (
                 <div
                   key={card.id}
-                  className="grid grid-cols-1 sm:grid-cols-[190px_1fr] gap-3 sm:gap-6 py-4 px-3 -mx-3 border-t border-zinc-800/70 rounded-lg transition-colors duration-200 hover:bg-amber-500/[0.03]"
+                  className="grid grid-cols-1 sm:grid-cols-[190px_1fr] gap-3 sm:gap-6 py-4 px-3 -mx-3 border-t border-surface-800/70 rounded-lg transition-colors duration-200 hover:bg-amber-500/[0.03]"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="w-7 h-7 shrink-0 grid place-items-center rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400">
+                    <span className="w-7 h-7 shrink-0 grid place-items-center rounded-md bg-amber-500/10 border border-amber-500/20 text-gold-400">
                       <IconComponent className="w-3.5 h-3.5" />
                     </span>
-                    <span className="font-mono text-xs font-semibold uppercase tracking-wider text-zinc-200">
+                    <span className="font-mono text-xs font-semibold uppercase tracking-wider text-ink-200">
                       {card.title}
                     </span>
                   </div>
@@ -194,7 +194,7 @@ const About = () => {
                     {tags.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-flex px-2.5 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.08] text-[12.5px] leading-none text-zinc-300 transition-all duration-150 hover:border-amber-500/50 hover:text-amber-300 hover:bg-amber-500/10 hover:-translate-y-0.5"
+                        className="inline-flex px-2.5 py-1.5 rounded-lg bg-surface-900/30 border border-surface-800/80 text-[12.5px] leading-none text-ink-300 transition-all duration-150 hover:border-amber-500/50 hover:text-gold-300 hover:bg-amber-500/10 hover:-translate-y-0.5"
                       >
                         {tag}
                       </span>
@@ -203,7 +203,7 @@ const About = () => {
                 </div>
               );
             })}
-            <div className="border-t border-zinc-800/70" />
+            <div className="border-t border-surface-800/70" />
           </div>
         </motion.div>
 
@@ -220,15 +220,15 @@ const About = () => {
             <div className="absolute left-[4px] top-2 bottom-3.5 w-[2px] bg-gradient-to-b from-amber-500 to-amber-500/10" />
             {educationItems.map((edu) => (
               <div key={edu.degree} className="relative pb-8 last:pb-0">
-                <span className="absolute -left-[30px] top-[3px] w-[11px] h-[11px] rounded-full bg-[#0a0a0a] border-2 border-amber-500" />
+                <span className="absolute -left-[30px] top-[3px] w-[11px] h-[11px] rounded-full bg-page border-2 border-amber-500" />
                 <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1.5 mb-2">
-                  <span className="text-base sm:text-lg font-semibold text-zinc-100 tracking-tight">
+                  <span className="text-base sm:text-lg font-semibold text-ink-100 tracking-tight">
                     {edu.degree}
                   </span>
-                  <span className="text-xs sm:text-sm text-zinc-500">
+                  <span className="text-xs sm:text-sm text-ink-500">
                     {edu.institution}
                   </span>
-                  <span className="font-mono text-[11px] text-amber-500">
+                  <span className="font-mono text-[11px] text-gold-500">
                     {edu.period}
                   </span>
                 </div>
@@ -237,9 +237,9 @@ const About = () => {
                     edu.highlights.map((h, i) => (
                       <li
                         key={i}
-                        className="flex gap-2.5 text-[13.5px] leading-relaxed text-zinc-500"
+                        className="flex gap-2.5 text-[13.5px] leading-relaxed text-ink-500"
                       >
-                        <span className="text-amber-500 shrink-0">›</span>
+                        <span className="text-gold-500 shrink-0">›</span>
                         <span>{h}</span>
                       </li>
                     ))}
